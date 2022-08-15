@@ -9,7 +9,7 @@ public class CategoryAndStylePage extends KbbBasePage{
 
     public CategoryAndStylePage(WebDriver driver) {
         super(driver);
-        //TODO Auto-generated constructor stub
+        
     }
 
     //#region page actions
@@ -18,32 +18,35 @@ public class CategoryAndStylePage extends KbbBasePage{
      */
     public void clickOnSelectboxAndClickOnAutomatic() {
         WebElement transmissionSelectBox = keyword.findWebElementByXpath("//select[@placeholder='Transmission']");
-        keyword.click(transmissionSelectBox);
+        keyword.scrollAndWaitToClick(transmissionSelectBox);
         WebElement optAutomatic = keyword.findWebElementByXpath("//option[@value='269401']");
-        keyword.click(optAutomatic);
+        keyword.scrollAndWaitToClick(optAutomatic);
     }
     public void sendKeysToMileageTextbox(String mileage)  {
         WebElement txtMileage = keyword.findWebElementByXpath("//input[@data-lean-auto='mileageInput']");
         keyword.sendKeys(txtMileage, mileage);        
     }
-    public void sendKeysToZIPTextbox(String zip)  {
+    public void sendKeysToZIPTextbox(String zip) throws InterruptedException  {
         WebElement txtZipCode = keyword.findWebElementByXpath("//input[@data-lean-auto='zipcodeInput']");
         keyword.sendKeys(txtZipCode, zip);
+        Thread.sleep(3000);
     }
-    public void clickOnNextButton() {
+    public void clickOnNextButton() throws InterruptedException{
         WebElement btnNext = keyword.findWebElementByXpath("//button[@data-cy='vinLpNext']");
-        keyword.click(btnNext);
+        keyword.scrollAndWaitToClick(btnNext);
+        Thread.sleep(4000);
     }
     /**
      * Option Make/Model
      */
     public void selectYourStyle() {
         WebElement optHatchback = keyword.findWebElementByXpath("//div[text()='LX Hatchback 4D']");
-        keyword.click(optHatchback);
+        keyword.scrollAndWaitToClick(optHatchback);
     }
-    public void clickOnMakeModelNextButton(){
+    public void clickOnMakeModelNextButton() throws InterruptedException{
         WebElement btnMakeModelNext = keyword.findWebElementByXpath("//button[@data-lean-auto='categoryPickerButton']");
-        keyword.click(btnMakeModelNext);
+        keyword.scrollAndWaitToClick(btnMakeModelNext);
+        Thread.sleep(4000);
     }
     //#endregion
 }

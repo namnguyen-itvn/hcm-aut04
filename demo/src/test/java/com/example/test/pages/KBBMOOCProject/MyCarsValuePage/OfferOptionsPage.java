@@ -13,10 +13,6 @@ public class OfferOptionsPage extends KbbBasePage{
     }
     WebElement chkGetTrade = keyword.findWebElementByXpath("//input[@id='no']");
     WebElement chkGetACashOffer = keyword.findWebElementByXpath("//input[@id='yes']");
-    WebElement h1YearMakeModel = keyword.findWebElementByXpath("//h1[text()='2016 Honda Fit']");
-    WebElement pStyle = keyword.findWebElementByXpath("//p[text()='LX Hatchback 4D']");
-
-    
 
     public boolean optionGetTradeCannotUnCheck() {
         if(!chkGetTrade.isSelected()){
@@ -31,7 +27,7 @@ public class OfferOptionsPage extends KbbBasePage{
         return false;
     }
     public boolean checkGetACashOfferCheckboxCanBeCheck() {
-        keyword.click(chkGetACashOffer);
+        keyword.scrollAndWaitToClick(chkGetACashOffer);
         if(chkGetACashOffer.isSelected()){
             return true;
         }
@@ -39,6 +35,8 @@ public class OfferOptionsPage extends KbbBasePage{
     }
     
     public String getValueOfVehiclesString() {
+        WebElement h1YearMakeModel = keyword.findWebElementByXpath("//h1[text()='2016 Honda Fit']");
+        WebElement pStyle = keyword.findWebElementByXpath("//p[text()='LX Hatchback 4D']");
         String strYearMakeModel = h1YearMakeModel.getText();
         String strStyle = pStyle.getText();
         String valueOfVehicles = strYearMakeModel + " " + strStyle;

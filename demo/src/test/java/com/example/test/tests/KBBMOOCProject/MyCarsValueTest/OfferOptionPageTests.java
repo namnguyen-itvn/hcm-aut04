@@ -12,7 +12,6 @@ import com.example.test.tests.KBBMOOCProject.KbbBaseTest;
 
 
 public class OfferOptionPageTests extends KbbBaseTest{
-
     @Test(testName = "Verify that 'Get a Cash Offer for Your Specific Vehicle' checkbox can be check and uncheck but 'Get Your Trade-In & Private Party Values' can not uncheck", dataProviderClass = TestDataProvider.class, dataProvider = "WhatsMyCarWorth")
     public void verifyThatGetACashOfferForYourSpecificVehicleCheckboxCanBeCheckAndUncheckButGetYourTradeInPrivatePartyValuesCanNotUncheck(String vin, String email, String mileage, String zip) throws InterruptedException {
         WhatsMyCarWorthPage whatsMyCarWorthPage = new WhatsMyCarWorthPage(driver);
@@ -33,25 +32,5 @@ public class OfferOptionPageTests extends KbbBaseTest{
         OfferOptionsPage offerOptionsPage = new OfferOptionsPage(driver);
         Assert.assertTrue(offerOptionsPage.optionGetTradeCannotUnCheck());
     }
-    @Test(testName = "Verify the Year/Make/Model/Style are displayed correctly as user selected", dataProviderClass = TestDataProvider.class, dataProvider = "OfferOptions")
-    public void verifyTheYearMakeModelStyleAreDisplayedCorrectlyAsUserSelected(String mileage, String zip, String email, String yearMakeModelStyle) throws InterruptedException {
-        WhatsMyCarWorthPage whatsMyCarWorthPage = new WhatsMyCarWorthPage(driver);
-        whatsMyCarWorthPage.clickOnMakeModelCheckbox();
-        whatsMyCarWorthPage.selectYear();
-        whatsMyCarWorthPage.selectMake();
-        whatsMyCarWorthPage.selectModel();
-        whatsMyCarWorthPage.sendKeysToTextboxes(mileage, zip, email);
-        whatsMyCarWorthPage.clickOnMakeModelGoButton();
-        CategoryAndStylePage categoryAndStylePage = new CategoryAndStylePage(driver);
-        categoryAndStylePage.selectYourStyle();
-        categoryAndStylePage.clickOnMakeModelNextButton();
-        OptionsPage optionsPage = new OptionsPage(driver);
-        optionsPage.clickOnSelectYourOptions();
-        optionsPage.clickOnRedColor();
-        optionsPage.clickYesOptionInKeyQuestion();
-        optionsPage.clickNoOptionInModificationsQuestion();
-        optionsPage.clickOnNextButton();
-        OfferOptionsPage offerOptionsPage = new OfferOptionsPage(driver);
-        Assert.assertTrue(offerOptionsPage.compareValueOfVehiclesAsUserSelected(yearMakeModelStyle));
-    }
+    
 }

@@ -29,7 +29,7 @@ public class CustomKeyword {
         {
             driver.get(baseUrl);
         }
-        throw new Exception("url not start with http or http. Double check baseUrl");
+        throw new Exception("url not start with https or http. Double check baseUrl");
     }
 
     /**
@@ -66,7 +66,9 @@ public class CustomKeyword {
      */
     public WebElement findWebElementByXpath(String locator){
         try{
-            return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
+            scrollToElement(driver.findElement(By.xpath(locator)));
+            return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
+            //return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
         } catch(WebDriverException ex ){
             throw new WebDriverException("Element not found!");
         }
@@ -96,6 +98,17 @@ public class CustomKeyword {
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].scrollIntoView(true);", element);
             Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+    public void scrollToElementAndClick(WebElement element){
+
+        try {
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].scrollIntoView(true);", element);
+            Thread.sleep(3000);
+            element.click();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -144,7 +157,43 @@ public class CustomKeyword {
     public CustomKeyword click(WebElement element){
         Actions actions = new Actions(this.driver);
         actions.moveToElement(element).build().perform();
-        waitForElementIsDisplayed(element).click();
+        waitForElementIsDisplayed(element);
+        scrollToElementAndClick(element);
+        //element.click();
         return new CustomKeyword(driver, wait);
+    }
+
+    /**
+     * Scroll to element into View
+     * @param element
+     */
+    public void scrollToElemtnIntoView(WebElement element){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    public WebElement waitForElementDisplayed(WebElement element) {
+        try{
+            scrollToElemtnIntoView(element);
+            return wait.until(ExpectedConditions.elementToBeClickable(element));
+        } catch(WebDriverException ex){
+            throw new WebDriverException("Element not displayed");
+        }
+        
+    }
+
+    /**
+     * Scroll And Wait To Click
+     * @param element
+     * @return
+     */
+    public CustomKeyword scrollAndWaitToClick(WebElement element) {
+        try{
+            scrollToElemtnIntoView(element);
+            waitForElementDisplayed(element);
+            element.click();
+            return new CustomKeyword(driver, wait);
+        }catch(WebDriverException ex){
+            throw new WebDriverException("Element not availabe to click!");
+        }
     }
 }

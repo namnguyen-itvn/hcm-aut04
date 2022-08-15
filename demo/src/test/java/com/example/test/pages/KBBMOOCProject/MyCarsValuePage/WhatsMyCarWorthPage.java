@@ -10,7 +10,6 @@ public class WhatsMyCarWorthPage extends KbbBasePage{
 
     public WhatsMyCarWorthPage(WebDriver driver) {
         super(driver);
-        //TODO Auto-generated constructor stub
     }
     //#region Declare web objects
     WebElement txtVIN = keyword.findWebElementByXpath("//div[@id='vinNumberInput']//input");
@@ -34,7 +33,7 @@ public class WhatsMyCarWorthPage extends KbbBasePage{
         keyword.sendKeys(txtEmail, email);
     }
     public void clickOnVINGoButton() throws InterruptedException {
-        keyword.click(btnGo);
+        keyword.scrollAndWaitToClick(btnGo);
         Thread.sleep(4000);
     }
     public String getErrorMessageString(){
@@ -54,7 +53,7 @@ public class WhatsMyCarWorthPage extends KbbBasePage{
      * Option License Plate
      */
     public void clickOnLicensePlateCheckbox() {
-        keyword.click(chkLicensePlate);
+        keyword.scrollAndWaitToClick(chkLicensePlate);
     }
     public void sendKeysToTextboxes(String plate, String invalidEmail) {
         WebElement txtPlate = keyword.findWebElementByXpath("//input[@data-lean-auto='plateInput']");
@@ -64,16 +63,16 @@ public class WhatsMyCarWorthPage extends KbbBasePage{
     }
     public void selectState() {
         WebElement ddlState = keyword.findWebElementByXpath("//select[@placeholder='State']");
-        keyword.click(ddlState);
+        keyword.scrollAndWaitToClick(ddlState);
         
     }
     public void selectHIoption(){
         WebElement optHI = keyword.findWebElementByXpath("//option[@value='HI']");
-        keyword.click(optHI);
+        keyword.scrollAndWaitToClick(optHI);
     }
     public void clickOnLicensePlateGoButton() throws InterruptedException{
         WebElement btnLicensePlateGo = keyword.findWebElementByXpath("//button[@data-testid='lpSubmitBtn']");
-        keyword.click(btnLicensePlateGo);
+        keyword.scrollAndWaitToClick(btnLicensePlateGo);
         Thread.sleep(3000);
     }
     public String getEmailErrorMessageString(){
@@ -93,25 +92,28 @@ public class WhatsMyCarWorthPage extends KbbBasePage{
      * Option Make/Model
      */
     public void clickOnMakeModelCheckbox() {
-        keyword.click(chkMakeModel);
+        keyword.scrollAndWaitToClick(chkMakeModel);
     }
-    public void selectYear() {
+    public void selectYear() throws InterruptedException {
         WebElement ddlYear = keyword.findWebElementByXpath("//select[@placeholder='Year']");
-        keyword.click(ddlYear);
+        keyword.scrollAndWaitToClick(ddlYear);
+        Thread.sleep(1000);
         WebElement valueOfYear = keyword.findWebElementByXpath("//option[@value='2016']");
-        keyword.click(valueOfYear);
+        keyword.scrollAndWaitToClick(valueOfYear);
     }
-    public void selectMake() {
+    public void selectMake() throws InterruptedException {
         WebElement ddlMake = keyword.findWebElementByXpath("//select[@placeholder='Make']");
-        keyword.click(ddlMake);
+        keyword.scrollAndWaitToClick(ddlMake);
+        Thread.sleep(1000);
         WebElement valueOfMake = keyword.findWebElementByXpath("//option[@value='18']");
-        keyword.click(valueOfMake);
+        keyword.scrollAndWaitToClick(valueOfMake);
     }
-    public void selectModel() {
+    public void selectModel() throws InterruptedException {
         WebElement ddlModel = keyword.findWebElementByXpath("//select[@placeholder='Model']");
-        keyword.click(ddlModel);
+        keyword.scrollAndWaitToClick(ddlModel);
+        Thread.sleep(1000);
         WebElement valueOfModel = keyword.findWebElementByXpath("//option[@value='920']");
-        keyword.click(valueOfModel);
+        keyword.scrollAndWaitToClick(valueOfModel);
     }
     public void sendKeysToTextboxes(String mileage, String zip, String email) {
         WebElement txtMileage = keyword.findWebElementByXpath("//input[@data-automation='vehicle-picker-input-4']");
@@ -123,9 +125,10 @@ public class WhatsMyCarWorthPage extends KbbBasePage{
         keyword.sendKeys(txtEmail, email);
 
     }
-    public void clickOnMakeModelGoButton() {
+    public void clickOnMakeModelGoButton() throws InterruptedException {
         WebElement btnMakeModelGo = keyword.findWebElementByXpath("//button[@data-lean-auto='vehiclePickerBtn']");
-        keyword.click(btnMakeModelGo);
+        keyword.scrollAndWaitToClick(btnMakeModelGo);
+        Thread.sleep(4000);
     }
     //#endregion
 }
