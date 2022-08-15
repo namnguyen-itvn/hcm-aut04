@@ -31,6 +31,9 @@ public class OfferOptionPageTests extends KbbBaseTest{
         optionsPage.clickOnNextButton();
         OfferOptionsPage offerOptionsPage = new OfferOptionsPage(driver);
         Assert.assertTrue(offerOptionsPage.optionGetTradeCannotUnCheck());
+        Assert.assertTrue(offerOptionsPage.checkGetACashOfferCheckboxCanBeUncheck());
+        Assert.assertTrue(offerOptionsPage.checkGetACashOfferCheckboxCanBeCheck());
+        
     }
     
 }
