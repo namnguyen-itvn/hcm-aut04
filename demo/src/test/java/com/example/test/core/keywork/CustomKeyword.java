@@ -1,6 +1,7 @@
 package com.example.test.core.keywork;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -15,9 +16,9 @@ public class CustomKeyword {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    public CustomKeyword(WebDriver driver) {
+    public CustomKeyword(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
-        this.wait = wait;
+        this.wait = new WebDriverWait(driver, 10);
     }
     
     /**
@@ -146,6 +147,101 @@ public class CustomKeyword {
         Actions actions = new Actions(this.driver);
         actions.moveToElement(element).build().perform();
         waitForElementIsDisplayed(element).click();
-        return new CustomKeyword(driver);
+        return new CustomKeyword(driver,wait);
+    }
+
+
+
+    public WebElement findWebElementByID(String locator){
+        try{
+            scrollToElemtnIntoView(driver.findElement(By.id(locator)));
+            return wait.until(ExpectedConditions.presenceOfElementLocated(By.id(locator)));
+        } catch(WebDriverException ex ){
+            throw new WebDriverException("Element not found!");
+        }
+    }
+
+    /**
+     * Scroll to element into View
+     * @param element
+     */
+    public void scrollToElemtnIntoView(WebElement element){
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    public void scrollUp()
+    {
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,-300)", "");
+    }
+
+    public WebElement waitForElementDisplayed(WebElement element) {
+        try{
+            scrollToElemtnIntoView(element);
+            return wait.until(ExpectedConditions.elementToBeClickable(element));
+        } catch(WebDriverException ex){
+            throw new WebDriverException("Element not displayed");
+        }    
+    }
+
+    /**
+     * Scroll And Wait To Click
+     * @param element
+     * @return
+     * @throws InterruptedException
+     */
+    public CustomKeyword scrollAndWaitToClick(WebElement element) throws InterruptedException {
+        try{
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            scrollToElemtnIntoView(element);
+            element.click();
+            return new CustomKeyword(driver, wait);
+        }catch(WebDriverException ex){
+            throw new WebDriverException("Element not availabe to click!");
+        }
+    }
+
+    public void implicitWait()
+    {
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
+
+    public CustomKeyword waitToClick(WebElement element) throws InterruptedException {
+        try{
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            element.click();
+            return new CustomKeyword(driver, wait);
+        }catch(WebDriverException ex){
+            throw new WebDriverException("Element not availabe to click!");
+        }
+    }
+
+    public WebElement findWebElementByClass(String locator){
+        try{
+            scrollToElemtnIntoView(driver.findElement(By.className(locator)));
+            return wait.until(ExpectedConditions.presenceOfElementLocated(By.className(locator)));
+        } catch(WebDriverException ex ){
+            throw new WebDriverException("ClassName not found!");
+        }
+    }
+
+    public WebElement findWebElementByCSS(String locator){
+        try{
+            scrollToElemtnIntoView(driver.findElement(By.cssSelector(locator)));
+            return wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(locator)));
+        } catch(WebDriverException ex ){
+            throw new WebDriverException("CSS not found!");
+        }
+    }
+
+    public void waitForPageToLoad() throws InterruptedException
+    {
+        Thread.sleep(4000);
+    }
+
+    public void scrollToTopOfPage()
+    {
+        ((JavascriptExecutor) driver).executeScript("window.scrollTo(document.body.scrollHeight, 0)");
     }
 }
