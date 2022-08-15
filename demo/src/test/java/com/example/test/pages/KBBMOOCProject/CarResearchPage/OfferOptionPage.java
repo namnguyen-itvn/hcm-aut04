@@ -16,6 +16,9 @@ public class OfferOptionPage extends KbbBasePage {
     WebElement  getBreadcrumd= keyword.findWebElementByXpath("//div[@data-automation='breadcrumb-container']");
 
     String expectedMessages="Home\nWhat’s My Car Worth\nCategory & Style\nOptions\nOffer Option";
+    /**
+     * @return
+     */
     public boolean isTextBreadCrumd(){
         if(getBreadcrumd.getAttribute("innerText").equals(expectedMessages)){
             return true;
@@ -25,6 +28,9 @@ public class OfferOptionPage extends KbbBasePage {
     }
     String expectedTitle="1998 Volkswagen Jetta GLS Sedan 4D Offer Option | Kelley Blue Book";
 
+    /**
+     * @return
+     */
     public boolean getOfferOptionPageTitle(){
         if(driver.getTitle().equals(expectedTitle)){
             return true;

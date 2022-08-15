@@ -20,8 +20,8 @@ public class OptionPageTest  extends KbbBaseTest{
     public void verifyOfferOptionPageshouldbedisplayedafteruserselectedNooftheItemHasYourVehicleHadAnyModifications(String Mileage,String Zipcode, String VIN, String Email,String Category) throws InterruptedException{
         
         WhatMyCarWorthPage whatMyCarWorthPage=new WhatMyCarWorthPage(driver);
-        whatMyCarWorthPage.actionInputVIN(VIN);
-        whatMyCarWorthPage.actionInputEmail(Email);
+        whatMyCarWorthPage.actionInputVINandEmail(VIN,Email);
+       // whatMyCarWorthPage.actionInputEmail(Email);
 
         CategoryStylePage categoryStylePage=new CategoryStylePage(driver);
         categoryStylePage.actionSelectCategory(Category);
@@ -37,6 +37,7 @@ public class OptionPageTest  extends KbbBaseTest{
 
        SelectKeyandVehicleComponentPage selectKeyandVehicleComponentPage=new SelectKeyandVehicleComponentPage(driver);
        selectKeyandVehicleComponentPage.actionselectKey();
+
        OfferOptionPage offerOptionPage=new OfferOptionPage(driver);
        Assert.assertTrue(offerOptionPage.getOfferOptionPageTitle());
        Assert.assertTrue(offerOptionPage.isTextBreadCrumd());
