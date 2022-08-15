@@ -16,21 +16,5 @@ public class KbbBasePage {
         driver.manage().window().maximize();
     }
     
-    /**
-     * return current PageTitle
-     * @return
-     */
-    public String pageTitle() {
-        return driver.getTitle();
-    }
-
-    /**
-     * return True if TitlePage is correct as expected
-     * @param expectedTitle
-     * @return
-     */
-    public boolean isTitlePageCorrect(String expectedTitle)
-    {
-        return pageTitle().equals(expectedTitle);
-    }
+  
 }
