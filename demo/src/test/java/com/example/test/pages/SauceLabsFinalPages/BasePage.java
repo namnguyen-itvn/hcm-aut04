@@ -12,7 +12,7 @@ public class BasePage {
     public BasePage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, 20);
-        this.keyword = new CustomKeyword(driver);
+        this.keyword = new CustomKeyword(driver, wait);
         driver.manage().window().maximize();
     }
     
@@ -20,17 +20,17 @@ public class BasePage {
      * return current PageTitle
      * @return
      */
-    public String pageTitle() {
-        return driver.getTitle();
-    }
+    // public String pageTitle() {
+    //     return driver.getTitle();
+    // }
 
-    /**
-     * return True if TitlePage is correct as expected
-     * @param expectedTitle
-     * @return
-     */
-    public boolean isTitlePageCorrect(String expectedTitle)
-    {
-        return pageTitle().equals(expectedTitle);
-    }
+    // /**
+    //  * return True if TitlePage is correct as expected
+    //  * @param expectedTitle
+    //  * @return
+    //  */
+    // public boolean isTitlePageCorrect(String expectedTitle)
+    // {
+    //     return pageTitle().equals(expectedTitle);
+    // }
 }

@@ -24,16 +24,18 @@ public class SauceLabLoginPage extends BasePage {
     /**
      * Input Username Action
      * @param userName
+     * @throws InterruptedException
      */
-    public void setUsername(String userName) {
+    public void setUsername(String userName) throws InterruptedException {
         keyword.sendKeys(txtUsername, userName); 
     }
 
     /**
      * Input Password Action
      * @param txtPassword
+     * @throws InterruptedException
      */
-    public void setPassword(String passWord) {
+    public void setPassword(String passWord) throws InterruptedException {
         keyword.sendKeys(txtPassword, passWord); 
     }
 
@@ -50,8 +52,9 @@ public class SauceLabLoginPage extends BasePage {
      * @param txtUsername
      * @param txtPassword
      * @param btnLogin
+     * @throws InterruptedException
      */
-    public void actionLogin() {
+    public void actionLogin() throws InterruptedException {
         setUsername("standard_user");
         setPassword("secret_sauce");
         actionClickOnLoginButton();

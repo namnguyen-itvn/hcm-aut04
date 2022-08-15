@@ -16,10 +16,10 @@ public class SauceLabProductPage extends BasePage {
     /**
      * Page Action
      */ 
-    public boolean isTitlePageCorrect(String expectedTitle)
-    {
-        return pageTitle().equals(expectedTitle);
-    }
+    // public boolean isTitlePageCorrect(String expectedTitle)
+    // {
+    //     return pageTitle().equals(expectedTitle);
+    // }
 
     public boolean isListProductHaveCountCorrect() {
         if(listProduct.equals(6))

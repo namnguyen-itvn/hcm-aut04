@@ -9,13 +9,14 @@ import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CustomKeyword {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    public CustomKeyword(WebDriver driver) {
+    public CustomKeyword(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
         this.wait = wait;
     }
@@ -37,10 +38,12 @@ public class CustomKeyword {
      * Wait for Element displayed and input text
      * @param element
      * @param text
+     * @throws InterruptedException
      */
-    public void sendKeys(WebElement element, String text){
+    public void sendKeys(WebElement element, String text) throws InterruptedException{
         try{
             waitForElementIsDisplayed(element).sendKeys(text);
+            Thread.sleep(5000);
         }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to input text!");
         }
@@ -67,7 +70,7 @@ public class CustomKeyword {
      */
     public WebElement findWebElementByXpath(String locator){
         try{
-            return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
+            return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
         } catch(WebDriverException ex ){
             throw new WebDriverException("Element not found!");
         }
@@ -146,6 +149,69 @@ public class CustomKeyword {
         Actions actions = new Actions(this.driver);
         actions.moveToElement(element).build().perform();
         waitForElementIsDisplayed(element).click();
-        return new CustomKeyword(driver);
+        return new CustomKeyword(driver, wait);
+    }
+    public void scrollToElemtnIntoView(WebElement element){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    public WebElement waitForElementDisplayed(WebElement element) {
+        try{
+            scrollToElemtnIntoView(element);
+            return wait.until(ExpectedConditions.elementToBeClickable(element));
+        } catch(WebDriverException ex){
+            throw new WebDriverException("Element not displayed");
+        }
+        
+    }
+    public void selectElement(WebElement element, String text) throws InterruptedException{
+        try{
+            waitForElementDisplayed(element);
+            Select select6=new Select(element);
+            select6.selectByVisibleText(text);
+            Thread.sleep(3000);
+            }catch(WebDriverException ex){
+            throw new WebDriverException("Element not availabe to input text!");
+        }
+    }
+
+     /**
+     * Scroll And Wait To Click
+     * @param element
+     * @return
+     * @throws InterruptedException
+     */
+    public CustomKeyword scrollAndWaitToClick(WebElement element) throws InterruptedException {
+        try{
+            
+            scrollToElemtnIntoView(element);
+            waitForElementDisplayed(element);
+            element.click();
+            Thread.sleep(3000);
+            return new CustomKeyword(driver, wait);
+        }catch(WebDriverException ex){
+            throw new WebDriverException("Element not availabe to input text!");
+        }
+    }
+    public void scrollByToClick(WebElement element) throws InterruptedException{
+        try{
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0,500)");
+            Thread.sleep(3000);
+            element.click();
+            Thread.sleep(3000);
+            }catch(WebDriverException ex){
+            throw new WebDriverException("Element not availabe to input text!");
+        }
+    }
+   
+    public void argumentsByToClick(WebElement element) throws InterruptedException{
+        try{
+            JavascriptExecutor jse = (JavascriptExecutor)driver;
+            jse.executeScript("arguments[0].click()", element);
+            Thread.sleep(3000);
+            }catch(WebDriverException ex){
+            throw new WebDriverException("Element not availabe to input text!");
+        }
     }
 }
