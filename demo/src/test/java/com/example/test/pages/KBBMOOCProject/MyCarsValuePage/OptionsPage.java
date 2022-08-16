@@ -37,9 +37,6 @@ public class OptionsPage extends KbbBasePage{
         Thread.sleep(4000);
     }
 
-    /**
-     * Option Make/Model
-     */
     
      //#endregion
 }

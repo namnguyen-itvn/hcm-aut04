@@ -37,19 +37,4 @@ public class OfferOptionsPage extends KbbBasePage{
         return false;
     }
     
-    public String getValueOfVehiclesString() {
-        WebElement h1YearMakeModel = keyword.findWebElementByXpath("//h1[text()='2016 Honda Fit']");
-        WebElement pStyle = keyword.findWebElementByXpath("//p[text()='LX Hatchback 4D']");
-        String strYearMakeModel = h1YearMakeModel.getText();
-        String strStyle = pStyle.getText();
-        String valueOfVehicles = strYearMakeModel + " " + strStyle;
-        return valueOfVehicles;
-    }
-
-    public boolean compareValueOfVehiclesAsUserSelected(String yearMakeModelStyle){
-        if(getValueOfVehiclesString().equals(yearMakeModelStyle)){
-            return true;
-        }
-        return false;
-    }
 }

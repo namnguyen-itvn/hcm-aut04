@@ -13,16 +13,4 @@ public class TestDataProvider {
     public static Object whatsMyCarWorth () {
         return JsonHelper.ReadJsonFromFile("src\\test\\java\\com\\example\\test\\core\\resources\\datas\\WhatsMyCarWorthPageTestData.json");       
     };
-    @DataProvider(name = "OfferOptions")
-    public static Object offerOptions () {
-        return JsonHelper.ReadJsonFromFile("src\\test\\java\\com\\example\\test\\core\\resources\\datas\\OfferOptionsPageTestData.json");       
-    };
-    @DataProvider(name = "Error Message VIN")
-    public static Object errorMessageVin () {
-        return JsonHelper.ReadJsonFromFile("src\\test\\java\\com\\example\\test\\core\\resources\\datas\\ErrorMessageVinTestData.json");       
-    };
-    @DataProvider(name = "Error Message Email")
-    public static Object errorMessageEmail () {
-        return JsonHelper.ReadJsonFromFile("src\\test\\java\\com\\example\\test\\core\\resources\\datas\\ErrorMessageEmailTestData.json");       
-    };
 }

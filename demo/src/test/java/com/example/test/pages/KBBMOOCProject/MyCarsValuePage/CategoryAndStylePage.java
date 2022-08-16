@@ -36,17 +36,6 @@ public class CategoryAndStylePage extends KbbBasePage{
         keyword.scrollAndWaitToClick(btnNext);
         Thread.sleep(4000);
     }
-    /**
-     * Option Make/Model
-     */
-    public void selectYourStyle() {
-        WebElement optHatchback = keyword.findWebElementByXpath("//div[text()='LX Hatchback 4D']");
-        keyword.scrollAndWaitToClick(optHatchback);
-    }
-    public void clickOnMakeModelNextButton() throws InterruptedException{
-        WebElement btnMakeModelNext = keyword.findWebElementByXpath("//button[@data-lean-auto='categoryPickerButton']");
-        keyword.scrollAndWaitToClick(btnMakeModelNext);
-        Thread.sleep(4000);
-    }
+    
     //#endregion
 }
