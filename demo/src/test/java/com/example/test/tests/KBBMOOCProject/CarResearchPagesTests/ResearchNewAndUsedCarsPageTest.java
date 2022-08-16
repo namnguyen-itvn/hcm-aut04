@@ -8,28 +8,14 @@ import com.example.test.tests.KBBMOOCProject.KbbBaseTest;
 
 public class ResearchNewAndUsedCarsPageTest extends KbbBaseTest {
 
-    @Test(testName = "Verify Select a different year in list from Year dropdown located on top of Car Name on Review Page to change to a different vehicle Page with the chosen year in Review Page")
-    public void verifySelectADifferentYearInListFromYearDropdownLocatedOnTopOfCarNameOnReviewPageToChangeToADifferentVehiclePageWithTheChosenYearinReviewPage()
+    @Test(testName = "Verify Click on Car Image in Other Compact Sedans Section on Review Page to bring user to the Chosen Car Review Page")
+    public void VerifyClickOnCarImageInOtherCompactSedansSectionOnReviewPageToBringUserToTheChosenCarReviewPage()
             throws InterruptedException {
 
         ResearchNewAndUsedCarsPage researchNewAndUsedCarsPage = new ResearchNewAndUsedCarsPage(driver);
         researchNewAndUsedCarsPage.actionSelectaCars();
         ReviewCarsPage reviewPage = new ReviewCarsPage(driver);
         reviewPage.clickfirstOtherCompactSedans();
-
-    }
-
-    // sangda
-    //tétt2
-
-    @Test(testName = " Select a different year in list from Year dropdown located on top of Car Name on Review Page to change to a different vehicle Page with the chosen year in Review Page")
-    public void SelectADifferentYearInListFromYearDropdownLocatedOnTopOfCarNameOnReviewPageToChangeToADifferentVehiclePageWithTheChosenYearinReviewPage()
-            throws InterruptedException {
-
-        ResearchNewAndUsedCarsPage researchNewAndUsedCarsPage = new ResearchNewAndUsedCarsPage(driver);
-        researchNewAndUsedCarsPage.actionSelectaCars();
-        ReviewCarsPage reviewPage = new ReviewCarsPage(driver);
-        reviewPage.firstOther();
 
     }
 
