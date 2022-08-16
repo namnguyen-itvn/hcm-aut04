@@ -1,11 +1,11 @@
-package com.example.test.tests.KBBMOOCProject;
+package com.example.test.tests.KBBMOOCProjectTest;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import com.example.test.core.drivers.DriverManager;
 import com.example.test.core.helper.ReadConfigPropertyFile;
-import com.example.test.core.keywork.CustomKeyword;
+import com.example.test.core.keyword.CustomKeyword;
 
 public class KbbBaseTest {
     
