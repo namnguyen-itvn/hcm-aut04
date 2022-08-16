@@ -15,7 +15,7 @@ public class CustomKeyword {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    public CustomKeyword(WebDriver driver) {
+    public CustomKeyword(WebDriver driver,WebDriverWait wait) {
         this.driver = driver;
         this.wait = wait;
     }
@@ -101,6 +101,43 @@ public class CustomKeyword {
             e.printStackTrace();
         }
     }
+     /**
+     * Scroll to element into View
+     * @param element
+     */
+    public void scrollToElemtnIntoView(WebElement element){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    public WebElement waitForElementDisplayed(WebElement element) {
+        try{
+            scrollToElemtnIntoView(element);
+            return wait.until(ExpectedConditions.elementToBeClickable(element));
+        } catch(WebDriverException ex){
+            throw new WebDriverException("Element not displayed");
+        }
+        
+    }
+    
+    /**
+     * Scroll And Wait To Click
+     * @param element
+     * @return
+     * @throws InterruptedException
+     */
+    public CustomKeyword scrollAndWaitToClick(WebElement element) throws InterruptedException {
+        try{
+            scrollToElemtnIntoView(element);
+            Thread.sleep(5000);
+            waitForElementDisplayed(element);
+            element.click();
+            Thread.sleep(5000);
+            return new CustomKeyword(driver, wait);
+        }catch(WebDriverException ex){
+            throw new WebDriverException("Element not availabe to click!");
+        }
+    }
+
 
     /**
      * Check element is display :v
@@ -146,6 +183,6 @@ public class CustomKeyword {
         Actions actions = new Actions(this.driver);
         actions.moveToElement(element).build().perform();
         waitForElementIsDisplayed(element).click();
-        return new CustomKeyword(driver);
+        return new CustomKeyword(driver,wait);
     }
 }
