@@ -6,7 +6,6 @@ import org.testng.annotations.BeforeTest;
 import com.example.test.core.drivers.DriverManager;
 import com.example.test.core.helper.ReadConfigPropertyFile;
 import com.example.test.core.keywork.CustomKeyword;
-
 public class KbbBaseTest {
     
     public WebDriver driver;
