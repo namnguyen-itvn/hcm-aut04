@@ -1,4 +1,4 @@
-package com.example.test.pages.KBBMOOCProject.CarResearchPage;
+package com.example.test.pages.KBBMOOCProject.MyCarValuePage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

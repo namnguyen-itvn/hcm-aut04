@@ -1,4 +1,4 @@
-package com.example.test.pages.KBBMOOCProject.CarResearchPage;
+package com.example.test.pages.KBBMOOCProject.MyCarValuePage;
 
 
 import org.openqa.selenium.WebDriver;
@@ -10,7 +10,6 @@ public class InputMileageandZipComponentPage  extends KbbBasePage{
 
     public InputMileageandZipComponentPage(WebDriver driver) {
         super(driver);
-        //TODO Auto-generated constructor stub
     }
  
     WebElement inputMileage = keyword.findWebElementByXpath("//input[@data-lean-auto='mileageInput']");

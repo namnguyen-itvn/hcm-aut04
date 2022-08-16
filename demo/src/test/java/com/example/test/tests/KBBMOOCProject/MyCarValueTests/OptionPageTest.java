@@ -1,16 +1,16 @@
-package com.example.test.tests.KBBMOOCProject.CarResearchTests;
+package com.example.test.tests.KBBMOOCProject.MyCarValueTests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.example.test.core.datadriven.MileageandZipcode;
-import com.example.test.pages.KBBMOOCProject.CarResearchPage.CategoryStylePage;
-import com.example.test.pages.KBBMOOCProject.CarResearchPage.InputMileageandZipComponentPage;
-import com.example.test.pages.KBBMOOCProject.CarResearchPage.OfferOptionPage;
-import com.example.test.pages.KBBMOOCProject.CarResearchPage.OptionPage;
-import com.example.test.pages.KBBMOOCProject.CarResearchPage.SelectColorCarComponentPage;
-import com.example.test.pages.KBBMOOCProject.CarResearchPage.SelectKeyandVehicleComponentPage;
-import com.example.test.pages.KBBMOOCProject.CarResearchPage.WhatMyCarWorthPage;
+import com.example.test.pages.KBBMOOCProject.MyCarValuePage.CategoryStylePage;
+import com.example.test.pages.KBBMOOCProject.MyCarValuePage.InputMileageandZipComponentPage;
+import com.example.test.pages.KBBMOOCProject.MyCarValuePage.OfferOptionPage;
+import com.example.test.pages.KBBMOOCProject.MyCarValuePage.OptionPage;
+import com.example.test.pages.KBBMOOCProject.MyCarValuePage.SelectColorCarComponentPage;
+import com.example.test.pages.KBBMOOCProject.MyCarValuePage.SelectKeyandVehicleComponentPage;
+import com.example.test.pages.KBBMOOCProject.MyCarValuePage.WhatMyCarWorthPage;
 import com.example.test.tests.KBBMOOCProject.KbbBaseTest;
 
 
@@ -21,7 +21,6 @@ public class OptionPageTest  extends KbbBaseTest{
         
         WhatMyCarWorthPage whatMyCarWorthPage=new WhatMyCarWorthPage(driver);
         whatMyCarWorthPage.actionInputVINandEmail(VIN,Email);
-       // whatMyCarWorthPage.actionInputEmail(Email);
 
         CategoryStylePage categoryStylePage=new CategoryStylePage(driver);
         categoryStylePage.actionSelectCategory(Category);
