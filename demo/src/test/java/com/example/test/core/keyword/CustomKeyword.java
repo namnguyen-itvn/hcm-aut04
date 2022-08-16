@@ -144,6 +144,7 @@ public class CustomKeyword {
         try{
             scrollToElemtnIntoView(element);
             waitForElementDisplayed(element);
+            ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,-100)");
             element.click();
             Thread.sleep(5000);
             return new CustomKeyword(driver, wait);
