@@ -19,7 +19,6 @@ public class ResearchNewAndUsedCarsPageTest extends KbbBaseTest {
         researchNewAndUsedCarsPage.actionSelectaCars();
         ReviewCarsPage reviewPage = new ReviewCarsPage(driver);
         reviewPage.clickfirstOtherCompactSedans();
-
     }
 
 }
