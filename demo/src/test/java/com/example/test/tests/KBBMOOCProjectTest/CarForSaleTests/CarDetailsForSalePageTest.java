@@ -11,8 +11,8 @@ import com.example.test.tests.KBBMOOCProjectTest.KbbBaseTest;
 
 
 public class CarDetailsForSalePageTest extends KbbBaseTest{
-    @Test(testName ="Verify User Can Confirmation Email Successful",dataProviderClass =DataDriven.class,dataProvider = "dataCarDetailsForSale" )
-    public  void verifyUserCanEmailConfirmationSuccessful(String search,String firstName,String lastName,String email,String phone,String confirmation) throws InterruptedException{
+    @Test(testName ="Verify User Can Confirm Email Successful",dataProviderClass =DataDriven.class,dataProvider = "dataCarDetailsForSale" )
+    public  void verifyUserCanConfirmEmailSuccessful(String search,String firstName,String lastName,String email,String phone,String confirmation) throws InterruptedException{
         CarForSalePage carForSalePage = new CarForSalePage(driver);
         carForSalePage.inputCarSearch(search);
         carForSalePage.ClickOptionCarSearch();
