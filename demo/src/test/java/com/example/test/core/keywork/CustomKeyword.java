@@ -15,16 +15,44 @@ public class CustomKeyword {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    public CustomKeyword(WebDriver driver) {
+    public CustomKeyword(WebDriver driver,WebDriverWait wait) {
         this.driver = driver;
         this.wait = wait;
     }
     
+        /**
+     * Scroll to element and find element by classname
+     * @param locator
+     * @return
+     */
+    public WebElement findWebElementByClassName(String element){
+        try{
+            scrollToElemtnIntoView(driver.findElement(By.className(element)));
+            return wait.until(ExpectedConditions.presenceOfElementLocated(By.className(element)));
+        } catch(WebDriverException ex ){
+            throw new WebDriverException("Element not found!");
+        }
+    }
+
+    /**
+     * Scroll to element and find element by css
+     * @param locator
+     * @return
+     */
+    public WebElement findWebElementByCSS(String element){
+        try{
+            scrollToElemtnIntoView(driver.findElement(By.cssSelector(element)));
+            return wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(element)));
+        } catch(WebDriverException ex ){
+            throw new WebDriverException("Element not found!");
+        }
+    }
     /**
      * Keyword for open url with checking if the url valid or not
      * @param baseUrl
      * @throws Exception
      */
+
     public void openUrl(String baseUrl) throws Exception {
         if(baseUrl.startsWith("http://") || baseUrl.startsWith("https://"))
         {
@@ -34,40 +62,14 @@ public class CustomKeyword {
     }
 
     /**
-     * Wait for Element displayed and input text
-     * @param element
-     * @param text
-     */
-    public void sendKeys(WebElement element, String text){
-        try{
-            waitForElementIsDisplayed(element).sendKeys(text);
-        }catch(WebDriverException ex){
-            throw new WebDriverException("Element not availabe to input text!");
-        }
-    }
-
-    /**
-     * find element by css selector
-     * 
-     * @param locator element locator
-     * @return element to be located
-     */
-    public WebElement findElementByCssSelector(String locator) {
-        try{
-            return wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(locator)));
-        } catch (WebDriverException e) {
-            throw new WebDriverException("Element is not displayed ");
-        }
-    }
-
-    /**
      * Scroll to element and find element by xpath
      * @param locator
      * @return
      */
-    public WebElement findWebElementByXpath(String locator){
+    public WebElement findWebElementByXpath(String element){
         try{
-            return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
+            scrollToElemtnIntoView(driver.findElement(By.xpath(element)));
+            return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(element)));
         } catch(WebDriverException ex ){
             throw new WebDriverException("Element not found!");
         }
@@ -78,74 +80,94 @@ public class CustomKeyword {
      * @param locator
      * @return
      */
-    public List<WebElement> findListWebElementByXpath(String locator){
+    public WebElement findWebElementById(String element){
         try{
-            return driver.findElements(By.xpath(locator));
+            scrollToElemtnIntoView(driver.findElement(By.id(element)));
+            return wait.until(ExpectedConditions.presenceOfElementLocated(By.id(element)));
         } catch(WebDriverException ex ){
-            throw new WebDriverException("Elements not found!");
+            throw new WebDriverException("Element not found!");
         }
     }
 
-    /**
-     * Scroll/Move to element
-     * 
-     * @param element to find in page
-     */
-    public void scrollToElement(WebElement element){
-
-        try {
-            JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("arguments[0].scrollIntoView(true);", element);
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
 
     /**
-     * Check element is display :v
-     * 
+     * Scroll to element into View
      * @param element
-     * @return
      */
-    public boolean isDisplay(WebElement element){
-        return waitForElementIsDisplayed(element).isDisplayed();
+    public void scrollToElemtnIntoView(WebElement element){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
-    /**
-     * Wait to element visible
-     * 
-     * @param element to check display and clickable 
-     * @return element to be located
-     */
-    public WebElement waitForElementIsDisplayed(WebElement element){
-        try {
+    public WebElement waitForElementDisplayed(WebElement element) {
+        try{
+            scrollToElemtnIntoView(element);
             return wait.until(ExpectedConditions.elementToBeClickable(element));
-        } catch (WebDriverException e) {
-            throw new WebDriverException("Element is not displayed ");
+        } catch(WebDriverException ex){
+            throw new WebDriverException("Element not displayed");
+        }
+        
+    }
+
+    /**
+     * Wait for Element displayed and input text
+     * @param element
+     * @param text
+     * @throws InterruptedException
+     */
+    public void sendKeys(WebElement element, String text) throws InterruptedException{
+        try{
+            waitForElementDisplayed(element).sendKeys(text);
+            Thread.sleep(5000);
+        }catch(WebDriverException ex){
+            throw new WebDriverException("Element not availabe to input text!");
+        }
+    }
+
+   
+
+      //*wait without scroll */
+      public WebElement waitForElementDisplayedWithoutScroll(WebElement element) {
+        try{
+            return wait.until(ExpectedConditions.elementToBeClickable(element));
+        } catch(WebDriverException ex){
+            throw new WebDriverException("Element not displayed");
+        }  
+    }
+
+    /**
+     * Scroll And Wait To Click
+     * @param element
+     * @return
+     * @throws InterruptedException
+     */
+    public CustomKeyword scrollAndWaitToClick(WebElement element) throws InterruptedException {
+        try{
+            scrollToElemtnIntoView(element);
+            waitForElementDisplayed(element);
+            element.click();
+            Thread.sleep(5000);
+            return new CustomKeyword(driver, wait);
+        }catch(WebDriverException ex){
+            throw new WebDriverException("Element not availabe to click!");
         }
     }
 
     /**
-     * Check place holder equal given text or not
-     * 
+     * Wait To Click
      * @param element
      * @return
      */
-    public boolean checkPlaceHolder(WebElement element, String text){
-        String attribute = waitForElementIsDisplayed(element).getAttribute("placeholder");
-        return (attribute.equals(text));
+    public CustomKeyword waitToClick(WebElement element) {
+        try{
+            waitForElementDisplayedWithoutScroll(element);
+            element.click();
+            return new CustomKeyword(driver, wait);
+        }catch(WebDriverException ex){
+            throw new WebDriverException("Element not availabe to click!");
+        }
     }
-
-    /**
-     * Click to element
-     * 
-     * @param element to click
-     */
-    public CustomKeyword click(WebElement element){
-        Actions actions = new Actions(this.driver);
-        actions.moveToElement(element).build().perform();
-        waitForElementIsDisplayed(element).click();
-        return new CustomKeyword(driver);
+    public void waitForPageToLoad() throws InterruptedException
+    {
+        Thread.sleep(5000);
     }
 }
