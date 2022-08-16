@@ -31,10 +31,15 @@ public class WhatMyCarWorthPage extends KbbBasePage {
 
     }
 
-    public void actionInputVINandEmail(String VIN,String Email) throws InterruptedException{
+    /**
+    * @param VIN
+    * @param Email
+    * @throws InterruptedException
+    */
+   public void actionInputVINandEmail(String VIN,String Email) throws InterruptedException{
        
-       inputVIN.sendKeys(VIN);
-       keyword.sendKeys(inputEmail, Email);
+        inputVIN.sendKeys(VIN);
+        keyword.sendKeys(inputEmail, Email);
         keyword.click(btnGo);
  
      }
