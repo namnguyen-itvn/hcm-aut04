@@ -15,7 +15,7 @@ public class CustomKeyword {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    public CustomKeyword(WebDriver driver) {
+    public CustomKeyword(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
         this.wait = wait;
     }
@@ -67,7 +67,8 @@ public class CustomKeyword {
      */
     public WebElement findWebElementByXpath(String locator){
         try{
-            return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
+            scrollToElement(driver.findElement(By.xpath(locator)));
+            return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
         } catch(WebDriverException ex ){
             throw new WebDriverException("Element not found!");
         }
@@ -136,7 +137,31 @@ public class CustomKeyword {
         String attribute = waitForElementIsDisplayed(element).getAttribute("placeholder");
         return (attribute.equals(text));
     }
+    public void scrollToElementIntoView(WebElement element) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
 
+    public WebElement waitForElementDisplayed(WebElement element) {
+        try {
+            scrollToElementIntoView(element);
+            return wait.until(ExpectedConditions.elementToBeClickable(element));
+        } catch (WebDriverException ex) {
+            throw new WebDriverException("Element not displayed");
+        }
+
+    }
+    public CustomKeyword scrollAndWaitToClick(WebElement element) throws InterruptedException {
+        try {
+            scrollToElementIntoView(element);
+            waitForElementDisplayed(element);
+            ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,-100)");
+            element.click();
+            Thread.sleep(4500);
+            return new CustomKeyword(driver, wait);
+        } catch (WebDriverException ex) {
+            throw new WebDriverException("Element not availabe to click!");
+        }
+    }
     /**
      * Click to element
      * 
@@ -146,6 +171,6 @@ public class CustomKeyword {
         Actions actions = new Actions(this.driver);
         actions.moveToElement(element).build().perform();
         waitForElementIsDisplayed(element).click();
-        return new CustomKeyword(driver);
+        return new CustomKeyword(driver, wait);
     }
 }
