@@ -185,12 +185,14 @@ public class CustomKeyword {
      * Scroll And Wait To Click
      * @param element
      * @return
+     * @throws InterruptedException
      */
-    public CustomKeyword scrollAndWaitToClick(WebElement element) {
+    public CustomKeyword scrollAndWaitToClick(WebElement element) throws InterruptedException {
         try{
             scrollToElemtnIntoView(element);
             waitForElementDisplayed(element);
             element.click();
+            Thread.sleep(4000);
             return new CustomKeyword(driver, wait);
         }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to click!");

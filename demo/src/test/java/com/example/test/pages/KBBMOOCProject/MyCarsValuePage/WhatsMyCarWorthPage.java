@@ -30,7 +30,7 @@ public class WhatsMyCarWorthPage extends KbbBasePage{
     }
     public void clickOnVINGoButton() throws InterruptedException {
         keyword.scrollAndWaitToClick(btnGo);
-        Thread.sleep(4000);
+    
     }
 
     //#endregion

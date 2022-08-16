@@ -15,8 +15,9 @@ public class CategoryAndStylePage extends KbbBasePage{
     //#region page actions
     /**
      * Option VIN
+     * @throws InterruptedException
      */
-    public void clickOnSelectboxAndClickOnAutomatic() {
+    public void clickOnSelectboxAndClickOnAutomatic() throws InterruptedException {
         WebElement transmissionSelectBox = keyword.findWebElementByXpath("//select[@placeholder='Transmission']");
         keyword.scrollAndWaitToClick(transmissionSelectBox);
         WebElement optAutomatic = keyword.findWebElementByXpath("//option[@value='269401']");
@@ -29,12 +30,10 @@ public class CategoryAndStylePage extends KbbBasePage{
     public void sendKeysToZIPTextbox(String zip) throws InterruptedException  {
         WebElement txtZipCode = keyword.findWebElementByXpath("//input[@data-lean-auto='zipcodeInput']");
         keyword.sendKeys(txtZipCode, zip);
-        Thread.sleep(3000);
     }
     public void clickOnNextButton() throws InterruptedException{
         WebElement btnNext = keyword.findWebElementByXpath("//button[@data-cy='vinLpNext']");
         keyword.scrollAndWaitToClick(btnNext);
-        Thread.sleep(4000);
     }
     
     //#endregion

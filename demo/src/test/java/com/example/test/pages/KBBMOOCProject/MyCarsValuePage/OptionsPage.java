@@ -14,12 +14,13 @@ public class OptionsPage extends KbbBasePage{
     //#region page actions
     /**
      * Option VIN
+     * @throws InterruptedException
      */
-    public void clickOnSelectYourOptions(){
+    public void clickOnSelectYourOptions() throws InterruptedException{
         WebElement optSelectYourOptions = keyword.findWebElementByXpath("//div[text()='Select Your Options']");
         keyword.scrollAndWaitToClick(optSelectYourOptions);
     }
-    public void clickOnRedColor() {
+    public void clickOnRedColor() throws InterruptedException {
         WebElement colorRed = keyword.findWebElementByXpath("//img[@alt='Red image']");
         keyword.scrollAndWaitToClick(colorRed);
     }
@@ -34,7 +35,7 @@ public class OptionsPage extends KbbBasePage{
     public void clickOnNextButton() throws InterruptedException {
         WebElement btnNext = keyword.findWebElementByXpath("//button[@data-lean-auto='optionsNextButton']");
         keyword.scrollAndWaitToClick(btnNext);
-        Thread.sleep(4000);
+       
     }
 
     

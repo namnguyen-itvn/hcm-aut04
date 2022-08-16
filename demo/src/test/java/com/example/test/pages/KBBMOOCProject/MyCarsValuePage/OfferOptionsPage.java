@@ -16,7 +16,7 @@ public class OfferOptionsPage extends KbbBasePage{
     WebElement divGetTrade = keyword.findWebElementByXpath("//div[text()='Get Your Trade-In & Private Party Values']");
     WebElement divGetACashOffer = keyword.findWebElementByXpath("//div[text()='Get a Cash Offer for Your Specific Vehicle']");
 
-    public boolean optionGetTradeCannotUnCheck() {
+    public boolean optionGetTradeCannotUnCheck() throws InterruptedException {
         keyword.scrollAndWaitToClick(divGetTrade);
         if(!chkGetTrade.isSelected()){
             return false;
@@ -29,7 +29,7 @@ public class OfferOptionsPage extends KbbBasePage{
         }
         return false;
     }
-    public boolean checkGetACashOfferCheckboxCanBeCheck() {
+    public boolean checkGetACashOfferCheckboxCanBeCheck() throws InterruptedException {
         keyword.scrollAndWaitToClick(divGetACashOffer);
         if(chkGetACashOffer.isSelected()){
             return true;
