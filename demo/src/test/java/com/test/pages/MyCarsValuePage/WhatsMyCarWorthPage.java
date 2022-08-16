@@ -20,28 +20,26 @@ public class WhatsMyCarWorthPage extends KBBBasePage{
    
     /**
      * Option Make/Model
+     * @throws InterruptedException
      */
-    public void clickOnMakeModelCheckbox() {
+    public void clickOnMakeModelCheckbox() throws InterruptedException {
         keyword.scrollAndWaitToClick(chkMakeModel);
     }
     public void selectYear() throws InterruptedException {
         WebElement ddlYear = keyword.findWebElementByXpath("//select[@placeholder='Year']");
         keyword.scrollAndWaitToClick(ddlYear);
-        Thread.sleep(1000);
         WebElement valueOfYear = keyword.findWebElementByXpath("//option[@value='2016']");
         keyword.scrollAndWaitToClick(valueOfYear);
     }
     public void selectMake() throws InterruptedException {
         WebElement ddlMake = keyword.findWebElementByXpath("//select[@placeholder='Make']");
         keyword.scrollAndWaitToClick(ddlMake);
-        Thread.sleep(1000);
         WebElement valueOfMake = keyword.findWebElementByXpath("//option[@value='18']");
         keyword.scrollAndWaitToClick(valueOfMake);
     }
     public void selectModel() throws InterruptedException {
         WebElement ddlModel = keyword.findWebElementByXpath("//select[@placeholder='Model']");
         keyword.scrollAndWaitToClick(ddlModel);
-        Thread.sleep(1000);
         WebElement valueOfModel = keyword.findWebElementByXpath("//option[@value='920']");
         keyword.scrollAndWaitToClick(valueOfModel);
     }
@@ -58,7 +56,7 @@ public class WhatsMyCarWorthPage extends KBBBasePage{
     public void clickOnMakeModelGoButton() throws InterruptedException {
         WebElement btnMakeModelGo = keyword.findWebElementByXpath("//button[@data-lean-auto='vehiclePickerBtn']");
         keyword.scrollAndWaitToClick(btnMakeModelGo);
-        Thread.sleep(4000);
+        
     }
     //#endregion
 }
