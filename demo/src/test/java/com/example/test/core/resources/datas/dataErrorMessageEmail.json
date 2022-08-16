@@ -1,0 +1,7 @@
+[
+    {
+        "Plate":"HI",
+        "invalidEmail":"abc#$gmail.com",
+        "errorMessageEmail":"Email is invalid."
+    }
+]
