@@ -7,7 +7,10 @@ import com.example.test.pages.KBBMOOCProject.CarsResearchPage.ResearchNewAndUsed
 import com.example.test.pages.KBBMOOCProject.CarsResearchPage.ReviewCarsPage;
 
 public class ResearchNewAndUsedCarsPageTest extends KbbBaseTest {
-
+/**
+ * 
+ * @throws InterruptedException
+ */
     @Test(testName = "Verify click on highlight Zip Code link located under Car Name on Review Page and Input Zip Code To Change Vehicle Zip Code and displayed location")
     public void verifyClickOnHighlightZipCodeLinkLocatedUnderCarNameOnReviewPageAndInputZipCodeToChangeVehicleZipCodeAndDisplayedLocation()
             throws InterruptedException {
