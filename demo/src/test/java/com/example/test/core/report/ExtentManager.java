@@ -11,7 +11,7 @@ public class ExtentManager {
         reporter.config().setReportName("Demo Extent Report");
         extentReports.attachReporter(reporter);
         extentReports.setSystemInfo("Framework Name", "Selenium Java Framework | ExtentReport Demo");
-        extentReports.setSystemInfo("Author", "NamND33");
+        extentReports.setSystemInfo("Author", "GiangDDT1");
         return extentReports;
     }
 }

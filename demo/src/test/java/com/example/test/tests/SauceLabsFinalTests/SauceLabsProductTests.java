@@ -9,7 +9,7 @@ import com.example.test.pages.SauceLabsFinalPages.SauceLabProductPage;
 public class SauceLabsProductTests extends BaseTest {
     
     @Test(testName = "Verify The Title Page Should Displayed Corect After User Have Login Success")
-    public void verifyTheTitlePageShoulDisplayedCorectWhenLoginSuccess()
+    public void verifyTheTitlePageShoulDisplayedCorectWhenLoginSuccess() throws InterruptedException
     {
         SauceLabLoginPage loginPage = new SauceLabLoginPage(driver);
         loginPage.actionLogin();
@@ -17,7 +17,7 @@ public class SauceLabsProductTests extends BaseTest {
     }
 
     @Test(testName = "Verify the six products are displayed on PRODUCT page as default")
-    public void verifyTheNumberOfProductShouldBeSix()
+    public void verifyTheNumberOfProductShouldBeSix() throws InterruptedException
     {
         SauceLabLoginPage loginPage = new SauceLabLoginPage(driver);
         loginPage.actionLogin();
