@@ -17,6 +17,9 @@ public class WhatsMyCarWorthPageTest extends KbbBaseTest{
         whatsMyCarWorthPage.clickOnVINGoButton();
         Assert.assertTrue(whatsMyCarWorthPage.compareErrorMessage(errorMessageVIN));
     }   
+
+
+    //bichdu
     @Test(testName = "Verify error message 'Email is invalid.'should be shown when user enter invalid email", dataProviderClass = TestDataProvider.class, dataProvider = "dataErrorMessageEmail")
     public void verifyErrorMessageEmailIsInvalidShouldBeShownWhenUserEnterInvalidEmail(String plate, String invalidEmail, String errorMessageEmail) throws InterruptedException {
         WhatsMyCarWorthPage whatsMyCarWorthPage = new WhatsMyCarWorthPage(driver);
