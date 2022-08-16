@@ -27,6 +27,14 @@ public class carForSalePriceRatingComponent extends KbbBasePage {
         WebElement txtPriceRating = keyword.findWebElementByXpath("//span[@data-cmp='filterTitle']/span[text()='Price Rating']");
         keyword.scrollAndWaitToClick(txtPriceRating);
     }
+    //*check Price Rating Filter Should Be Extended After Click */
+    public boolean chekPriceRatingFilterAfterClick() {
+        WebElement priceRatingFilterAfterExtending = keyword.findWebElementByXpath("//span[@data-cmp='filterTitle']/span[text()='Price Rating']/parent::span/parent::div/following-sibling::div");
+            if(priceRatingFilterAfterExtending.isDisplayed()) {
+                return true;
+            }
+            return false; 
+        }
     //*Click Good Price  */
     public void clickGoodPrice () throws InterruptedException{
         WebElement cbGoodPrice = keyword.findWebElementByXpath("//div[@class='accordion-panel-content-wrapper padding-horizontal-4 collapse in']//div[text()='Good Price']");

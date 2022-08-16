@@ -13,6 +13,7 @@ public class carForSalePriceRatingComponentTest extends KbbBaseTest {
         carForSalePriceRatingComponent carForSalePriceRating = new carForSalePriceRatingComponent(driver);
         carForSalePriceRating.checkTitlePage();
         carForSalePriceRating.clickPriceRating();
+        Assert.assertTrue(carForSalePriceRating.chekPriceRatingFilterAfterClick(),"Price Rating Filter Not Displayed");
         carForSalePriceRating.clickGoodPrice();
         Assert.assertTrue(carForSalePriceRating.checkGoodPrice(goodprice),"The Car Good Price Not Displayed");
     }
