@@ -42,7 +42,6 @@ public class demo {
         WebElement successMessage = driver.findElement(By.xpath("//div[@id='layer_cart'] //i//ancestor::h2"));
         String expectedMessage = "Product successfully added to your shopping cart";
         String actualMessage = successMessage.getText();
-        String actualMessage1 = successMessage.getAttribute("innerText");
         Assert.assertEquals(actualMessage, expectedMessage, "Actual message does not matched as expected message");
     }
 
