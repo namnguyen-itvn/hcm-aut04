@@ -15,7 +15,6 @@ import com.test.core.report.ReportListener;
 @Listeners(ReportListener.class)
 public class KBBBaseTest {
     public WebDriver driver;
-    String pathChromeDriver = "src\\test\\java\\com\\kbb\\staging\\core\\drivers\\driver\\chromedriver.exe";
     String baseUrl = ReadConfigPropertyFile.getPropertyValue("url");
     String browser = ReadConfigPropertyFile.getPropertyValue("browser");
     @BeforeTest

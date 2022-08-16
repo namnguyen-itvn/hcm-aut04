@@ -17,7 +17,7 @@ public class ChromeDriverSetup implements SeleniumDriver{
             options = new ChromeOptions();
             options.addArguments("start-maximized");
             options.setAcceptInsecureCerts(true);
-            //options.addExtensions(new File("src\\test\\java\\com\\kbb\\staging\\core\\drivers\\driver\\gighmmpiobklfepjocnamgkkbiglidom-5.0.4-Crx4Chrome.com.crx"));
+            options.addExtensions(new File("src\\test\\java\\com\\test\\core\\drivers\\driver\\bgnkhhnnamicmpeenaelnjfhikgbkllg-4.1.1-Crx4Chrome.com.crx"));
         }
         return options;
     }

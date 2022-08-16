@@ -14,6 +14,5 @@ public class KBBBasePage{
         this.driver = driver;
         this.wait = new WebDriverWait(driver, 20);
         this.keyword = new CustomKeyword(driver, wait);
-        driver.manage().window().maximize();
     }
 }
