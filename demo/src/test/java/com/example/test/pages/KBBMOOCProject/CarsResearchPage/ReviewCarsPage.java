@@ -12,10 +12,16 @@ public class ReviewCarsPage extends KbbBasePage {
         // TODO Auto-generated constructor stub
     }
 
-    String expectedMessageText = "2018 Honda Civic Values & Cars for Sale | Kelley Blue Book";
 
-    public boolean isgetPageTitle() {
+    public boolean isgetPageTitle(String expectedMessageText) {
         if (driver.getTitle().equals(expectedMessageText)) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isgetPageURLHondaCivicPage(String URLHondaCivicPage) {
+        if (driver.getCurrentUrl().equals(URLHondaCivicPage)) {
             return true;
         }
         return false;
@@ -23,9 +29,9 @@ public class ReviewCarsPage extends KbbBasePage {
 
     WebElement getReviewComponentTitles = keyword
             .findWebElementByXpath("//div[@class='css-1044rcd eds0yfe0']//h2[@class='css-1eagefn e148eed12']");
-    String expectedMessageText1 = "2018 Honda Civic Review";
 
-    public boolean isgetComponentTitles() {
+
+    public boolean isgetComponentTitles(String expectedMessageText1) {
         if (getReviewComponentTitles.getText().equals(expectedMessageText1)) {
             return true;
         }

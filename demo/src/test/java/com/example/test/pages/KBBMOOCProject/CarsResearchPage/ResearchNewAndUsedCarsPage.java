@@ -17,80 +17,89 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
     // #endregion
 
     // #region
-/**
- * 
- * @throws InterruptedException
- */
-    public void selectYears() throws InterruptedException {
+    /**
+     * 
+     * @throws InterruptedException
+     */
+
+    public void selectYears(String year) throws InterruptedException {
         WebElement selectYears = keyword.findWebElementByXpath("//select[@placeholder='Year']");
-        keyword.selectElement(selectYears, "2018");
+
+        keyword.selectElement(selectYears, year);
     }
-/**
- * 
- * @throws InterruptedException
- */
-    public void selectMake() throws InterruptedException {
+
+    /**
+     * 
+     * @throws InterruptedException
+     */
+    public void selectMake(String make) throws InterruptedException {
         WebElement selectMake = keyword.findWebElementByXpath("//div[@class='make']//select[@placeholder='Make']");
-        keyword.selectElement(selectMake, "Honda");
+        keyword.selectElement(selectMake, make);
 
     }
-/**
- * 
- * @throws InterruptedException
- */
-    public void selectModel() throws InterruptedException {
+
+    /**
+     * 
+     * @throws InterruptedException
+     */
+    public void selectModel(String model) throws InterruptedException {
         WebElement selectModel = keyword.findWebElementByXpath("//div[@class='model']//select[@placeholder='Model']");
-        keyword.selectElement(selectModel, "Civic");
+        keyword.selectElement(selectModel, model);
 
     }
-/**
- * 
- * @throws InterruptedException
- */
-    public void selectZipCode() throws InterruptedException {
+
+    /**
+     * 
+     * @throws InterruptedException
+     */
+    public void selectZipCode(String zipbefore) throws InterruptedException {
         WebElement inputZip = keyword.findWebElementByXpath("//input[@type='tel']");
-        keyword.sendKeys(inputZip, "43446");
+        keyword.sendKeys(inputZip, zipbefore);
     }
-/**
- * 
- * @throws InterruptedException
- */
+
+    /**
+     * 
+     * @throws InterruptedException
+     */
     public void btnGetReviews() throws InterruptedException {
         WebElement btnGetReview = keyword.findWebElementByXpath("//form//button[@type='submit']");
         keyword.scrollAndWaitToClick(btnGetReview);
     }
 
     // #endregion
-/**
- * 
- * @throws InterruptedException
- */
+    /**
+     * 
+     * @throws InterruptedException
+     */
     public void btnChangeZipCode() throws InterruptedException {
         WebElement btnChangeZipCode = keyword.findWebElementByXpath("//span[@data-automation='zipcode-link']");
         keyword.scrollByToClick(btnChangeZipCode);
 
     }
-/**
- * 
- * @throws InterruptedException
- */
+
+    /**
+     * 
+     * @throws InterruptedException
+     */
     public void deleteZipCode() throws InterruptedException {
         WebElement sendKeyOnInputTextZipCodeDelete = keyword
                 .findWebElementByXpath("//input[@data-lean-auto='zip-input']");
         sendKeyOnInputTextZipCodeDelete.clear();
     }
-/**
- * 
- * @throws InterruptedException
- */
-    public void sendKeyZipCode() throws InterruptedException {
+
+    /**
+     * 
+     * @throws InterruptedException
+     */
+    public void sendKeyZipCode(String zipafter) throws InterruptedException {
         WebElement sendKeyOnInputTextZipCode = keyword.findWebElementByXpath("//input[@data-lean-auto='zip-input']");
-        keyword.sendKeys(sendKeyOnInputTextZipCode, "42134");
+        keyword.sendKeys(sendKeyOnInputTextZipCode, zipafter);
     }
-/**
- * 
- * @throws InterruptedException
- */
+
+    /**
+     * 
+     * @throws InterruptedException
+     */
     public void btnSaveZipCode() throws InterruptedException {
         WebElement btnSaveZipCode = keyword.findWebElementByXpath("//button[@data-lean-auto='save-button']");
         keyword.scrollAndWaitToClick(btnSaveZipCode);
