@@ -1,10 +1,12 @@
 package com.example.test.tests.KBBMOOCProject.WhatsMyCarWorth;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.example.test.core.datadriven.phpAccount;
 import com.example.test.pages.KBBMOOCProject.WhatsMyCarWorth.CategoryandStylePage;
 import com.example.test.pages.KBBMOOCProject.WhatsMyCarWorth.ConditionPage;
 import com.example.test.pages.KBBMOOCProject.WhatsMyCarWorth.OptionPage;
+import com.example.test.pages.KBBMOOCProject.WhatsMyCarWorth.PopupCalculatingYourBlueBookValuePage;
 import com.example.test.pages.KBBMOOCProject.WhatsMyCarWorth.WhatMyCarWorthPage;
 
 public class OptionPageTest extends KbbBaseTest {
@@ -32,5 +34,7 @@ public class OptionPageTest extends KbbBaseTest {
         ConditionPage conditionPage = new ConditionPage(driver);
         conditionPage.clickOnItemFair();
         conditionPage.clickOnNextbutton();
+        PopupCalculatingYourBlueBookValuePage popupCalculatingYourBlueBookValuePage = new PopupCalculatingYourBlueBookValuePage(driver);
+        Assert.assertTrue(popupCalculatingYourBlueBookValuePage.checktitlePopupWhenUserClickOnFairbutton());
     }
 }
