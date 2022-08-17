@@ -20,6 +20,13 @@ public class ReviewCarsPage extends KbbBasePage {
         }
         return false;
     }
+    String URLHondaCivicPage = "https://staging.kbb.com/honda/civic/2018/";
+    public boolean isgetPageURLHondaCivicPage() {
+        if (driver.getCurrentUrl().equals(URLHondaCivicPage)) {
+            return true;
+        }
+        return false;
+    }
 
     WebElement getReviewComponentTitles = keyword
             .findWebElementByXpath("//div[@class='css-1044rcd eds0yfe0']//h2[@class='css-1eagefn e148eed12']");
@@ -71,4 +78,14 @@ public class ReviewCarsPage extends KbbBasePage {
         return false;
     }
 
+
+
+
+    String URLReviewPage = "https://staging.kbb.com/honda/civic/2018/base-style-consumer_reviews_write_review/?intent=buy-used&entry=ymm";
+    public boolean isgetPageURLWriteAReview() {
+        if (driver.getCurrentUrl().equals(URLReviewPage)) {
+            return true;
+        }
+        return false;
+    }
 }

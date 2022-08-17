@@ -22,13 +22,15 @@ public class ResearchNewAndUsedCarsPageTest extends KbbBaseTest {
         researchNewAndUsedCarsPage.btnGetReviews();
         ReviewCarsPage reviewPage = new ReviewCarsPage(driver);
         Assert.assertTrue(reviewPage.isgetPageTitle());
+        Assert.assertTrue(reviewPage.isgetPageURLHondaCivicPage());
         Assert.assertTrue(reviewPage.isgetComponentTitles());
         Assert.assertTrue(reviewPage.isBuildAndPriceBtnDisplayed());
         Assert.assertTrue(reviewPage.isSeeCarsForSaleBtnDisplayed());
         Assert.assertTrue(reviewPage.isSeeWriteAReviewBtnDisplayed());
         researchNewAndUsedCarsPage.actionClickWriteAReviewButton();
         Assert.assertTrue(reviewPage.isgetPageTitleWriteAReview());
-
+        //get URL
+        Assert.assertTrue(reviewPage.isgetPageURLWriteAReview());
     }
 
 }
