@@ -14,6 +14,11 @@ public class DetailVehicleValuePage extends KbbBasePage {
         WebElement iconEdit = keyword.findWebElementByXpath("//a[@data-analytics='mileage_top_lnk']");
         keyword.scrollAndWaitToClick(iconEdit);
     }
+    public void actionDeleteValueMileage(){
+        WebElement textboxMileage1 = keyword.findWebElementByXpath("//input[@type='tel']");
+        textboxMileage1.clear();
+
+    }
     public void actionEditValueMileage(String mileagee) throws InterruptedException{
         WebElement textboxMileage = keyword.findWebElementByXpath("//input[@type='tel']");
         keyword.sendKeys(textboxMileage, mileagee);
@@ -22,20 +27,23 @@ public class DetailVehicleValuePage extends KbbBasePage {
         WebElement buttonSave = keyword.findWebElementByXpath("//button[@data-analytics='mileage_save_btn']");
         keyword.scrollAndWaitToClick(buttonSave);
     }
-    
-    public boolean actionCompareResultAfterUserEditValueMileagesuccessful(){
-        WebElement iconMileage = keyword.findWebElementByXpath("//a[text()='100,002']");
-        if (iconMileage.isDisplayed()) {
+
+    public boolean actionCompareValueVinINVehicleValueDetailWithValueVINEnteredVinValue(String vin){
+        WebElement  vin2 = keyword.findWebElementByXpath("//div[@data-lean-auto='vin-license']/span/span");
+        String strvin2 = vin2.getText();
+        if (strvin2.equals(vin) ){
             return true;
         }
         return false;
     }
     
-    public boolean actionCompareValueVinINVehicleValueDetailWithValueVINEnteredVinValue(){
-        WebElement iconMileage = keyword.findWebElementByXpath("//span[text()='3VWSB81H8WM210368']");
-        if (iconMileage.isDisplayed()) {
+    public boolean actionCompareResultAfterUserEditValueMileagesuccessful(String editmileage){
+        WebElement  mileage2 = keyword.findWebElementByXpath("//a[@data-analytics='mileage_top_lnk']");
+        String strmileage2 = mileage2.getText();
+        if (strmileage2.equals(editmileage) ){
             return true;
         }
         return false;
     }
+ 
 }
