@@ -11,7 +11,7 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
         super(driver);
         // TODO Auto-generated constructor stub
     }
-
+    
     WebElement selectYear = keyword.findWebElementByXpath("//select[@placeholder='Year']");
     WebElement selectMake = keyword.findWebElementByXpath("//div[@class='make']//select[@placeholder='Make']");
     WebElement selectModel = keyword.findWebElementByXpath("//div[@class='model']//select[@placeholder='Model']");
@@ -33,4 +33,33 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
         keyword.scrollAndWaitToClick(btnGetReview);
     }
 
+    /**
+     * @return
+     */
+    String expectedTitle = "2018 Honda Civic Values & Cars for Sale | Kelley Blue Book";
+    public boolean checkTitle (){
+        if(driver.getTitle().equals(expectedTitle)){
+                return true;
+            }
+            return false;
+        }
+
+        public boolean checkBuildPriceButtonDisplay(){
+            WebElement btnBuildPrice = keyword.findWebElementByXpath("//span[@class='css-nmm0sa e1uau9z01']");
+            if(btnBuildPrice.isDisplayed()){
+                return true;
+            }
+            return false;
+        }
+
+        public boolean checkSeeCarForSaleButtonDisplay(){
+            WebElement btnSeeCarForSale = keyword.findWebElementByXpath("//span[@class='css-rqm6z7 e1uau9z01']");
+            if(btnSeeCarForSale.isDisplayed()){
+                return true;
+            }
+            return false;
+        }
+
+
 }
+

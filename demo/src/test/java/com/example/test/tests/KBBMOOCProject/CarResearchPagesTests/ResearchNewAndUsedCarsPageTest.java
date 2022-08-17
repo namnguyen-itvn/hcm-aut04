@@ -3,6 +3,7 @@ package com.example.test.tests.KBBMOOCProject.CarResearchPagesTests;
 
 
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.example.test.pages.KBBMOOCProject.CarResearchPages.ResearchNewAndUsedCarsPage;
@@ -17,8 +18,12 @@ public class ResearchNewAndUsedCarsPageTest extends KbbBaseTest {
 
         ResearchNewAndUsedCarsPage researchNewAndUsedCarsPage = new ResearchNewAndUsedCarsPage(driver);
         researchNewAndUsedCarsPage.actionSelectaCars();
+        Assert.assertTrue(researchNewAndUsedCarsPage.checkTitle());
+        Assert.assertTrue(researchNewAndUsedCarsPage.checkBuildPriceButtonDisplay());
+        Assert.assertTrue(researchNewAndUsedCarsPage.checkSeeCarForSaleButtonDisplay()); 
         ReviewCarsPage reviewPage = new ReviewCarsPage(driver);
         reviewPage.clickfirstOtherCompactSedans();
+        
     }
 
 }
