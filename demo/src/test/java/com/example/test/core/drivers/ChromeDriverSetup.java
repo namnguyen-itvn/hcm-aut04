@@ -18,6 +18,7 @@ public class ChromeDriverSetup implements SeleniumDriver {
             options = new ChromeOptions();
             options.addArguments("start-maximized");
             options.setAcceptInsecureCerts(true);
+            options.addArguments("src\\test\\java\\com\\example\\test\\core\\drivers\\adblock_1_42_4_0_chrome.crx");
         }
         return options;
     }

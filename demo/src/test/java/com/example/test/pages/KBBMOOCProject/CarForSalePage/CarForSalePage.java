@@ -21,13 +21,13 @@ public class CarForSalePage extends KbbBasePage{
 
 
     //*Input Zip Code */
-    public void inputZip (String zip) throws InterruptedException{
+    public void inputToZip (String zip) throws InterruptedException{
         keyword.waitForPageToLoad();
         txtZip.sendKeys(zip);
     }
     
     //*Click Check Box Delivery  */
-    public void clickCheckBoxDelivery () throws InterruptedException{
+    public void clickOnCheckBoxDelivery () throws InterruptedException{
         keyword.waitForPageToLoad();
         keyword.scrollAndWaitToClick(selectDelivery);
         
@@ -36,14 +36,14 @@ public class CarForSalePage extends KbbBasePage{
 //_________________________________________________________________________________________________________________________________________
    
     //* Input  Car Search  */
-     public  void inputCarSearch(String search) throws InterruptedException{
+     public  void inputToCarSearch(String search) throws InterruptedException{
         keyword.scrollAndWaitToClick(txtSearch);
         keyword.sendKeys(txtSearch, search); 
         
     }
    
        //*  Click Options in Text box Search  */
-    public  void ClickOptionCarSearch() throws InterruptedException{
+    public  void clickOnOptionCarSearch() throws InterruptedException{
        WebElement optionSearch = keyword.findWebElementByXpath("//li[@id='react-autowhatever-1-section-0-item-0']");
         keyword.scrollAndWaitToClick(optionSearch);
     }

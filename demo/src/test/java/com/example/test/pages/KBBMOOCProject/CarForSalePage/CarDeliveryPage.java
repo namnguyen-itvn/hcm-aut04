@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 
 import com.example.test.pages.KBBMOOCProject.KbbBasePage;
 
-public class CarReviewDeliveryPage extends KbbBasePage{
+public class CarDeliveryPage extends KbbBasePage{
 
-    public CarReviewDeliveryPage(WebDriver driver) {
+    public CarDeliveryPage(WebDriver driver) {
         super(driver);
         //TODO Auto-generated constructor stub
     }
@@ -19,7 +19,7 @@ public class CarReviewDeliveryPage extends KbbBasePage{
 
   
     //*Check Button Delivery Have Checked */
-    public boolean checkbuttonDelivery(){
+    public boolean checkButtonDelivery(){
         WebElement checkBoxDelivery = keyword.findWebElementByXpath("//input[@value='SHIP_TO_HOME']");
         if(checkBoxDelivery.isSelected()){
             return true;
@@ -29,7 +29,7 @@ public class CarReviewDeliveryPage extends KbbBasePage{
 
     
     //* Veryky Title Component */
-    public boolean checkTitleConponent (){
+    public boolean checkTitleComponent (){
         // WebElement titleComponent = keyword.findWebElementByXpath("//h1[text()='Cars for Sale in Cleveland, OH']");
         String getTitleComponent=driver.getTitle();
         System.out.println(getTitleComponent);
