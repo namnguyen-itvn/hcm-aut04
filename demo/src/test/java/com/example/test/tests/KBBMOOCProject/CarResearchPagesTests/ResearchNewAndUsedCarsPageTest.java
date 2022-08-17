@@ -12,8 +12,8 @@ import com.example.test.tests.KBBMOOCProject.KbbBaseTest;
 public class ResearchNewAndUsedCarsPageTest extends KbbBaseTest {
 
     
-    @Test(testName = " Verify click on See less in Other Compact Sedans Section on Review Page after click on See More Compact Sedans to show less Item")
-    public void VerifyClickOnSeeLessinOtherCompactSedansSectionOnReviewPageAfterClickOnSeeMoreCompactSedansToShowLessItem()
+    @Test(testName = " Verify click on See More in Other Compact Sedans Section on Review Page after click on See More Compact Sedans to show less Item")
+    public void VerifyClickOnSeeMoreinOtherCompactSedansSectionOnReviewPageAfterClickOnSeeMoreCompactSedansToShowLessItem()
             throws InterruptedException {
 
         ResearchNewAndUsedCarsPage researchNewAndUsedCarsPage = new ResearchNewAndUsedCarsPage(driver);
