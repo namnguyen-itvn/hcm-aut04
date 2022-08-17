@@ -18,8 +18,22 @@ public class CarDetialsForSalePage extends KbbBasePage{
     WebElement txtPhoneName = keyword.findWebElementByXpath("//input[@id='phoneNumber']");
     WebElement btnSentEmail = keyword.findWebElementByXpath("//button[text()='Send Email']");
 
-    public String strTitle = driver.getTitle();
-    public String actualTitleDeatilsCar = "New 2018 RAM 3500 ST for sale in NORMAN, OK 73069: Truck Details - 500114042 - Autotrader";
+
+    //* Compera Title */
+    String strTitle = driver.getTitle();
+    public boolean compareTitle(String title){
+        if(strTitle.equals(title)){
+            return true;
+        }return false;
+    }
+
+    //* Compare Url */
+    String strUrl = driver.getCurrentUrl();
+    public boolean compareUrl(String url){
+        if(strUrl.equals(url)){
+            return true;
+        }return false;
+    }
 
     //*Fill User Information */
     public void fillInformation(String firstName,String lastName,String email,String phone) throws InterruptedException{
@@ -30,11 +44,11 @@ public class CarDetialsForSalePage extends KbbBasePage{
         keyword.sendKeys(txtPhoneName, phone);
     }
     //* Click Sent Email Button  */
-    public void clickSentEmail() throws InterruptedException{
+    public void clickOnSentEmailButton() throws InterruptedException{
 
         keyword.scrollAndWaitToClick(btnSentEmail);
     }
-//* Check Message Email Confirmation  */
+    //* Check Message Email Confirmation  */
     public boolean checkEmailConfirmation(String confirmation){
         WebElement msConfirmation = keyword.findWebElementByXpath("//div[@class='modal-body']//div");
         String getConfirmation = msConfirmation.getText();
@@ -44,10 +58,15 @@ public class CarDetialsForSalePage extends KbbBasePage{
         return false;
     }
    
-    public String getDetialsPriceCar(){
+    //* Compare Price Car  */
+       
+    public boolean comparePrice(String price){
         WebElement detailsPriceCar = keyword.findWebElementByXpath("//span[@class='first-price first-price-lg text-size-700']");
         String strDetialsPriceCar = detailsPriceCar.getText();
-        return strDetialsPriceCar;
+        if(strDetialsPriceCar.equals(price)){
+            return true;
+        }return false;
     }
+
         
 }
