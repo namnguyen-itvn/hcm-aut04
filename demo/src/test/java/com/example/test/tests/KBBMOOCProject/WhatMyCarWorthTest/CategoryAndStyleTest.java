@@ -27,9 +27,7 @@ public class CategoryAndStyleTest extends KbbBaseTest {
                 categoryAndStylePage.sendKeysToZipTextBoxInCategoryAndStylePage(zip);
                 categoryAndStylePage.clickOnNextButtonInCategoryAndStylePage();
                 OptionPage optionPage = new OptionPage(driver);
-                Assert.assertTrue(optionPage.optionPageTitle.equals(optionPageTitleTest1),
-                                "The actual title are not match with expected");
-                Assert.assertTrue(optionPage.categoryAndStyleName.equals(categoryandstylenameinoption),
-                                "The category and style name are not match with expected");
-        }
+                Assert.assertTrue(optionPage.compareOptionPageTitleToTitleInFileDatas(optionPageTitleTest1));
+                Assert.assertTrue(optionPage.compareCarStyleAndCategoryNameIsSimilarToStyleAnCarDataInFileDatas(categoryandstylenameinoption));
+                }
 }

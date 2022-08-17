@@ -84,7 +84,7 @@ public class CustomKeyword {
         try {
             waitForElementDisplayed(element);
             element.click();
-            Thread.sleep(3000);
+            Thread.sleep(5000);
             return new CustomKeyword(driver, wait);
         } catch (WebDriverException ex) {
             throw new WebDriverException("Element not availabe to click!");
