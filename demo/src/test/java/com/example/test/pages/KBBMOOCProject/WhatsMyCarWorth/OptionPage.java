@@ -11,6 +11,10 @@ public class OptionPage extends KbbBasePage {
         WebElement iconEdit = keyword.findWebElementByXpath("//a[@data-analytics='mileage_top_lnk']");
         keyword.scrollAndWaitToClick(iconEdit);
     }
+    public void deleteMileage(){
+        WebElement inputMileage = keyword.findWebElementByXpath("//input[@type='tel']");
+        inputMileage.clear();
+    }
     public void sendInforchangeMileage(String mileagee) throws InterruptedException{
         WebElement txtMileage = keyword.findWebElementByXpath("//input[@type='tel']");
         keyword.sendKeys(txtMileage, mileagee);
@@ -41,7 +45,7 @@ public class OptionPage extends KbbBasePage {
         keyword.scrollAndWaitToClick(btnNext);
     }
     public boolean compareResultAfterUserChangeMileagesuccessful(){
-        WebElement iconMileage = keyword.findWebElementByXpath("//a[text()='10,000']");
+        WebElement iconMileage = keyword.findWebElementByXpath("//a[text()='12,345']");
         if (iconMileage.isDisplayed()) {
             return true;
         }

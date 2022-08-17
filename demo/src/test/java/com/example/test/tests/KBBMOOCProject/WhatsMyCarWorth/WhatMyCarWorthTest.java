@@ -29,6 +29,7 @@ public class WhatMyCarWorthTest extends KbbBaseTest {
     public void verifyEditIconwhenuserclickonitShouldbeeditMileagesuccessful(String vin,String email,String mileage ,String zipcode,String mileagee) throws InterruptedException{
         OptionPage optionPage = new OptionPage(driver);
         optionPage.clickOnIconEditMileage();
+        optionPage.deleteMileage();
         optionPage.sendInforchangeMileage(mileagee);
         optionPage.clickOnSavebutton();
         Assert.assertTrue(optionPage.compareResultAfterUserChangeMileagesuccessful());
