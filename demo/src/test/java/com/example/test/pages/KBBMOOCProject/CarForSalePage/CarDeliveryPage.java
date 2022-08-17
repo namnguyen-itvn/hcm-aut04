@@ -13,12 +13,15 @@ public class CarDeliveryPage extends KbbBasePage{
     }
     
 
-    
-    
-    String actualTitleComponent = "Cars for Sale in Cleveland, OH (Test Drive at Home) - Kelley Blue Book";
-
+    String strUrl = driver.getCurrentUrl();
+    public boolean compareUrl (String url){
+        if(strUrl.equals(url)){
+            return true;
+        }return false;
+    }
   
     //*Check Button Delivery Have Checked */
+    String expectedTitleComponent = "Cars for Sale in Cleveland, OH (Test Drive at Home) - Kelley Blue Book";
     public boolean checkButtonDelivery(){
         WebElement checkBoxDelivery = keyword.findWebElementByXpath("//input[@value='SHIP_TO_HOME']");
         if(checkBoxDelivery.isSelected()){
@@ -28,12 +31,18 @@ public class CarDeliveryPage extends KbbBasePage{
     }
 
     
-    //* Veryky Title Component */
+    //* Verify Title Component */
     public boolean checkTitleComponent (){
-        // WebElement titleComponent = keyword.findWebElementByXpath("//h1[text()='Cars for Sale in Cleveland, OH']");
         String getTitleComponent=driver.getTitle();
         System.out.println(getTitleComponent);
-        if(getTitleComponent.equals(actualTitleComponent)){
+        if(getTitleComponent.equals(expectedTitleComponent)){
+            return true;
+        }return false;
+    }
+
+    public boolean checkChipDelivery (){
+        WebElement chipDelivery = keyword.findWebElementByXpath("//div[@data-cmp='chip']//span[text()='Local Home Delivery']");
+        if(chipDelivery.isDisplayed()){
             return true;
         }return false;
     }
@@ -45,6 +54,7 @@ public class CarDeliveryPage extends KbbBasePage{
         System.out.println(dataDelivery);
         return dataDelivery;
     }
+
     //*Check Delivery */
     public boolean checkDelivery(String delivery){
         if( getDelivery().equals(delivery)){
