@@ -12,8 +12,7 @@ import com.example.test.tests.KBBMOOCProject.KbbBaseTest;
 public class CategoryAndStyleTest extends KbbBaseTest {
     @Test(testName = "Verify Option Page is displayed after choosing items from section Category and section Style", dataProviderClass = dataJson.class, dataProvider = "dataCategoryAndStyle")
     public void verifyOptionPageIsDisplayedAfterChoosingItemsFromSectionCategoryAndSectionStyle(String plate,
-            String mileage, String zip, String optionPageTitleTest1, String categoryandstylenameinoption,
-            String optionPageTitleTest2)
+            String mileage, String zip, String optionPageTitleTest, String categoryandstylenameinoption)
             throws InterruptedException {
         MyCarValuePage myCarValuePage = new MyCarValuePage(driver);
         myCarValuePage.clickOnMakeModelCheckBoxInMyCarValuePage();
@@ -31,9 +30,7 @@ public class CategoryAndStyleTest extends KbbBaseTest {
         categoryAndStylePage.clickToChooseAstyleInStyleSectionInCategoryAndStylePage();
         categoryAndStylePage.clickOnNextButtonInCategoryAndStylePage();
         OptionPage optionPage = new OptionPage(driver);
-        Assert.assertTrue(optionPage.optionPageTitle.equals(optionPageTitleTest1),
-                "The actual title are not match with expected");
-        Assert.assertTrue(optionPage.categoryAndStyleName.equals(categoryandstylenameinoption),
-                "The actual category and style are not match with expected");
+        Assert.assertTrue(optionPage.compareOptionPageTitleToTitleInFileDatas(optionPageTitleTest));
+        Assert.assertTrue(optionPage.compareCarStyleAndCategoryNameIsSimilarToStyleAnCarDataInFileDatas(categoryandstylenameinoption));
     }
 }
