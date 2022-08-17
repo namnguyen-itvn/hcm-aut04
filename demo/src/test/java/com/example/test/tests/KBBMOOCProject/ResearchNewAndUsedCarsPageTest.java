@@ -28,7 +28,6 @@ public class ResearchNewAndUsedCarsPageTest extends KbbBaseTest {
         Assert.assertTrue(reviewPage.isSeeWriteAReviewBtnDisplayed());
         researchNewAndUsedCarsPage.actionClickWriteAReviewButton();
         Assert.assertTrue(reviewPage.isgetPageTitleWriteAReview());
-        Assert.assertTrue(reviewPage.isSeeSubmitReviewBtnDisplayed());
 
     }
 

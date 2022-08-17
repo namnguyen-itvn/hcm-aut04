@@ -1,6 +1,5 @@
 package com.example.test.pages.KBBMOOCProject.CarsResearchPage;
 
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -62,22 +61,11 @@ public class ReviewCarsPage extends KbbBasePage {
         }
         return false;
     }
+
     String expectedMessageText2 = "Kelley Blue Book";
 
     public boolean isgetPageTitleWriteAReview() {
         if (driver.getTitle().equals(expectedMessageText2)) {
-            return true;
-        }
-        return false;
-    }
-    WebElement btnSubmitReview = keyword.findWebElementByXpath("//span[@class='css-cje431 e1uau9z01']");
-/**
- * 
- * @return
- */
-    public boolean isSeeSubmitReviewBtnDisplayed() {
-
-        if (btnSubmitReview.isDisplayed()) {
             return true;
         }
         return false;
