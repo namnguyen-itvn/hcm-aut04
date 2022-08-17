@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class carForSaleDoorComponentTest extends KbbBaseTest{
-    @Test(testName ="Verify Car models for sale whose transmission is automatic should be displayed when user choose filter with transmission type as user's intention")
+    @Test(testName ="TC 1: Verify Car models for sale whose transmission is automatic should be displayed when user choose filter with transmission type as user's intention")
     public void verifyCarTranmissionAutomaticDisplayed () throws InterruptedException
     { 
         carForSaleDoorComponentPage carComponentPage = new carForSaleDoorComponentPage(driver);
