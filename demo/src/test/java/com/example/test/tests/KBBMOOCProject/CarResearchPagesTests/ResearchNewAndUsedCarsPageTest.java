@@ -33,7 +33,7 @@ public class ResearchNewAndUsedCarsPageTest extends KbbBaseTest {
         Assert.assertTrue(reviewCarsPage.isgetPageTitle2020AudiA3());
         Assert.assertTrue(reviewCarsPage.assertIsTitleUsed2020AudiA3());
         Assert.assertTrue(reviewCarsPage.isBuildAndPriceBtnDisplayedAudi2020());
-        Assert.assertTrue(reviewCarsPage.isSeeCarsForSaleBtnDisplayedHonda2019());
+        Assert.assertTrue(reviewCarsPage.isSeeCarsForSaleBtnDisplayedAudi2020());
         
 
        
