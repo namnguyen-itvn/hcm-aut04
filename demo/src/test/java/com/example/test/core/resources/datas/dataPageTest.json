@@ -1,0 +1,14 @@
+[
+    {
+        "year":"2018",
+        "make":"Honda",
+        "model":"Civic",
+        "zip":"43446",
+        "expectedMessageText":"2018 Honda Civic Values & Cars for Sale | Kelley Blue Book",
+        "expectedMessageText1":"2018 Honda Civic Review",
+        "URLHondaCivicPage":"https://staging.kbb.com/honda/civic/2018/",
+        "expectedMessageText2":"Kelley Blue Book",
+        "URLReviewPage":"https://staging.kbb.com/honda/civic/2018/base-style-consumer_reviews_write_review/?intent=buy-used&entry=ymm"
+    }
+  
+]

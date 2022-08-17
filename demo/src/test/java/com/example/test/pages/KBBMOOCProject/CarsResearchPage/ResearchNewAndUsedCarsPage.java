@@ -21,35 +21,35 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
  * 
  * @throws InterruptedException
  */
-    public void selectYears() throws InterruptedException {
+    public void selectYears(String year) throws InterruptedException {
         WebElement selectYears = keyword.findWebElementByXpath("//select[@placeholder='Year']");
-        keyword.selectElement(selectYears, "2018");
+        keyword.selectElement(selectYears, year);
     }
 /**
  * 
  * @throws InterruptedException
  */
-    public void selectMake() throws InterruptedException {
+    public void selectMake(String make) throws InterruptedException {
         WebElement selectMake = keyword.findWebElementByXpath("//div[@class='make']//select[@placeholder='Make']");
-        keyword.selectElement(selectMake, "Honda");
+        keyword.selectElement(selectMake, make);
 
     }
 /**
  * 
  * @throws InterruptedException
  */
-    public void selectModel() throws InterruptedException {
+    public void selectModel(String model) throws InterruptedException {
         WebElement selectModel = keyword.findWebElementByXpath("//div[@class='model']//select[@placeholder='Model']");
-        keyword.selectElement(selectModel, "Civic");
+        keyword.selectElement(selectModel, model);
 
     }
 /**
  * 
  * @throws InterruptedException
  */
-    public void selectZipCode() throws InterruptedException {
+    public void selectZipCode(String zip) throws InterruptedException {
         WebElement inputZip = keyword.findWebElementByXpath("//input[@type='tel']");
-        keyword.sendKeys(inputZip, "43446");
+        keyword.sendKeys(inputZip, zip);
     }
 /**
  * 

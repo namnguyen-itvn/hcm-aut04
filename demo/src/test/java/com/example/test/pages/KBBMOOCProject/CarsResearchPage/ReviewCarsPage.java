@@ -12,16 +12,14 @@ public class ReviewCarsPage extends KbbBasePage {
         // TODO Auto-generated constructor stub
     }
 
-    String expectedMessageText = "2018 Honda Civic Values & Cars for Sale | Kelley Blue Book";
 
-    public boolean isgetPageTitle() {
+    public boolean isgetPageTitle(String expectedMessageText) {
         if (driver.getTitle().equals(expectedMessageText)) {
             return true;
         }
         return false;
     }
-    String URLHondaCivicPage = "https://staging.kbb.com/honda/civic/2018/";
-    public boolean isgetPageURLHondaCivicPage() {
+    public boolean isgetPageURLHondaCivicPage(String URLHondaCivicPage) {
         if (driver.getCurrentUrl().equals(URLHondaCivicPage)) {
             return true;
         }
@@ -30,9 +28,8 @@ public class ReviewCarsPage extends KbbBasePage {
 
     WebElement getReviewComponentTitles = keyword
             .findWebElementByXpath("//div[@class='css-1044rcd eds0yfe0']//h2[@class='css-1eagefn e148eed12']");
-    String expectedMessageText1 = "2018 Honda Civic Review";
 
-    public boolean isgetComponentTitles() {
+    public boolean isgetComponentTitles(String expectedMessageText1) {
         if (getReviewComponentTitles.getText().equals(expectedMessageText1)) {
             return true;
         }
@@ -69,9 +66,8 @@ public class ReviewCarsPage extends KbbBasePage {
         return false;
     }
 
-    String expectedMessageText2 = "Kelley Blue Book";
 
-    public boolean isgetPageTitleWriteAReview() {
+    public boolean isgetPageTitleWriteAReview(String expectedMessageText2) {
         if (driver.getTitle().equals(expectedMessageText2)) {
             return true;
         }
@@ -81,8 +77,7 @@ public class ReviewCarsPage extends KbbBasePage {
 
 
 
-    String URLReviewPage = "https://staging.kbb.com/honda/civic/2018/base-style-consumer_reviews_write_review/?intent=buy-used&entry=ymm";
-    public boolean isgetPageURLWriteAReview() {
+    public boolean isgetPageURLWriteAReview(String URLReviewPage) {
         if (driver.getCurrentUrl().equals(URLReviewPage)) {
             return true;
         }
