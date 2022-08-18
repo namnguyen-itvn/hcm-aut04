@@ -10,9 +10,7 @@ public class CarForSalePage extends KbbBasePage{
         super(driver);
     }
 
-    WebElement mileageTab = keyword.findWebElementByXpath("//span[@ data-cmp='filterTitle']/span[text()='Mileage']");
-
-    WebElement bodyType = keyword.findWebElementByXpath("//span[@ data-cmp='filterTitle']/span[text()='Body Style']");
+    private WebElement mileageTab = keyword.findWebElementByXpath("//span[@ data-cmp='filterTitle']/span[text()='Mileage']");
 
 
     public void clickMileageTabInCarForSalePage() throws InterruptedException
