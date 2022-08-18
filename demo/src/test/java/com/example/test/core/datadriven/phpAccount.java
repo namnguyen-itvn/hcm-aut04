@@ -5,8 +5,8 @@ import org.testng.annotations.DataProvider;
 import com.example.test.core.helper.JsonHelper;
 
 public class phpAccount {
-    @DataProvider(name = "accountLogin")
-    public static Object accountLoginPhp () {
+    @DataProvider(name = "inputzipcode")
+    public static Object inputzipcode () {
         return JsonHelper.ReadJsonFromFile("src\\test\\java\\com\\example\\test\\core\\resources\\datas\\phpaccountdata.json");       
     };
 }

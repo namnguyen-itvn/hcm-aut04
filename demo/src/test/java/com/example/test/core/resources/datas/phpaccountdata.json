@@ -1,10 +1,7 @@
 [
     {
-        "email":"admin@phptravels.com",
-        "password":"demoadmin"
-    },
-    {
-        "email":"admin1@phptravels.com",
-        "password":"demoadmin1"
+        
+        "zipcode":"43446"
     }
+   
 ]
