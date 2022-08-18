@@ -13,7 +13,7 @@ public class CustomKeyword {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    public CustomKeyword(WebDriver driver, WebDriverWait wait ) {
+    public CustomKeyword(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
         this.wait = wait;
     }
@@ -130,8 +130,6 @@ public class CustomKeyword {
         try {
             scrollToElemtnIntoView(element);
             waitForElementDisplayed(element);
-            ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,-100)");
-
             element.click();
             Thread.sleep(4500);
             return new CustomKeyword(driver, wait);
