@@ -9,8 +9,8 @@ public class CarForSaleTruckDetailPage extends KbbBasePage {
         super(driver);
     }
     
-    WebElement bedTab = keyword.findWebElementByXpath("//li[last()]//div[@class='col-xs-10 margin-bottom-0']");
-    String strBed = bedTab.getText();
+    private WebElement bedTab = keyword.findWebElementByXpath("//li[last()]//div[@class='col-xs-10 margin-bottom-0']");
+    private String strBed = bedTab.getText();
 
     public boolean checkWordContainInElement()
     {

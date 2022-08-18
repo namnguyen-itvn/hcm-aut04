@@ -9,13 +9,10 @@ public class CarForSaleTruckPage extends KbbBasePage {
     public CarForSaleTruckPage(WebDriver driver) {
         super(driver);
     }
-    WebElement truckBedTab = keyword.findWebElementByXpath("//span[@ data-cmp='filterTitle']/span[text()='Truck Bed Length']");
+    private WebElement truckBedTab = keyword.findWebElementByXpath("//span[@ data-cmp='filterTitle']/span[text()='Truck Bed Length']");
    
     public String strActual = pageTitle();
-    public String strExpected = "Trucks for Sale (Test Drive at Home) - Kelley Blue Book";
-
-    WebElement yourSearch = keyword.findWebElementByXpath("//span[text()='Your Search']");
-   
+    public String strExpected = "Trucks for Sale (Test Drive at Home) - Kelley Blue Book";   
 
 
     public void clickTruckBedTab() throws InterruptedException
