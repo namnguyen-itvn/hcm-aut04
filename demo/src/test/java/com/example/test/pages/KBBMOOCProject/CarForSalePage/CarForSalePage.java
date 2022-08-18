@@ -30,22 +30,10 @@ public class CarForSalePage extends KbbBasePage{
     public void clickOnCheckBoxDelivery () throws InterruptedException{
         keyword.waitForPageToLoad();
         keyword.scrollAndWaitToClick(selectDelivery);
+        keyword.waitForPageToLoad();
         
     }
    
-//_________________________________________________________________________________________________________________________________________
+
    
-    //* Input  Car Search  */
-     public  void inputToCarSearch(String search) throws InterruptedException{
-        keyword.scrollAndWaitToClick(txtSearch);
-        keyword.sendKeys(txtSearch, search); 
-        
-    }
-   
-       //*  Click Options in Text box Search  */
-    public  void clickOnOptionCarSearch() throws InterruptedException{
-       WebElement optionSearch = keyword.findWebElementByXpath("//li[@id='react-autowhatever-1-section-0-item-0']");
-        keyword.scrollAndWaitToClick(optionSearch);
-    }
-    
 }

@@ -11,7 +11,10 @@ public class CarDeliveryPage extends KbbBasePage{
         super(driver);
         //TODO Auto-generated constructor stub
     }
-    
+    public WebElement checkBoxDelivery = keyword.findWebElementByXpath("//input[@value='SHIP_TO_HOME']");
+    public WebElement chipDelivery = keyword.findWebElementByXpath("//div[@data-cmp='chip']//span[text()='Local Home Delivery']");
+    public WebElement textDelivery = keyword.findWebElementByXpath("//div[@data-qaid='cntnr-listings']/div[2]//li[text()='Delivery']");
+
 
     String strUrl = driver.getCurrentUrl();
     public boolean compareUrl (String url){
@@ -21,9 +24,7 @@ public class CarDeliveryPage extends KbbBasePage{
     }
   
     //*Check Button Delivery Have Checked */
-    String expectedTitleComponent = "Cars for Sale in Cleveland, OH (Test Drive at Home) - Kelley Blue Book";
     public boolean checkButtonDelivery(){
-        WebElement checkBoxDelivery = keyword.findWebElementByXpath("//input[@value='SHIP_TO_HOME']");
         if(checkBoxDelivery.isSelected()){
             return true;
         }
@@ -32,16 +33,16 @@ public class CarDeliveryPage extends KbbBasePage{
 
     
     //* Verify Title Component */
-    public boolean checkTitleComponent (){
+    public boolean checkTitleComponent (String title){
         String getTitleComponent=driver.getTitle();
         System.out.println(getTitleComponent);
-        if(getTitleComponent.equals(expectedTitleComponent)){
+        if(getTitleComponent.equals(title)){
             return true;
         }return false;
     }
 
     public boolean checkChipDelivery (){
-        WebElement chipDelivery = keyword.findWebElementByXpath("//div[@data-cmp='chip']//span[text()='Local Home Delivery']");
+        
         if(chipDelivery.isDisplayed()){
             return true;
         }return false;
@@ -49,7 +50,7 @@ public class CarDeliveryPage extends KbbBasePage{
 
     //*Get Text Delivery */
     public String getDelivery(){
-        WebElement textDelivery = keyword.findWebElementByXpath("//div[@data-qaid='cntnr-listings']/div[2]//li[text()='Delivery']");
+       
         String dataDelivery = textDelivery.getText();
         System.out.println(dataDelivery);
         return dataDelivery;

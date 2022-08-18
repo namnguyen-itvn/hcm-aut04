@@ -117,7 +117,6 @@ public class CustomKeyword {
     public void sendKeys(WebElement element, String text) throws InterruptedException{
         try{
             waitForElementDisplayed(element).sendKeys(text);
-            Thread.sleep(5000);
         }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to input text!");
         }
@@ -146,7 +145,6 @@ public class CustomKeyword {
             waitForElementDisplayed(element);
             ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,-100)");
             element.click();
-            Thread.sleep(5000);
             return new CustomKeyword(driver, wait);
         }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to click!");
