@@ -1,6 +1,5 @@
 package com.example.test.pages.KBBMOOCProject.CategoryAndStylePage;
 
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -12,15 +11,13 @@ public class MyCarValuePage extends KbbBasePage {
       super(driver);
       // TODO Auto-generated constructor stub
    }
+
    private WebElement btnLicensePlate = keyword.findWebElementByXpath("//div[text()='License Plate']");
 
-   public void clickOnLicensePlateCheckBoxInMyCarValuePage()  {
+   /**
+    * Click on License radio box
+    */
+   public void clickOnLicensePlateCheckBoxInMyCarValuePage() {
       keyword.clickThenWait(btnLicensePlate);
-   }
-
-   public void clickOnGoButtonInMyCarValuePage()  {
-      WebElement btnGo = keyword.findWebElementByXpath("//span[text()='Go']");
-
-      keyword.clickThenWait(btnGo);
    }
 }

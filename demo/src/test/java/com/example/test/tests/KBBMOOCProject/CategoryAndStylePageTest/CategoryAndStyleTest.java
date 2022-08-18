@@ -5,8 +5,9 @@ import org.testng.Assert;
 
 import com.example.test.core.datadriven.dataJsonforStyleAndCategoryPage;
 import com.example.test.pages.KBBMOOCProject.CategoryAndStylePage.CategoryAndStylePage;
+import com.example.test.pages.KBBMOOCProject.CategoryAndStylePage.GoButtonComponent;
 import com.example.test.pages.KBBMOOCProject.CategoryAndStylePage.MyCarValuePage;
-import com.example.test.pages.KBBMOOCProject.CategoryAndStylePage.NextButton;
+import com.example.test.pages.KBBMOOCProject.CategoryAndStylePage.NextButtonComponent;
 import com.example.test.pages.KBBMOOCProject.CategoryAndStylePage.OptionPage;
 import com.example.test.pages.KBBMOOCProject.CategoryAndStylePage.PlateAndStateComponentt;
 import com.example.test.tests.KBBMOOCProject.KbbBaseTest;
@@ -18,20 +19,22 @@ public class CategoryAndStyleTest extends KbbBaseTest {
                         throws InterruptedException {
                 MyCarValuePage myCarValuePage = new MyCarValuePage(driver);
                 myCarValuePage.clickOnLicensePlateCheckBoxInMyCarValuePage();
-                PlateAndStateComponentt plateAndStateComponentt =new PlateAndStateComponentt(driver);
+                PlateAndStateComponentt plateAndStateComponentt = new PlateAndStateComponentt(driver);
                 plateAndStateComponentt.sendKeysToPlateTextBoxInMyCarValuePage(plate);
                 plateAndStateComponentt.clickOnStateDropDownInMyCarValuePage();
                 plateAndStateComponentt.clickToChooseStateInStateDropDownInMyCarValuePage();
-                myCarValuePage.clickOnGoButtonInMyCarValuePage();
+                GoButtonComponent goButtonComponent = new GoButtonComponent(driver);
+                goButtonComponent.clickOnGoButtonInMyCarValuePage();
                 CategoryAndStylePage categoryAndStylePage = new CategoryAndStylePage(driver);
                 categoryAndStylePage.clickOnStyleDropdownInCategoryAndStylePage();
                 categoryAndStylePage.clickToChooseaStyleinStyleDropdownInCategoryAndStylePage();
                 categoryAndStylePage.sendKeysToMileageTextBoxInCategoryAndStylePage(mileage);
                 categoryAndStylePage.sendKeysToZipTextBoxInCategoryAndStylePage(zip);
-                NextButton nextButton = new NextButton(driver);
+                NextButtonComponent nextButton = new NextButtonComponent(driver);
                 nextButton.clickOnNextButtonInCategoryAndStylePage();
                 OptionPage optionPage = new OptionPage(driver);
                 Assert.assertTrue(optionPage.compareOptionPageTitleToTitleInFileDatas(optionPageTitleTest1));
-                Assert.assertTrue(optionPage.compareCarStyleAndCategoryNameIsSimilarToStyleAnCarDataInFileDatas(categoryandstylenameinoption));
-                }
+                Assert.assertTrue(optionPage.compareCarStyleAndCategoryNameIsSimilarToStyleAnCarDataInFileDatas(
+                                categoryandstylenameinoption));
+        }
 }

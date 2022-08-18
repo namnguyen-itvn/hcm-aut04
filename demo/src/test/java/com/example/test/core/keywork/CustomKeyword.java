@@ -42,7 +42,7 @@ public class CustomKeyword {
     public void sendKeys(WebElement element, String text){
         try{
             waitForElementIsDisplayed(element).sendKeys(text);
-            driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to input text!");
         }
@@ -156,7 +156,7 @@ public class CustomKeyword {
         try {
             waitForElementIsDisplayed(btnMakeModel);
             btnMakeModel.click();
-            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
             return new CustomKeyword(driver, wait);
         } catch (WebDriverException ex) {
             throw new WebDriverException("Element not availabe to click!");

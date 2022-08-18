@@ -12,6 +12,9 @@ public class OptionPage extends KbbBasePage {
         // TODO Auto-generated constructor stub
     }
 
+    /**
+     * Check the Title of the Page
+     */
     public boolean compareOptionPageTitleToTitleInFileDatas(String optionPageTitleTest) {
         String optionPageTitle = driver.getTitle();
         if (optionPageTitle.equals(optionPageTitle)) {
@@ -20,6 +23,9 @@ public class OptionPage extends KbbBasePage {
         return false;
     }
 
+    /**
+     * Check if the Style Change
+     */
     private WebElement xpathCategoryAndStyle = keyword.findWebElementByXpath("//div[@class='css-1itv5e3 eisth834']/p");
 
     public boolean compareCarStyleAndCategoryNameIsSimilarToStyleAnCarDataInFileDatas(
