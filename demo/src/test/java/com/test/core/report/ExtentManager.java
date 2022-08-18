@@ -11,7 +11,7 @@ public class ExtentManager {
         ExtentSparkReporter reporter = new ExtentSparkReporter("./ExtentReports/ExtentReport.html");
         reporter.config().setDocumentTitle("Extend Report");
         reporter.config().setReportName("The First Extent Report");
-        reporter.config().setTheme(Theme.DARK);
+        reporter.config().setTheme(Theme.STANDARD);
         reporter.config().setTimeStampFormat("EEEE, MMMM dd, yyyy, hh:mm a '('zzz')'"); 
         extentReports.attachReporter(reporter);
         extentReports.setSystemInfo("Framework Name", "Selenium Java Framework | ExtentReport Demo");

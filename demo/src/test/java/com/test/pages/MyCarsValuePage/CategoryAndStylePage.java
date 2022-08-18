@@ -11,19 +11,17 @@ public class CategoryAndStylePage extends KBBBasePage{
         super(driver);
         //TODO Auto-generated constructor stub
     }
+    //#region Declare web objects
+    private WebElement optHatchback = keyword.findWebElementByXpath("//div[text()='LX Hatchback 4D']");
+    private WebElement btnMakeModelNext = keyword.findWebElementByXpath("//button[@data-lean-auto='categoryPickerButton']");
+    //#endregion
 
     //#region page actions
-    /**
-     * Option Make/Model
-     * @throws InterruptedException
-     */
-    public void selectYourStyle() throws InterruptedException {
-        WebElement optHatchback = keyword.findWebElementByXpath("//div[text()='LX Hatchback 4D']");
+    public void clickToSelectStyle() {
         keyword.scrollAndWaitToClick(optHatchback);
     }
     public void clickOnMakeModelNextButton() throws InterruptedException{
-        WebElement btnMakeModelNext = keyword.findWebElementByXpath("//button[@data-lean-auto='categoryPickerButton']");
-        keyword.scrollAndWaitToClick(btnMakeModelNext);
+        keyword.scrollAndWaitToPageLoad(btnMakeModelNext);
     }
     //#endregion
 }

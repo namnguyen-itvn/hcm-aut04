@@ -12,9 +12,8 @@ public class WhatsMyCarWorthPage extends KBBBasePage{
         super(driver);
     }
     //#region Declare web objects
-    WebElement btnGo = keyword.findWebElementByXpath("//button[@data-testid='vinSubmitBtn']");
-    WebElement chkMakeModel = keyword.findWebElementByXpath("//div[text()='Make/Model']");
-    //#endregion
+    private WebElement chkMakeModel = keyword.findWebElementByXpath("//div[text()='Make/Model']");
+     //#endregion
 
     //#region page actions
    
@@ -24,39 +23,6 @@ public class WhatsMyCarWorthPage extends KBBBasePage{
      */
     public void clickOnMakeModelCheckbox() throws InterruptedException {
         keyword.scrollAndWaitToClick(chkMakeModel);
-    }
-    public void selectYear() throws InterruptedException {
-        WebElement ddlYear = keyword.findWebElementByXpath("//select[@placeholder='Year']");
-        keyword.scrollAndWaitToClick(ddlYear);
-        WebElement valueOfYear = keyword.findWebElementByXpath("//option[@value='2016']");
-        keyword.scrollAndWaitToClick(valueOfYear);
-    }
-    public void selectMake() throws InterruptedException {
-        WebElement ddlMake = keyword.findWebElementByXpath("//select[@placeholder='Make']");
-        keyword.scrollAndWaitToClick(ddlMake);
-        WebElement valueOfMake = keyword.findWebElementByXpath("//option[@value='18']");
-        keyword.scrollAndWaitToClick(valueOfMake);
-    }
-    public void selectModel() throws InterruptedException {
-        WebElement ddlModel = keyword.findWebElementByXpath("//select[@placeholder='Model']");
-        keyword.scrollAndWaitToClick(ddlModel);
-        WebElement valueOfModel = keyword.findWebElementByXpath("//option[@value='920']");
-        keyword.scrollAndWaitToClick(valueOfModel);
-    }
-    public void sendKeysToTextboxes(String mileage, String zip, String email) {
-        WebElement txtMileage = keyword.findWebElementByXpath("//input[@data-automation='vehicle-picker-input-4']");
-        WebElement txtZIPCode = keyword.findWebElementByXpath("//input[@data-automation='vehicle-picker-input-3']");
-        WebElement txtEmail = keyword.findWebElementByXpath("//input[@data-automation='vehicle-picker-input-5']");
-
-        keyword.sendKeys(txtMileage, mileage);
-        keyword.sendKeys(txtZIPCode, zip);
-        keyword.sendKeys(txtEmail, email);
-
-    }
-    public void clickOnMakeModelGoButton() throws InterruptedException {
-        WebElement btnMakeModelGo = keyword.findWebElementByXpath("//button[@data-lean-auto='vehiclePickerBtn']");
-        keyword.scrollAndWaitToClick(btnMakeModelGo);
-        
     }
     //#endregion
 }

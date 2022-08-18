@@ -10,8 +10,6 @@ import com.test.core.helper.ReadConfigPropertyFile;
 import com.test.core.report.ReportListener;
 
 
-
-
 @Listeners(ReportListener.class)
 public class KBBBaseTest {
     public WebDriver driver;

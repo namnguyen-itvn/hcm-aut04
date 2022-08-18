@@ -11,30 +11,13 @@ public class OptionsPage extends KBBBasePage{
         super(driver);
         //TODO Auto-generated constructor stub
     }
-    //#region page actions
+    //#region Declare web objects
+    private WebElement optSelectYourOptions = keyword.findWebElementByXpath("//div[text()='Select Your Options']");
+    //#endregion
 
-    public void clickOnSelectYourOptions() throws InterruptedException{
-        WebElement optSelectYourOptions = keyword.findWebElementByXpath("//div[text()='Select Your Options']");
+    //#region page actions
+    public void clickOnSelectYourOptionsOption(){
         keyword.scrollAndWaitToClick(optSelectYourOptions);
     }
-    public void clickOnRedColor() throws InterruptedException {
-        WebElement colorRed = keyword.findWebElementByXpath("//img[@alt='Red image']");
-        keyword.scrollAndWaitToClick(colorRed);
-    }
-    public void clickYesOptionInKeyQuestion() throws InterruptedException {
-        WebElement withKeys = keyword.findWebElementByXpath("//label[@data-testid='withKeys']");
-        keyword.scrollAndWaitToClick(withKeys);
-    }
-    public void clickNoOptionInModificationsQuestion() throws InterruptedException {
-        WebElement withoutModifications = keyword.findWebElementByXpath("//label[@data-testid='withoutModifications']");
-        keyword.scrollAndWaitToClick(withoutModifications);
-    }
-    public void clickOnNextButton() throws InterruptedException {
-        WebElement btnNext = keyword.findWebElementByXpath("//button[@data-lean-auto='optionsNextButton']");
-        keyword.scrollAndWaitToClick(btnNext);
-    }
-
-
-    
      //#endregion
 }
