@@ -20,11 +20,6 @@ public class KbbBaseTest {
         driver.get(baseUrl);
     }
 
-    /**
-     * Common Function Any Page
-     */
-
-
     @AfterTest
     public void tearDown(){
         driver.quit();
