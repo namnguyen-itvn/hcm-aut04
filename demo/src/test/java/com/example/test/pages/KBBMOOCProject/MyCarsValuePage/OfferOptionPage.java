@@ -1,4 +1,4 @@
-package com.example.test.pages.KBBMOOCProject.MyCarValuePage;
+package com.example.test.pages.KBBMOOCProject.MyCarsValuePage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,7 +13,7 @@ public class OfferOptionPage extends KbbBasePage {
     
     public String getOfferOptionPageTitle= driver.getTitle();
 
-    WebElement  getBreadcrumd= keyword.findWebElementByXpath("//div[@data-automation='breadcrumb-container']");
+  private  WebElement  getBreadcrumd= keyword.findWebElementByXpath("//div[@data-automation='breadcrumb-container']");
 
     String expectedMessages="Home\nWhat’s My Car Worth\nCategory & Style\nOptions\nOffer Option";
     /**

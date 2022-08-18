@@ -11,10 +11,8 @@ public class KbbBasePage {
     public CustomKeyword keyword;
     public KbbBasePage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, 30);
-        this.keyword = new CustomKeyword(driver, wait);
+        this.wait = new WebDriverWait(driver, 20);
+        this.keyword = new CustomKeyword(driver,wait);
         driver.manage().window().maximize();
- 
     }
-    
 }

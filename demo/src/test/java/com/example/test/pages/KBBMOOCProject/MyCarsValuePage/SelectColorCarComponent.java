@@ -1,20 +1,23 @@
-package com.example.test.pages.KBBMOOCProject.MyCarValuePage;
+package com.example.test.pages.KBBMOOCProject.MyCarsValuePage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.example.test.pages.KBBMOOCProject.KbbBasePage;
 
-public class SelectColorCarComponentPage extends KbbBasePage {
+public class SelectColorCarComponent extends KbbBasePage {
 
-    public SelectColorCarComponentPage(WebDriver driver) {
+    public SelectColorCarComponent(WebDriver driver) {
         super(driver);
         //TODO Auto-generated constructor stub
     }
     
     
-    WebElement clickRedButton = keyword.findWebElementByXpath("//div[text()='Red']");
+  private  WebElement clickRedButton = keyword.findWebElementByXpath("//div[text()='Red']");
 
+    /**
+     * @throws InterruptedException
+     */
     public void actionClickRedButton() throws InterruptedException{
         keyword.scrollAndWaitToClick(clickRedButton);
 

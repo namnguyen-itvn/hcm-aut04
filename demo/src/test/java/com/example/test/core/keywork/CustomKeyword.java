@@ -16,7 +16,7 @@ public class CustomKeyword {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    public CustomKeyword(WebDriver driver, WebDriverWait wait) {
+    public CustomKeyword(WebDriver driver,WebDriverWait wait) {
         this.driver = driver;
         this.wait = wait;
     }
@@ -43,7 +43,7 @@ public class CustomKeyword {
     public void sendKeys(WebElement element, String text) throws InterruptedException{
         try{
             waitForElementIsDisplayed(element).sendKeys(text);
-            Thread.sleep(5000);
+            Thread.sleep(4000);
         }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to input text!");
         }
@@ -144,12 +144,38 @@ public class CustomKeyword {
      * Click to element
      * 
      * @param element to click
+     * @throws InterruptedException
      */
-    public CustomKeyword click(WebElement element){
-        Actions actions = new Actions(this.driver);
-        actions.moveToElement(element).build().perform();
+    public CustomKeyword click(WebElement element) throws InterruptedException{
         waitForElementIsDisplayed(element).click();
-        return new CustomKeyword(driver, wait);
+        Thread.sleep(3000);
+        return new CustomKeyword(driver,wait);
+    }
+
+    public void selectElement(WebElement element, String text) throws InterruptedException{
+        try{
+            waitForElementDisplayed(element);
+            Select select6=new Select(element);
+            select6.selectByVisibleText(text);
+            Thread.sleep(3000);
+            }catch(WebDriverException ex){
+            throw new WebDriverException("Element not availabe to input text!");
+        }
+    }
+
+    
+    public WebElement waitForElementDisplayedWithoutScroll(WebElement element) {
+
+        try{
+
+            return wait.until(ExpectedConditions.elementToBeClickable(element));
+
+        } catch(WebDriverException ex){
+
+            throw new WebDriverException("Element not displayed");
+
+        }  
+
     }
     public void scrollToElemtnIntoView(WebElement element){
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
@@ -164,18 +190,7 @@ public class CustomKeyword {
         }
         
     }
-    public void selectElement(WebElement element, String text) throws InterruptedException{
-        try{
-            waitForElementDisplayed(element);
-            Select select6=new Select(element);
-            select6.selectByVisibleText(text);
-            Thread.sleep(3000);
-            }catch(WebDriverException ex){
-            throw new WebDriverException("Element not availabe to input text!");
-        }
-    }
-
-     /**
+    /**
      * Scroll And Wait To Click
      * @param element
      * @return

@@ -1,4 +1,4 @@
-package com.example.test.pages.KBBMOOCProject.MyCarValuePage;
+package com.example.test.pages.KBBMOOCProject.MyCarsValuePage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,15 +14,16 @@ public class WhatMyCarWorthPage extends KbbBasePage {
 
 
    
-    WebElement inputVIN = keyword.findWebElementByXpath("//input[@data-lean-auto='vinInput']");
-
-    WebElement inputEmail = keyword.findWebElementByXpath("//input[@data-lean-auto='emailVinInput']");
-    
-    WebElement btnGo = keyword.findWebElementByXpath("//button[@data-lean-auto='vinSubmitBtn']");
+   private WebElement inputVIN = keyword.findWebElementByXpath("//input[@data-lean-auto='vinInput']");
+   private  WebElement inputEmail = keyword.findWebElementByXpath("//input[@data-lean-auto='emailVinInput']");
+   private WebElement btnGo = keyword.findWebElementByXpath("//button[@data-lean-auto='vinSubmitBtn']");
 
     
 
 
+    /**
+     * @throws InterruptedException
+     */
     public void actionInputVINandEmail() throws InterruptedException{
        
        keyword.sendKeys(inputVIN, "3VWSB81H8WM210368"); 
@@ -32,18 +33,18 @@ public class WhatMyCarWorthPage extends KbbBasePage {
     }
 
     /**
-    * @param VIN
-    * @param Email
-    * @throws InterruptedException
-    */
-   public void actionInputVINandEmail(String VIN,String Email) throws InterruptedException{
+     * @param VIN
+     * @param Email
+     * @throws InterruptedException
+     */
+    public void actionInputVINandEmail(String VIN, String Email) throws InterruptedException{
        
-        inputVIN.sendKeys(VIN);
+        keyword.sendKeys(inputVIN, VIN); 
         keyword.sendKeys(inputEmail, Email);
         keyword.click(btnGo);
  
      }
-   
+
     
     
 

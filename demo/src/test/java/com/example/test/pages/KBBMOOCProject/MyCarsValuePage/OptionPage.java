@@ -1,4 +1,4 @@
-package com.example.test.pages.KBBMOOCProject.MyCarValuePage;
+package com.example.test.pages.KBBMOOCProject.MyCarsValuePage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,8 +12,12 @@ public class OptionPage extends KbbBasePage {
         //TODO Auto-generated constructor stub
     }
 
-    WebElement clickSelectOption = keyword.findWebElementByXpath("//div[text()='Select Your Options']");
+  private  WebElement clickSelectOption = keyword.findWebElementByXpath("//div[text()='Select Your Options']");
 
+    /**
+     * @param clickSelectOption
+     * @throws InterruptedException
+     */
     public void actionClickSlectYourOption() throws InterruptedException{
         keyword.click(clickSelectOption);
     }
