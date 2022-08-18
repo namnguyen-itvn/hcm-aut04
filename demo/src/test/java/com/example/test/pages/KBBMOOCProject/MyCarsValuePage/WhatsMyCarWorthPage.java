@@ -1,6 +1,5 @@
 package com.example.test.pages.KBBMOOCProject.MyCarsValuePage;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -16,13 +15,9 @@ public class WhatsMyCarWorthPage extends KbbBasePage{
     private WebElement txtVIN = keyword.findWebElementByXpath("//div[@id='vinNumberInput']//input");
     private WebElement txtEmail = keyword.findWebElementByXpath("//div[@id='vinEmailInput']//input");
     private WebElement btnGo = keyword.findWebElementByXpath("//button[@data-testid='vinSubmitBtn']");
-    
     //#endregion
 
     //#region page actions
-    /**
-     * Option VIN
-     */
     public void sendKeysToVINTextbox(String vin) {
         keyword.sendKeys(txtVIN, vin);
     }
@@ -32,6 +27,5 @@ public class WhatsMyCarWorthPage extends KbbBasePage{
     public void clickOnVINGoButton() throws InterruptedException {
         keyword.scrollAndWaitToPageLoad(btnGo);
     }
-
     //#endregion
 }
