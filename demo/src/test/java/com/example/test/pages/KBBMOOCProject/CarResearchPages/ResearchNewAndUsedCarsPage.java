@@ -21,18 +21,6 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
 
     
     public void actionSelectaCars(String zipcode) throws InterruptedException{
-          
-        // keyword.scrollAndWaitToClick(selectYear);
-        // WebElement lbYear = keyword.findWebElementByXpath("//select/option[@value='2018']");
-        // keyword.scrollAndWaitToClick(lbYear);
-        // keyword.scrollAndWaitToClick(selectMake);
-        // WebElement lbMake = keyword.findWebElementByXpath("//select/option[text()='Honda']");
-        // keyword.scrollAndWaitToClick(lbMake);
-        // keyword.scrollAndWaitToClick(selectModel);
-        // WebElement lbModel = keyword.findWebElementByXpath("//select/option[text()='Civic']");
-        // keyword.scrollAndWaitToClick(lbModel);
-        // keyword.sendKeys(inputZip, "43446");
-        // keyword.scrollAndWaitToClick(btnGetReview);
         keyword.selectElement(selectYear, "2018");
         keyword.selectElement(selectMake, "Honda");
         keyword.selectElement(selectModel, "Civic");
