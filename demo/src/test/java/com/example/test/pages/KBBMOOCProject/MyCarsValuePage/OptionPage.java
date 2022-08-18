@@ -15,6 +15,7 @@ public class OptionPage extends KbbBasePage {
   private  WebElement clickSelectOption = keyword.findWebElementByXpath("//div[text()='Select Your Options']");
 
     /**
+     * @param clickSelectOption
      * @throws InterruptedException
      */
     public void actionClickSlectYourOption() throws InterruptedException{

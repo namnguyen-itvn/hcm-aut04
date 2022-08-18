@@ -49,6 +49,5 @@ public class OptionPageSelectInteriorComponent extends KbbBasePage {
    }
 
 
-
 }
 

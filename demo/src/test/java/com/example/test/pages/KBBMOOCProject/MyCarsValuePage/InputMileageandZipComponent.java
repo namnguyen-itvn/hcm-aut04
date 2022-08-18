@@ -28,6 +28,9 @@ public class InputMileageandZipComponent  extends KbbBasePage{
     /**
      * @param Mileage
      * @param Zipcode
+     * @param inputMileage
+     * @param inputZipCode
+     * @param btnNext
      * @throws InterruptedException
      */
     public void actioninputMileageandZipcode(String Mileage,String Zipcode) throws InterruptedException{

@@ -14,8 +14,9 @@ public class OptionPageIconWarningComponent extends KbbBasePage {
     }
     
    private WebElement iconWarning= driver.findElement(By.cssSelector(".css-1nmg2hd"));
-    
+
     /**
+     * @param iconWarning
      * @return
      * @throws InterruptedException
      */
@@ -29,6 +30,7 @@ public class OptionPageIconWarningComponent extends KbbBasePage {
       
 
     /**
+      * @param iconWarning
      * @throws InterruptedException
      */
     public void actionclickIconDisplay() throws InterruptedException{

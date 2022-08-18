@@ -37,6 +37,7 @@ public class IconWarningOptionPageTest  extends KbbBaseTest{
         selectInteriorPage.actionSelectInterior();
         selectInteriorPage.actionSelectCPMP3();
         Assert.assertTrue(selectInteriorPage.isselectCPMP3SingDisSelected());
+        
        
      
         OptionPageIconWarningComponent iconWarningComponent=new OptionPageIconWarningComponent(driver);

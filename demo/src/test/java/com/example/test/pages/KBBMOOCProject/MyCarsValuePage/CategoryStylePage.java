@@ -24,6 +24,7 @@ public class CategoryStylePage extends KbbBasePage {
     
     /**
      * @param Category
+     * @param selectCategory
      * @throws InterruptedException
      */
     public void actionSelectCategory(String Category) throws InterruptedException{
