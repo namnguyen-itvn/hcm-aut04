@@ -11,7 +11,7 @@ public class KbbBaseTest {
     public WebDriver driver;
     String pathChromeDriver = "src\\test\\java\\com\\example\\test\\resources\\driver\\chromedriver.exe";
     // String pathChromeDriver = "src//test//java//com//example//test//resources//driver//chromedriver";
-    String baseUrl = ReadConfigPropertyFile.getPropertyValue("url");
+    String baseUrl = ReadConfigPropertyFile.getPropertyValue("urlforwhatmycarworth");
     String browser = ReadConfigPropertyFile.getPropertyValue("browser");
     
     @BeforeTest
