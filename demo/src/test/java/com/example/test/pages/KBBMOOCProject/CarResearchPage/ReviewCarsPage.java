@@ -12,10 +12,10 @@ public class ReviewCarsPage extends KbbBasePage {
         // TODO Auto-generated constructor stub
     }
 
-   private WebElement btnSeemoreCompactSedans = keyword.findWebElementByXpath("//span[text()='See More Compact Sedans']");
+   private WebElement btnSeeMoreCompactSedans = keyword.findWebElementByXpath("//span[text()='See More Compact Sedans']");
 
-    public void clickonSeeMore() throws InterruptedException {
+    public void clickOnSeeMore() throws InterruptedException {
 
-        keyword.scrollAndWaitToClick(btnSeemoreCompactSedans);
+        keyword.scrollAndWaitToClick(btnSeeMoreCompactSedans);
     }
 }
