@@ -12,16 +12,24 @@ public class InputMileageandZipComponent  extends KbbBasePage{
         //TODO Auto-generated constructor stub
     }
  
-    WebElement inputMileage = keyword.findWebElementByXpath("//input[@data-lean-auto='mileageInput']");
-    WebElement  inputZipCode= keyword.findWebElementByXpath("//input[@data-lean-auto='zipcodeInput']");
-    WebElement  btnNext= keyword.findWebElementByXpath("//button[@data-cy='vinLpNext']");
+  private  WebElement inputMileage = keyword.findWebElementByXpath("//input[@data-lean-auto='mileageInput']");
+  private  WebElement  inputZipCode= keyword.findWebElementByXpath("//input[@data-lean-auto='zipcodeInput']");
+  private  WebElement  btnNext= keyword.findWebElementByXpath("//button[@data-cy='vinLpNext']");
 
+    /**
+     * @throws InterruptedException
+     */
     public void actioninputMileageandZipcode() throws InterruptedException{
         keyword.sendKeys(inputMileage, "1000");
         keyword.sendKeys(inputZipCode, "30813");
         keyword.click(btnNext);
     }
 
+    /**
+     * @param Mileage
+     * @param Zipcode
+     * @throws InterruptedException
+     */
     public void actioninputMileageandZipcode(String Mileage,String Zipcode) throws InterruptedException{
         keyword.sendKeys(inputMileage,Mileage);
         keyword.sendKeys(inputZipCode,Zipcode);

@@ -12,8 +12,11 @@ public class OptionPage extends KbbBasePage {
         //TODO Auto-generated constructor stub
     }
 
-    WebElement clickSelectOption = keyword.findWebElementByXpath("//div[text()='Select Your Options']");
+  private  WebElement clickSelectOption = keyword.findWebElementByXpath("//div[text()='Select Your Options']");
 
+    /**
+     * @throws InterruptedException
+     */
     public void actionClickSlectYourOption() throws InterruptedException{
         keyword.click(clickSelectOption);
     }

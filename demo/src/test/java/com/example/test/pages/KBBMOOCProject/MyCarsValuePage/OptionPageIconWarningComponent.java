@@ -13,8 +13,12 @@ public class OptionPageIconWarningComponent extends KbbBasePage {
         
     }
     
-    WebElement iconWarning= driver.findElement(By.cssSelector(".css-1nmg2hd"));
+   private WebElement iconWarning= driver.findElement(By.cssSelector(".css-1nmg2hd"));
     
+    /**
+     * @return
+     * @throws InterruptedException
+     */
     public boolean isIconDisplay() throws InterruptedException{
         if(iconWarning.isDisplayed())
         {
@@ -23,9 +27,10 @@ public class OptionPageIconWarningComponent extends KbbBasePage {
         return false;
         }
       
-    
 
-
+    /**
+     * @throws InterruptedException
+     */
     public void actionclickIconDisplay() throws InterruptedException{
         iconWarning.click();
     }

@@ -13,11 +13,15 @@ public class OptionPageOptionNoteComponent extends KbbBasePage {
     }
     
 
-    WebElement displayOverlay= keyword.findWebElementByXpath("//div[@data-automation='overlay-container']");
-    WebElement getMessegae= keyword.findWebElementByXpath("//div[@data-automation='overlay-body']");
+  private  WebElement displayOverlay= keyword.findWebElementByXpath("//div[@data-automation='overlay-container']");
+  private   WebElement getMessegae= keyword.findWebElementByXpath("//div[@data-automation='overlay-body']");
 
 
 
+    /**
+     * @return
+     * @throws InterruptedException
+     */
     public boolean isdisplayOverlay() throws InterruptedException{
         if(displayOverlay.isDisplayed())
         {
@@ -27,6 +31,10 @@ public class OptionPageOptionNoteComponent extends KbbBasePage {
         }
 
     String expectText="Option NotesThis option was removed based on a previous selection.";
+    /**
+     * @return
+     * @throws InterruptedException
+     */
     public boolean isTextIconWarning() throws InterruptedException{
         if(getMessegae.getAttribute("textContent").equals(expectText))
         {

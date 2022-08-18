@@ -13,15 +13,23 @@ public class CategoryStylePage extends KbbBasePage {
     }
 
 
-    WebElement selectCategory = keyword.findWebElementByXpath("//select[@class='css-1712iv5 e1c5k7mc0']");
+   private WebElement selectCategory = keyword.findWebElementByXpath("//select[@class='css-1712iv5 e1c5k7mc0']");
 
+    /**
+     * @throws InterruptedException
+     */
     public void actionSelectCategory() throws InterruptedException{
         keyword.selectElement(selectCategory, "Automatic");
     }
     
+    /**
+     * @param Category
+     * @throws InterruptedException
+     */
     public void actionSelectCategory(String Category) throws InterruptedException{
         keyword.selectElement(selectCategory,Category);
     }
+
 
     
 }

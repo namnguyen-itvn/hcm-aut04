@@ -43,7 +43,7 @@ public class CustomKeyword {
     public void sendKeys(WebElement element, String text) throws InterruptedException{
         try{
             waitForElementIsDisplayed(element).sendKeys(text);
-            Thread.sleep(3000);
+            Thread.sleep(4000);
         }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to input text!");
         }
