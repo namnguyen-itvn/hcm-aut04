@@ -21,6 +21,7 @@ public class CarForSalePage extends KbbBasePage{
     public  void inputToTextBoxCarSearch(String search) throws InterruptedException{
         keyword.waitForPageToLoad();
         keyword.sendKeysAndWait(txtSearch, search);
+        keyword.waitForPageToLoad();
        
     }
     
