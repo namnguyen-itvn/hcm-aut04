@@ -22,8 +22,8 @@ public class carForSalePriceRatingComponent extends KbbBasePage {
 
         }return false;
     }
-    //*Click Price Rating  */
-    public void clickPriceRating () throws InterruptedException{
+    //*Click Filter Price Rating  */
+    public void clickFilterPriceRating () throws InterruptedException{
         WebElement txtPriceRating = keyword.findWebElementByXpath("//span[@data-cmp='filterTitle']/span[text()='Price Rating']");
         keyword.scrollAndWaitToClick(txtPriceRating);
     }
@@ -35,23 +35,23 @@ public class carForSalePriceRatingComponent extends KbbBasePage {
             }
             return false; 
         }
-    //*Click Good Price  */
-    public void clickGoodPrice () throws InterruptedException{
+    //*Click Check Box Good Price  */
+    public void clickCheckBoxGoodPrice () throws InterruptedException{
         WebElement cbGoodPrice = keyword.findWebElementByXpath("//div[@class='accordion-panel-content-wrapper padding-horizontal-4 collapse in']//div[text()='Good Price']");
         keyword.click(cbGoodPrice);
 }
-    // //*Check Check Box Good Price Is Selected */
-    // public boolean checkCheckBoxGoodPriceIsSelected(){
-    //     WebElement checkCbGoodPrice = keyword.findWebElementByXpath("//input[@value='goodprice']");
-    //     if(checkCbGoodPrice.isSelected()){
-    //         return true;
-    //     }
-    //     return false;
+    //*Check Check Box Good Price Is Selected */
+    public boolean checkCheckBoxGoodPriceIsSelected(){
+        WebElement checkCbGoodPrice = keyword.findWebElementByXpath("//input[@value='goodprice']/parent::label");
+        if(checkCbGoodPrice.isSelected()){
+            return true;
+        }
+        return false;
   
         
-    // }
-    //*Get Text Good Price */
-    public String getTextGoodPrice(){
+    }
+    //*Get Text Good Price Of Your Search*/
+    public String getTextGoodPriceOfYouSearch(){
         WebElement txtGoodPrice = keyword.findWebElementByXpath("//span[text()='Good Price']");
         keyword.scrollToElemtnIntoView(txtGoodPrice);
         String dataGoodPrice = txtGoodPrice.getText();
@@ -60,7 +60,7 @@ public class carForSalePriceRatingComponent extends KbbBasePage {
     }
     //*Check Good Price */
     public boolean checkGoodPrice(String goodprice){
-        if( getTextGoodPrice().equals(goodprice)){
+        if( getTextGoodPriceOfYouSearch().equals(goodprice)){
             return true;
         }return false;
 
