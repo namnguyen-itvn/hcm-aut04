@@ -9,12 +9,12 @@ public class ButtonStyles extends KbbBasePage {
         super(driver);
         //TODO Auto-generated constructor stub
     }
-     WebElement btnStyles = keyword.findWebElementByXpath("//div[@label='Styles']");
+    WebElement btnStyles = keyword.findWebElementByXpath("//div[@label='Styles']");
    
-public void clickOnButtonStyles () throws InterruptedException{
+    public void clickOnButtonStyles () throws InterruptedException{
+        
+        keyword.scrollAndWaitToClick(btnStyles);
+        
+    }
     
-    keyword.scrollAndWaitToClick(btnStyles);
-    
-}
-
 }

@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import com.example.test.core.datadriven.CarResearchPages;
 import com.example.test.pages.CompareTitleCar;
-import com.example.test.pages.KBBMOOCProject.ButtonCarchevloca;
+import com.example.test.pages.KBBMOOCProject.ButtonCarChevroletCorvette;
 import com.example.test.pages.KBBMOOCProject.ButtonStyles;
 import com.example.test.pages.KBBMOOCProject.SearchCarPage;
 import com.example.test.tests.KBBMOOCProject.KbbBaseTest;
@@ -17,7 +17,7 @@ public class CarRearchTest extends KbbBaseTest {
         CarSearch.actionSelectaCars(zipcode);
         ButtonStyles buttonStyles =new ButtonStyles(driver);
         buttonStyles.clickOnButtonStyles();
-        ButtonCarchevloca buttonCarchevloca=new ButtonCarchevloca(driver);
+        ButtonCarChevroletCorvette buttonCarchevloca=new ButtonCarChevroletCorvette(driver);
         buttonCarchevloca.clickOnButtonCar();
         CompareTitleCar Car = new CompareTitleCar(driver);
         Assert.assertTrue(Car.isgetPageTitle());

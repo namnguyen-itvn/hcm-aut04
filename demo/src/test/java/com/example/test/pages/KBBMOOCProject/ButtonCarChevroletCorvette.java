@@ -3,9 +3,9 @@ package com.example.test.pages.KBBMOOCProject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class ButtonCarchevloca extends KbbBasePage {
+public class ButtonCarChevroletCorvette extends KbbBasePage {
 
-    public ButtonCarchevloca(WebDriver driver) {
+    public ButtonCarChevroletCorvette(WebDriver driver) {
         super(driver);
         //TODO Auto-generated constructor stub
     }
