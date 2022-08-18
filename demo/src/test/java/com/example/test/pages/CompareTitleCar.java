@@ -1,9 +1,6 @@
 package com.example.test.pages;
-
 import org.openqa.selenium.WebDriver;
-
 import com.example.test.pages.KBBMOOCProject.KbbBasePage;
-
 public class CompareTitleCar extends KbbBasePage {
        /**
      * @param driver

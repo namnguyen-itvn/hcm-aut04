@@ -160,7 +160,6 @@ public class CustomKeyword {
         try{
             JavascriptExecutor jse = (JavascriptExecutor)driver;
             jse.executeScript("arguments[0].click()", element);
-            Thread.sleep(3000);
             }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to input text!");
         }
@@ -169,9 +168,8 @@ public class CustomKeyword {
         try{
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,0)");
-            Thread.sleep(3000);
             element.click();
-            Thread.sleep(3000);
+     
             }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to input text!");
         }
@@ -181,7 +179,6 @@ public class CustomKeyword {
             waitForElementDisplayed(element);
             Select select6=new Select(element);
             select6.selectByVisibleText(text);
-            Thread.sleep(3000);
         }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to input text!");
         }
