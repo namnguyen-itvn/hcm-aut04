@@ -41,8 +41,9 @@ public class CustomKeyword {
      */
     public WebElement findWebElementByXpath(String locator) {
         try {
-            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
             scrollToElemtnIntoView(driver.findElement(By.xpath(locator)));
+            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+
             return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
         } catch (WebDriverException ex) {
             throw new WebDriverException("Element not found!");
@@ -57,9 +58,9 @@ public class CustomKeyword {
      */
     public WebElement findWebElementByClassName(String locator) {
         try {
+            scrollToElemtnIntoView(driver.findElement(By.className(locator)));
             driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
-            scrollToElemtnIntoView(driver.findElement(By.className(locator)));
             return wait.until(ExpectedConditions.presenceOfElementLocated(By.className(locator)));
         } catch (WebDriverException ex) {
             throw new WebDriverException("Element not found!");
@@ -75,7 +76,6 @@ public class CustomKeyword {
     public WebElement findWebElementByCSS(String locator) {
         try {
             driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-
             scrollToElemtnIntoView(driver.findElement(By.cssSelector(locator)));
             return wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(locator)));
         } catch (WebDriverException ex) {
@@ -98,8 +98,6 @@ public class CustomKeyword {
         try {
             driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
             scrollToElemtnIntoView(element);
-            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-
             return wait.until(ExpectedConditions.elementToBeClickable(element));
         } catch (WebDriverException ex) {
             throw new WebDriverException("Element not displayed");
@@ -125,9 +123,9 @@ public class CustomKeyword {
      */
     public void sendKeys(WebElement element, String text) throws InterruptedException {
         try {
+            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
             waitForElementDisplayed(element).sendKeys(text);
-            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
         } catch (WebDriverException ex) {
             throw new WebDriverException("Element not availabe to input text!");
@@ -145,15 +143,10 @@ public class CustomKeyword {
         try {
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,500)");
-            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             scrollToElemtnIntoView(element);
             waitForElementDisplayed(element);
             element.click();
-
-            scrollToElemtnIntoView(element);
-            waitForElementDisplayed(element);
-            element.click();
-
             return new CustomKeyword(driver, wait);
         } catch (WebDriverException ex) {
             throw new WebDriverException("Element not availabe to click!");
@@ -169,8 +162,6 @@ public class CustomKeyword {
      */
     public CustomKeyword waitToClick(WebElement element) throws InterruptedException {
         try {
-            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-
             waitForElementDisplayedWithoutScroll(element);
             driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
@@ -183,11 +174,8 @@ public class CustomKeyword {
 
     public void scrollByToClick(WebElement element) throws InterruptedException {
         try {
-            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,500)");
-            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-            element.click();
             driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
             element.click();
         } catch (WebDriverException ex) {
@@ -230,9 +218,8 @@ public class CustomKeyword {
 
     public void click(WebElement element) {
         try {
-            waitForElementDisplayed(element);
             driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-
+            waitForElementDisplayed(element);
             element.click();
         } catch (WebDriverException ex) {
             throw new WebDriverException("Element not availabe to input text!");

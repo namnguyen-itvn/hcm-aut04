@@ -1,12 +1,10 @@
 package com.example.test.tests.KBBMOOCProject;
 
-import com.example.test.tests.KBBMOOCProject.KbbBaseTest;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.example.test.core.datadriven.dataPageTest;
-import com.example.test.pages.KBBMOOCProject.CarsResearchPage.zipCodeComponent;
+import com.example.test.pages.KBBMOOCProject.CarsResearchPage.ZipCodeComponent;
 import com.example.test.pages.KBBMOOCProject.CarsResearchPage.ResearchNewAndUsedCarsPage;
 import com.example.test.pages.KBBMOOCProject.CarsResearchPage.ReviewCarsPage;
 
@@ -34,16 +32,16 @@ public class ResearchNewAndUsedCarsPageTest extends KbbBaseTest {
         researchNewAndUsedCarsPage.selectModel(model);
         researchNewAndUsedCarsPage.selectZipCode(zipbefore);
         researchNewAndUsedCarsPage.btnGetReviews();
-        zipCodeComponent zipCodeComponent = new zipCodeComponent(driver);
-        zipCodeComponent.btnChangeZipCodeOnCarsResearchPage();
+        Assert.assertTrue(researchNewAndUsedCarsPage.isgetPageTitle(expectedMessageText));
+        Assert.assertTrue(researchNewAndUsedCarsPage.isgetPageURLHondaCivicPage(URLHondaCivicPage));
+        researchNewAndUsedCarsPage.btnChangeZipCodeOnCarsResearchPage();
+        ZipCodeComponent zipCodeComponent = new ZipCodeComponent(driver);
         zipCodeComponent.deleteZipCode();
         zipCodeComponent.sendKeyZipCode(zipafter);
         zipCodeComponent.btnSaveZipCodeOnCarsResearchPage();
         ReviewCarsPage reviewPage = new ReviewCarsPage(driver);
-        Assert.assertTrue(reviewPage.isgetPageTitle(expectedMessageText));
-        Assert.assertTrue(reviewPage.isgetComponentTitles(expectedMessageText1));
-        Assert.assertTrue(reviewPage.isgetPageURLHondaCivicPage(URLHondaCivicPage));
         Assert.assertTrue(reviewPage.isBuildAndPriceBtnDisplayed());
+        Assert.assertTrue(reviewPage.isgetComponentTitles(expectedMessageText1));
         Assert.assertTrue(reviewPage.isSeeCarsForSaleBtnDisplayed());
         Assert.assertTrue(reviewPage.assertTrueNameZipCodeDisplayed());
 

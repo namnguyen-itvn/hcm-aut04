@@ -14,13 +14,11 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
 
     // #region
     private WebElement selectYears = keyword.findWebElementByXpath("//select[@placeholder='Year']");
-    private  WebElement selectMake = keyword.findWebElementByXpath("//div[@class='make']//select[@placeholder='Make']");
-    private WebElement selectModel = keyword.findWebElementByXpath("//div[@class='model']//select[@placeholder='Model']");
+    private WebElement selectMake = keyword.findWebElementByXpath("//div[@class='make']//select[@placeholder='Make']");
+    private WebElement selectModel = keyword
+            .findWebElementByXpath("//div[@class='model']//select[@placeholder='Model']");
     private WebElement inputZip = keyword.findWebElementByXpath("//input[@type='tel']");
     private WebElement btnGetReview = keyword.findWebElementByXpath("//form//button[@type='submit']");
-   
-
-
 
     // #endregion
 
@@ -61,12 +59,32 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
         keyword.sendKeys(inputZip, zipbefore);
     }
 
-    
     public void btnGetReviews() throws InterruptedException {
         keyword.scrollAndWaitToClick(btnGetReview);
     }
 
     // #endregion
-    
+
+    public void btnChangeZipCodeOnCarsResearchPage() throws InterruptedException {
+        WebElement btnChangeZipCode = keyword
+                .findWebElementByXpath("//div[@class='css-19tr75h ey3jrsu1']//span[@data-automation='zipcode-link']");
+        keyword.scrollAndWaitToClick(btnChangeZipCode);
+
+    }
+
+    public boolean isgetPageTitle(String expectedMessageText) {
+        if (driver.getTitle().equals(expectedMessageText)) {
+            return true;
+        }
+        return false;
+    }
+    public boolean isgetPageURLHondaCivicPage(String URLHondaCivicPage) {
+        if (driver.getCurrentUrl().equals(URLHondaCivicPage)) {
+            return true;
+        }
+        return false;
+    }
+
+   
 
 }

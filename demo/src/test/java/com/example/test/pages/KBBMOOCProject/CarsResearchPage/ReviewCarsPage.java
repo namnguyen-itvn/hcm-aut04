@@ -14,18 +14,23 @@ public class ReviewCarsPage extends KbbBasePage {
 
     private WebElement getReviewComponentTitles = keyword.findWebElementByXpath("//div[@class='css-1044rcd eds0yfe0']//h2[@class='css-1eagefn e148eed12']");
     private WebElement btnBuildAndPrice = keyword.findWebElementByXpath("//span[text()='Build & Price']");
+
     private WebElement btnSeeCarsForSale = keyword.findWebElementByXpath("//span[text()='See Cars for Sale']");
     private WebElement nameZipCodeExpected = keyword.findWebElementByXpath("//span[text()='Franklin, KY']");
 
-    public boolean isgetPageTitle(String expectedMessageText) {
-        if (driver.getTitle().equals(expectedMessageText)) {
+   
+
+    public boolean isSeeCarsForSaleBtnDisplayed() {
+
+        if (btnSeeCarsForSale.isDisplayed()) {
             return true;
         }
         return false;
     }
 
-    public boolean isgetPageURLHondaCivicPage(String URLHondaCivicPage) {
-        if (driver.getCurrentUrl().equals(URLHondaCivicPage)) {
+    public boolean assertTrueNameZipCodeDisplayed() {
+
+        if (nameZipCodeExpected.isDisplayed()) {
             return true;
         }
         return false;
@@ -39,24 +44,9 @@ public class ReviewCarsPage extends KbbBasePage {
     }
 
     public boolean isBuildAndPriceBtnDisplayed() {
+        
 
         if (btnBuildAndPrice.isDisplayed()) {
-            return true;
-        }
-        return false;
-    }
-
-    public boolean isSeeCarsForSaleBtnDisplayed() {
-
-        if (btnSeeCarsForSale.isDisplayed()) {
-            return true;
-        }
-        return false;
-    }
-
-    public boolean assertTrueNameZipCodeDisplayed() {
-
-        if (nameZipCodeExpected.isDisplayed()) {
             return true;
         }
         return false;
