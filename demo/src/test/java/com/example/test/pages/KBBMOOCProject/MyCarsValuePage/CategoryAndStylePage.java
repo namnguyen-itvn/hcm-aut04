@@ -11,29 +11,30 @@ public class CategoryAndStylePage extends KbbBasePage{
         super(driver);
         
     }
+    //#region Declare web objects
+    private WebElement transmissionSelectBox = keyword.findWebElementByXpath("//select[@placeholder='Transmission']");
+    //#endregion
 
     //#region page actions
     /**
      * Option VIN
      * @throws InterruptedException
      */
-    public void clickOnSelectboxAndClickOnAutomatic() throws InterruptedException {
-        WebElement transmissionSelectBox = keyword.findWebElementByXpath("//select[@placeholder='Transmission']");
+    public void clickOnSelectboxAndClickOnAutomatic(String automatic){
         keyword.scrollAndWaitToClick(transmissionSelectBox);
-        WebElement optAutomatic = keyword.findWebElementByXpath("//option[@value='269401']");
-        keyword.scrollAndWaitToClick(optAutomatic);
+        keyword.selectElement(transmissionSelectBox, automatic);
     }
     public void sendKeysToMileageTextbox(String mileage)  {
         WebElement txtMileage = keyword.findWebElementByXpath("//input[@data-lean-auto='mileageInput']");
         keyword.sendKeys(txtMileage, mileage);        
     }
-    public void sendKeysToZIPTextbox(String zip) throws InterruptedException  {
+    public void sendKeysToZIPTextbox(String zip) throws InterruptedException { 
         WebElement txtZipCode = keyword.findWebElementByXpath("//input[@data-lean-auto='zipcodeInput']");
-        keyword.sendKeys(txtZipCode, zip);
+        keyword.sendKeyAndWait(txtZipCode, zip);
     }
     public void clickOnNextButton() throws InterruptedException{
         WebElement btnNext = keyword.findWebElementByXpath("//button[@data-cy='vinLpNext']");
-        keyword.scrollAndWaitToClick(btnNext);
+        keyword.scrollAndWaitToPageLoad(btnNext);
     }
     
     //#endregion

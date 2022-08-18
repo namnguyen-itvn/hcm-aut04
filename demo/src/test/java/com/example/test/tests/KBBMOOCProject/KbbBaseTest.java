@@ -11,13 +11,11 @@ public class KbbBaseTest {
     
     public WebDriver driver;
     public CustomKeyword keyword;
-    //public String pathChromeDriver = "src\\test\\java\\com\\example\\test\\core\\drivers\\driver\\chromedriver.exe";
     public String baseUrl = ReadConfigPropertyFile.getPropertyValue("url");
     public String browser = ReadConfigPropertyFile.getPropertyValue("browser");
     
     @BeforeTest
     public void setUp() throws Exception{
-        //System.setProperty("webdriver.chrome.driver",pathChromeDriver);
         this.driver = DriverManager.getDriver(browser);
         driver.get(baseUrl);
 

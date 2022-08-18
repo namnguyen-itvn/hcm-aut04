@@ -3,6 +3,7 @@
         "vin":"3VWSB81H8WM210368",
         "email":"abc@gmail.com",
         "mileage":"10000",
-        "zip": "03038"
+        "zip": "03038",
+        "automatic":"Automatic"
     }
 ]

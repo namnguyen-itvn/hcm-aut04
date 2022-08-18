@@ -11,12 +11,12 @@ public class OfferOptionsPage extends KbbBasePage{
         super(driver);
         
     }
-    WebElement chkGetTrade = keyword.findWebElementByXpath("//input[@id='no']");
-    WebElement chkGetACashOffer = keyword.findWebElementByXpath("//input[@id='yes']");
-    WebElement divGetTrade = keyword.findWebElementByXpath("//div[text()='Get Your Trade-In & Private Party Values']");
-    WebElement divGetACashOffer = keyword.findWebElementByXpath("//div[text()='Get a Cash Offer for Your Specific Vehicle']");
+    private WebElement chkGetTrade = keyword.findWebElementByXpath("//input[@id='no']");
+    private WebElement chkGetACashOffer = keyword.findWebElementByXpath("//input[@id='yes']");
+    private WebElement divGetTrade = keyword.findWebElementByXpath("//div[text()='Get Your Trade-In & Private Party Values']");
+    private WebElement divGetACashOffer = keyword.findWebElementByXpath("//div[text()='Get a Cash Offer for Your Specific Vehicle']");
 
-    public boolean optionGetTradeCannotUnCheck() throws InterruptedException {
+    public boolean optionGetTradeCannotUnCheck() {
         keyword.scrollAndWaitToClick(divGetTrade);
         if(!chkGetTrade.isSelected()){
             return false;
@@ -29,7 +29,7 @@ public class OfferOptionsPage extends KbbBasePage{
         }
         return false;
     }
-    public boolean checkGetACashOfferCheckboxCanBeCheck() throws InterruptedException {
+    public boolean checkGetACashOfferCheckboxCanBeCheck(){
         keyword.scrollAndWaitToClick(divGetACashOffer);
         if(chkGetACashOffer.isSelected()){
             return true;
