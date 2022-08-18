@@ -30,7 +30,7 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
     public void actionInputZipcodeCarResearchPage(String zipcode) {
         keyword.sendKeys(inputZip,zipcode);
     }
-    public void actionClickGetReviewBtnCarResearchPage(String zipcode) throws InterruptedException {
+    public void actionClickGetReviewBtnCarResearchPage() throws InterruptedException {
         keyword.waitToClick(btnGetReview);
     }
 //#endregion
