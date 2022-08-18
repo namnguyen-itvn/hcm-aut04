@@ -12,13 +12,13 @@ public class ReviewCarsPage extends KbbBasePage {
         // TODO Auto-generated constructor stub
     }
 
-
     public boolean isgetPageTitle(String expectedMessageText) {
         if (driver.getTitle().equals(expectedMessageText)) {
             return true;
         }
         return false;
     }
+
     public boolean isgetPageURLHondaCivicPage(String URLHondaCivicPage) {
         if (driver.getCurrentUrl().equals(URLHondaCivicPage)) {
             return true;
@@ -56,31 +56,5 @@ public class ReviewCarsPage extends KbbBasePage {
         return false;
     }
 
-    WebElement btnWriteAReview = keyword.findWebElementByXpath("//a[text()='Write a Review']");
-
-    public boolean isSeeWriteAReviewBtnDisplayed() {
-
-        if (btnWriteAReview.isDisplayed()) {
-            return true;
-        }
-        return false;
-    }
-
-
-    public boolean isgetPageTitleWriteAReview(String expectedMessageText2) {
-        if (driver.getTitle().equals(expectedMessageText2)) {
-            return true;
-        }
-        return false;
-    }
-
-
-
-
-    public boolean isgetPageURLWriteAReview(String URLReviewPage) {
-        if (driver.getCurrentUrl().equals(URLReviewPage)) {
-            return true;
-        }
-        return false;
-    }
+    
 }

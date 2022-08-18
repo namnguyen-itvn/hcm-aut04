@@ -3,7 +3,9 @@ package com.example.test.tests.KBBMOOCProject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.example.test.core.datadriven.dataPageResearch;
+import com.example.test.core.datadriven.dataCarsResearchPage;
+import com.example.test.pages.KBBMOOCProject.CarsResearchPage.CarsReviewPage;
+import com.example.test.pages.KBBMOOCProject.CarsResearchPage.CarsWriteAReviewPage;
 import com.example.test.pages.KBBMOOCProject.CarsResearchPage.ResearchNewAndUsedCarsPage;
 import com.example.test.pages.KBBMOOCProject.CarsResearchPage.ReviewCarsPage;
 
@@ -21,7 +23,7 @@ public class ResearchNewAndUsedCarsPageTest extends KbbBaseTest {
      * @param URLReviewPage
      * @throws InterruptedException
      */
-    @Test(testName = "Verify click on highlight Zip Code link located under Car Name on Review Page and Input Zip Code To Change Vehicle Zip Code and displayed location", dataProviderClass = dataPageResearch.class, dataProvider = "dataPageTest")
+    @Test(testName = "Verify click on highlight Zip Code link located under Car Name on Review Page and Input Zip Code To Change Vehicle Zip Code and displayed location", dataProviderClass = dataCarsResearchPage.class, dataProvider = "dataCarsResearchPage")
     public void verifyClickOnHighlightZipCodeLinkLocatedUnderCarNameOnReviewPageAndInputZipCodeToChangeVehicleZipCodeAndDisplayedLocation(
             String year, String make, String model, String zip, String expectedMessageText,
             String expectedMessageText1, String URLHondaCivicPage, String expectedMessageText2, String URLReviewPage)
@@ -39,11 +41,13 @@ public class ResearchNewAndUsedCarsPageTest extends KbbBaseTest {
         Assert.assertTrue(reviewPage.isgetComponentTitles(expectedMessageText1));
         Assert.assertTrue(reviewPage.isBuildAndPriceBtnDisplayed());
         Assert.assertTrue(reviewPage.isSeeCarsForSaleBtnDisplayed());
-        Assert.assertTrue(reviewPage.isSeeWriteAReviewBtnDisplayed());
-        researchNewAndUsedCarsPage.actionClickWriteAReviewButton();
-        Assert.assertTrue(reviewPage.isgetPageTitleWriteAReview(expectedMessageText2));
+        CarsReviewPage carsReviewPage = new CarsReviewPage(driver);
+        Assert.assertTrue(carsReviewPage.isSeeWriteAReviewBtnDisplayed());
+        carsReviewPage.actionClickWriteAReviewButton();
+        CarsWriteAReviewPage carsWriteAReviewPage = new CarsWriteAReviewPage(driver);
+        Assert.assertTrue(carsWriteAReviewPage.isgetPageTitleWriteAReview(expectedMessageText2));
         // get URL
-        Assert.assertTrue(reviewPage.isgetPageURLWriteAReview(URLReviewPage));
+        Assert.assertTrue(carsWriteAReviewPage.isgetPageURLWriteAReview(URLReviewPage));
     }
 
 }
