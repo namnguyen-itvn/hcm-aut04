@@ -16,7 +16,6 @@ public class CarDetailsForSalePageTest extends KbbBaseTest{
     @Test(testName ="Verify User Can Confirm Email Successful",dataProviderClass =DataDriven.class,dataProvider = "dataCarDetailsForSale" )
     public  void verifyUserCanConfirmEmailSuccessful(String search,String firstName,String lastName,String email,String phone,String price,String title,String url,String confirmation) throws InterruptedException{
         CarForSalePage carForSalePage = new CarForSalePage(driver);
-        carForSalePage.ClickTextBoxSearch();
         carForSalePage.inputToTextBoxCarSearch(search);
         OptionSearchComponent optionSearchCar= new OptionSearchComponent(driver);
         optionSearchCar.clickonOptionSearchCar();

@@ -122,6 +122,21 @@ public class CustomKeyword {
         }
     }
 
+
+    /**
+     * Wait for Element displayed and input text
+     * @param element
+     * @param text
+     * @throws InterruptedException
+     */
+    public void sendKeysAndWait(WebElement element, String text) throws InterruptedException{
+        try{
+            waitForElementDisplayed(element).sendKeys(text);
+            Thread.sleep(3000);
+        }catch(WebDriverException ex){
+            throw new WebDriverException("Element not availabe to input text!");
+        }
+    }
    
 
       //*wait without scroll */
@@ -139,13 +154,12 @@ public class CustomKeyword {
      * @return
      * @throws InterruptedException
      */
-    public CustomKeyword scrollAndWaitToClick(WebElement element) throws InterruptedException {
+    public CustomKeyword scrollAndWaitToClick(WebElement element)  {
         try{
             scrollToElemtnIntoView(element);
             waitForElementDisplayed(element);
             ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,-100)");
             element.click();
-           
             return new CustomKeyword(driver, wait);
         }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to click!");
@@ -168,7 +182,7 @@ public class CustomKeyword {
     }
     public void waitForPageToLoad() throws InterruptedException
     {
-        Thread.sleep(3000);
+        Thread.sleep(5000);
     }
   
 }

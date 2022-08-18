@@ -15,27 +15,14 @@ public class CarForSalePage extends KbbBasePage{
     }
     
     private WebElement txtSearch = keyword.findWebElementByXpath("//div[@class='margin-bottom-3']//input");
+    private WebElement btnSearch = keyword.findWebElementByXpath("//div[@class='margin-bottom-3']//button[@aria-label='search-btn']");
 
-
-    //* Input  Car Search  */
-    public  void ClickTextBoxSearch() throws InterruptedException{
-        keyword.scrollAndWaitToClick(txtSearch);
-        
-    }
 
     public  void inputToTextBoxCarSearch(String search) throws InterruptedException{
-        Actions action = new Actions(driver);
-        action.sendKeys(txtSearch,search).build().perform();
-        keyword.waitForPageToLoad();    
-        
+        keyword.waitForPageToLoad();
+        keyword.sendKeysAndWait(txtSearch, search);
+       
     }
-   
-    // public  void SearchCar() throws InterruptedException{
-    //     WebElement optionSearch = keyword.findWebElementByXpath("//li[@id='react-autowhatever-1-section-0-item-0']");
-    //      keyword.scrollAndWaitToClick(optionSearch);
-    //      keyword.waitForPageToLoad();
-    //  }
     
-
 
 }
