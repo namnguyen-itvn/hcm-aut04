@@ -5,26 +5,21 @@ public class CategoryandStylePage extends KbbBasePage{
     public CategoryandStylePage(WebDriver driver) {
         super(driver);
         //TODO Auto-generated constructor stub
+        /**
+     * return current PageTitle
+     * @return
+     */
     }
-    public void clickOnDropListTransmission() throws InterruptedException{
-        WebElement droplistTrans = keyword.findWebElementByXpath("//div//select[@placeholder='Transmission']");
+    private WebElement droplistTrans = keyword.findWebElementByXpath("//div//select[@placeholder='Transmission']");
+    private WebElement optionTrans = keyword.findWebElementByXpath("//div//option[text()='Automatic']");
+    public void clickOnDropListTransmission() {
+        
         keyword.scrollAndWaitToClick(droplistTrans);
     }
-    public void selectOnAutomatic() throws InterruptedException{
-        WebElement optionTrans = keyword.findWebElementByXpath("//div//option[text()='Automatic']");
+    public void selectOnAutomatic() {
+        
         keyword.scrollAndWaitToClick(optionTrans);
     }
-    public void sendInforMileage(String mileage) throws InterruptedException{
-        WebElement txtmileage = keyword.findWebElementByXpath("//div//input[@data-lean-auto='mileageInput']");
-        keyword.sendKeys(txtmileage, mileage);
-    }
-    public void sendInforZIP(String zipcode) throws InterruptedException{
-        WebElement txtZipcode = keyword.findWebElementByXpath("//div//input[@data-lean-auto='zipcodeInput']");
-        keyword.sendKeys(txtZipcode, zipcode);
-    }
-    public void clickOnNextbutton() throws InterruptedException{
-        WebElement btnNext = keyword.findWebElementByXpath("//button//span[text()='Next']");
-        keyword.scrollAndWaitToClick(btnNext);
-    }
+  
 
 }
