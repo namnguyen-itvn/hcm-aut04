@@ -8,7 +8,7 @@ import com.example.test.pages.KBBMOOCProject.MyCarsValuePage.CategoryStylePage;
 import com.example.test.pages.KBBMOOCProject.MyCarsValuePage.InputMileageandZipComponent;
 import com.example.test.pages.KBBMOOCProject.MyCarsValuePage.OfferOptionPage;
 import com.example.test.pages.KBBMOOCProject.MyCarsValuePage.OptionPage;
-import com.example.test.pages.KBBMOOCProject.MyCarsValuePage.SelectColorCarComponent;
+import com.example.test.pages.KBBMOOCProject.MyCarsValuePage.WhatColorIsYourVehicleComponent;
 import com.example.test.pages.KBBMOOCProject.MyCarsValuePage.SelectKeyandVehicleComponent;
 import com.example.test.pages.KBBMOOCProject.MyCarsValuePage.WhatMyCarWorthPage;
 import com.example.test.tests.KBBMOOCProject.KbbBaseTest;
@@ -31,7 +31,7 @@ public class OptionPageTest  extends KbbBaseTest{
         OptionPage optionPage=new OptionPage(driver);
         optionPage.actionClickSlectYourOption();
 
-       SelectColorCarComponent selectYourOptionPage=new SelectColorCarComponent(driver);
+       WhatColorIsYourVehicleComponent selectYourOptionPage=new WhatColorIsYourVehicleComponent(driver);
        selectYourOptionPage.actionClickRedButton();
 
        SelectKeyandVehicleComponent selectKeyandVehicleComponentPage=new SelectKeyandVehicleComponent(driver);

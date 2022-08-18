@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 
 import com.example.test.pages.KBBMOOCProject.KbbBasePage;
 
-public class SelectColorCarComponent extends KbbBasePage {
+public class WhatColorIsYourVehicleComponent extends KbbBasePage {
 
-    public SelectColorCarComponent(WebDriver driver) {
+    public WhatColorIsYourVehicleComponent(WebDriver driver) {
         super(driver);
         //TODO Auto-generated constructor stub
     }
