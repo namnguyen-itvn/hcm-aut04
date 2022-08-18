@@ -126,7 +126,6 @@ public class CustomKeyword {
             scrollToElemtnIntoView(element);
             waitForElementDisplayed(element);
             element.click();
-            Thread.sleep(4500);
             return new CustomKeyword(driver, wait);
         }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to click!");
@@ -151,10 +150,8 @@ public class CustomKeyword {
     public void scrollByToClick(WebElement element) throws InterruptedException{
         try{
             JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("window.scrollBy(0,500)");
-            Thread.sleep(3000);
+            js.executeScript("window.scrollBy(0,500)"); 
             element.click();
-            Thread.sleep(3000);
             }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to input text!");
         }

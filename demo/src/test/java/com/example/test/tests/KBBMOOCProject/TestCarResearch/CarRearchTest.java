@@ -11,10 +11,10 @@ import com.example.test.pages.KBBMOOCProject.SearchCarPage;
 import com.example.test.tests.KBBMOOCProject.KbbBaseTest;
 
 public class CarRearchTest extends KbbBaseTest {
-    @Test(testName = "Verify Cars Review page  title is display when user click on item car name as Chevrolet Corvette of component Other Compact Coupes", dataProviderClass = CarResearch.class, dataProvider = "CarResearchPages")
+    @Test(testName = "Verify Cars Review page  title is display when user click on item car name as Chevrolet Corvette of component Other Compact Coupes", dataProviderClass = CarResearch.class, dataProvider = "CarResearch")
     public void VerifyCarsReviewPageTitleIsDisplayWhenUserClickOnItemCarNameAsChevroletCorvetteOfComponentOtherCompactCoupesverifyProductsPageTitleWhenLoginSuccess(String zipcode) throws InterruptedException{
         SearchCarPage CarSearch = new SearchCarPage(driver);
-        CarSearch.actionSelectaCars(zipcode);
+        CarSearch.SelectCars(zipcode);
         ButtonStyles buttonStyles =new ButtonStyles(driver);
         buttonStyles.clickOnButtonStyles();
         ButtonCarChevroletCorvette buttonCarchevloca=new ButtonCarChevroletCorvette(driver);
