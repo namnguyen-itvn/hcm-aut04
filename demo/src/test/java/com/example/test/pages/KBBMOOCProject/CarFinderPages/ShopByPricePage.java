@@ -11,19 +11,21 @@ public class ShopByPricePage extends KbbBasePage {
         super(driver);
         //TODO Auto-generated constructor stub
     }
-    WebElement selectMinPrice = keyword.findWebElementByXpath("//select[@placeholder='Min price']");
-    WebElement selectMaxPrice = keyword.findWebElementByXpath("//select[@placeholder='Max price']");
-   
+    //#region Declare web object
+    private WebElement selectMinPrice = keyword.findWebElementByXpath("//select[@placeholder='Min price']");
+    private WebElement selectMaxPrice = keyword.findWebElementByXpath("//select[@placeholder='Max price']");
+   //#endregion
 
-    public void actionSenkeyShopByPriceToFindVehicle() throws InterruptedException{
-        keyword.selectElement(selectMinPrice,"$5,000");
-        keyword.selectElement(selectMaxPrice,"$10,000");
-       
+    public void actionShopByPriceToFindVehicle(String minprice, String maxprice) throws InterruptedException{
+        keyword.selectElement(selectMinPrice,minprice);
+        keyword.selectElement(selectMaxPrice,maxprice);  
     }
-
-    public void actionClickSeeResultBtn() {
-    WebElement btnSeeResult = keyword.findWebElementByXpath("//span[text()='See Results']");
-    
+    // private WebElement btnSeeResult = keyword.findWebElementByXpath("//div//a[@class='css-14twj67 e1uau9z02']");  
+    public void actionClickSeeResultForShopByPrice() {
+        WebElement btnSeeResult = keyword.findWebElementByXpath("//div//a[@class='css-14twj67 e1uau9z02']");  
         keyword.scrollAndWaitToClick(btnSeeResult);
     }
+ 
+
+
 }

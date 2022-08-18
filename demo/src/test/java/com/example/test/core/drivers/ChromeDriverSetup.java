@@ -1,5 +1,7 @@
 package com.example.test.core.drivers;
 
+import java.io.File;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -17,6 +19,8 @@ public class ChromeDriverSetup implements SeleniumDriver {
             options = new ChromeOptions();
             options.addArguments("start-maximized");
             options.setAcceptInsecureCerts(true);
+            File file = new File("src\\test\\java\\com\\example\\test\\core\\drivers\\adblock_1_42_4_0_chrome.crx");
+            options.addExtensions(file);
         }
         return options;
     }
@@ -26,9 +30,11 @@ public class ChromeDriverSetup implements SeleniumDriver {
             this.capabilities = DesiredCapabilities.chrome();
             this.capabilities.setJavascriptEnabled(true);
             this.capabilities.setAcceptInsecureCerts(true);
+            
         }
         return capabilities;
     }
+
 
     @Override
     public WebDriver createDriver(){

@@ -11,6 +11,14 @@ public class CarFinderPage extends KbbBasePage{
         super(driver);
         //TODO Auto-generated constructor stub
     }
+
+    //#region Declare web object
+    private WebElement getCarFinderComponentTitle = keyword.findWebElementByXpath("//h1[@id='CarFinderHeading']");
+    private WebElement getBreadcrumb = keyword.findWebElementByXpath("//div[@data-automation='breadcrumb-container']");
+    private WebElement getResult = keyword.findWebElementByXpath("//span[@class='css-ctzzv3-FilterHeading el1sgj20']");
+    //#endregion
+
+    //#region page action
     String expectedMessageText="Car Finder | Find Your Perfect Car | Kelley Blue Book";
     public boolean isgetPageTitle(){
         if(driver.getTitle().equals(expectedMessageText)){
@@ -19,7 +27,6 @@ public class CarFinderPage extends KbbBasePage{
         return false;
     }
 
-    WebElement getCarFinderComponentTitle = keyword.findWebElementByXpath("//h1[@id='CarFinderHeading']");
     String expectedMessageText1="Car Finder";
     public boolean isgetComponentTitle(){
         if(getCarFinderComponentTitle.getText().equals(expectedMessageText1)){
@@ -28,7 +35,6 @@ public class CarFinderPage extends KbbBasePage{
         return false;
     }
 
-    WebElement getBreadcrumb = keyword.findWebElementByXpath("//div[@data-automation='breadcrumb-container']");
     String expectedMessageText2="Home\nCar Finder";
     public boolean isgetBreadcrumb(){
         if(getBreadcrumb.getAttribute("innerText").equals(expectedMessageText2)){
@@ -37,7 +43,6 @@ public class CarFinderPage extends KbbBasePage{
         return false;
     }
 
-    WebElement getResult = keyword.findWebElementByXpath("//span[@class='css-ctzzv3-FilterHeading el1sgj20']");
     String expectedResultMessageText="0 matches";
     public boolean isgetResultCarFinder(){
         
@@ -46,4 +51,5 @@ public class CarFinderPage extends KbbBasePage{
         }
         return false;
     }
+    //#endregion
 }
