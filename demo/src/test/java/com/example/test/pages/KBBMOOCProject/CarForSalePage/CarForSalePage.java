@@ -28,7 +28,7 @@ public class CarForSalePage extends KbbBasePage{
         action.sendKeys(txtSearch,search).build().perform();
         // action.sendKeys(Keys.ENTER).build().perform();
         keyword.waitForPageToLoad();    
-        keyword.waitForPageToLoad();  
+        
     }
    
     // public  void SearchCar() throws InterruptedException{

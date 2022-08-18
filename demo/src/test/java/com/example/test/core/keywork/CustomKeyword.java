@@ -170,8 +170,5 @@ public class CustomKeyword {
     {
         Thread.sleep(3000);
     }
-    public void waitForPageToLoadLong() throws InterruptedException
-    {
-        Thread.sleep(7000);
-    }
+  
 }
