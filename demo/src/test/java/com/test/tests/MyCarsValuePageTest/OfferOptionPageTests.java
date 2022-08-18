@@ -5,6 +5,8 @@ import org.testng.annotations.Test;
 
 import com.test.core.datadriven.TestDataProvider;
 import com.test.pages.MyCarsValuePage.CategoryAndStylePage;
+import com.test.pages.MyCarsValuePage.KeyQuestionComponentInOptionsPage;
+import com.test.pages.MyCarsValuePage.ModificationQuestionComponentInOptionsPage;
 import com.test.pages.MyCarsValuePage.OfferOptionsPage;
 import com.test.pages.MyCarsValuePage.OptionsExtendPage;
 import com.test.pages.MyCarsValuePage.OptionsPage;
@@ -31,9 +33,12 @@ public class OfferOptionPageTests extends KBBBaseTest{
         optionsPage.clickOnSelectYourOptionsOption();
         OptionsExtendPage optionsExtendPage = new OptionsExtendPage(driver);
         optionsExtendPage.clickOnRedColor();
-        // optionsPage.clickYesOptionInKeyQuestion();
-        // optionsPage.clickNoOptionInModificationsQuestion();
         optionsExtendPage.clickOnNextButton();
+        // KeyQuestionComponentInOptionsPage keyQuestionComponentInOptionsPage = new KeyQuestionComponentInOptionsPage(driver);
+        // keyQuestionComponentInOptionsPage.clickYesOptionInKeyQuestion();
+        // ModificationQuestionComponentInOptionsPage modificationQuestionComponentInOptionsPage = new ModificationQuestionComponentInOptionsPage(driver);
+        // modificationQuestionComponentInOptionsPage.clickNoOptionInModificationsQuestion();
+        // modificationQuestionComponentInOptionsPage.clickOnNextButton();
         OfferOptionsPage offerOptionsPage = new OfferOptionsPage(driver);
         Assert.assertTrue(offerOptionsPage.compareValueOfVehiclesAsUserSelected(yearMakeModelStyle));
     }

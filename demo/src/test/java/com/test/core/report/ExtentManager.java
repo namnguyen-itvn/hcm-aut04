@@ -15,7 +15,7 @@ public class ExtentManager {
         reporter.config().setTimeStampFormat("EEEE, MMMM dd, yyyy, hh:mm a '('zzz')'"); 
         extentReports.attachReporter(reporter);
         extentReports.setSystemInfo("Framework Name", "Selenium Java Framework | ExtentReport Demo");
-        extentReports.setSystemInfo("Author", "ChienNV19");
+        extentReports.setSystemInfo("Author", "NamND33");
         return extentReports;
     }
 }
