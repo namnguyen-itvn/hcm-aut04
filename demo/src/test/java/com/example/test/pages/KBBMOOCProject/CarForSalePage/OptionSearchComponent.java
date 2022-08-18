@@ -13,8 +13,8 @@ public class OptionSearchComponent extends KbbBasePage {
     }
     
        //*  Search Car  */
-      private WebElement optionSearch = keyword.findWebElementByXpath("//li[@id='react-autowhatever-1-section-0-item-0']");
-    public  void SearchCar() throws InterruptedException{
+    private WebElement optionSearch = keyword.findWebElementByXpath("//li[@id='react-autowhatever-1-section-0-item-0']");
+    public  void clickonOptionSearchCar() throws InterruptedException{
         
          keyword.scrollAndWaitToClick(optionSearch);
          keyword.waitForPageToLoad();

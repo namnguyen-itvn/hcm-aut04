@@ -26,8 +26,17 @@ public class CarForSalePage extends KbbBasePage{
     public  void inputToTextBoxCarSearch(String search) throws InterruptedException{
         Actions action = new Actions(driver);
         action.sendKeys(txtSearch,search).build().perform();
+        // action.sendKeys(Keys.ENTER).build().perform();
         keyword.waitForPageToLoad();    
+        keyword.waitForPageToLoad();  
     }
+   
+    // public  void SearchCar() throws InterruptedException{
+    //     WebElement optionSearch = keyword.findWebElementByXpath("//li[@id='react-autowhatever-1-section-0-item-0']");
+    //      keyword.scrollAndWaitToClick(optionSearch);
+    //      keyword.waitForPageToLoad();
+    //  }
+    
 
 
 }
