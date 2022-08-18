@@ -3,6 +3,7 @@ package com.example.test.tests.KBBMOOCProject.CarResearchPagesTests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.example.test.core.datadriven.ZipcodeForCarResearch;
 import com.example.test.pages.KBBMOOCProject.CarResearchPages.ResearchNewAndUsedCarsPage;
 import com.example.test.pages.KBBMOOCProject.CarResearchPages.ReviewCarsPage;
 import com.example.test.tests.KBBMOOCProject.KbbBaseTest;
@@ -12,11 +13,13 @@ import com.example.test.tests.KBBMOOCProject.KbbBaseTest;
 public class ResearchNewAndUsedCarsPageTest extends KbbBaseTest {
     
     
-    @Test(testName = "Verify the Car Review Page should be displayed after click Get Reviews Button using valid data ")
-    public void VerifytheCarReviewPageshouldbedisplayedafterclickGetReviewsButtonusingvaliddata() throws InterruptedException{
+    @Test(testName = "Verify the Car Review Page should be displayed after click Get Reviews Button using valid data",dataProviderClass = ZipcodeForCarResearch.class, dataProvider = "zipcode")
+    public void VerifytheCarReviewPageshouldbedisplayedafterclickGetReviewsButtonusingvaliddata(String zipcode) throws InterruptedException{
         
        ResearchNewAndUsedCarsPage researchNewAndUsedCarsPage=new ResearchNewAndUsedCarsPage(driver);
        researchNewAndUsedCarsPage.actionSelectaVehicle();
+       researchNewAndUsedCarsPage.actionInputZipcodeCarResearchPage(zipcode);
+       researchNewAndUsedCarsPage.actionClickGetReviewBtnCarResearchPage(zipcode);
        ReviewCarsPage reviewPage=new ReviewCarsPage(driver);
        Assert.assertTrue(reviewPage.isgetPageTitle());
        Assert.assertTrue(reviewPage.isgetComponentTitle());
@@ -24,20 +27,5 @@ public class ResearchNewAndUsedCarsPageTest extends KbbBaseTest {
        Assert.assertTrue(reviewPage.isSeeCarsForSaleBtnDisplayed());
     }
 
-
-    @Test(testName = "Verify Select a different year in list from Year dropdown located on top of Car Name on Review Page to change to a different vehicle Page with the chosen year in Review Page")
-    public void verifySelectADifferentYearInListFromYearDropdownLocatedOnTopOfCarNameOnReviewPageToChangeToADifferentVehiclePageWithTheChosenYearinReviewPage() throws InterruptedException{
-        
-       ResearchNewAndUsedCarsPage researchNewAndUsedCarsPage=new ResearchNewAndUsedCarsPage(driver);
-       researchNewAndUsedCarsPage.actionSelectaCars();
-       ReviewCarsPage reviewPage=new ReviewCarsPage(driver);
-       reviewPage.actionClickDropdowChangeYear();
-       Assert.assertTrue(reviewPage.isgetPageTitle2019HondaCivic());
-       Assert.assertTrue(reviewPage.assertIsTitleUsed2019HondaCivic());
-       Assert.assertTrue(reviewPage.isBuildAndPriceBtnDisplayedHonda2019());
-       Assert.assertTrue(reviewPage.isSeeCarsForSaleBtnDisplayedHonda2019());
-       
-       
-    }
 }
     
