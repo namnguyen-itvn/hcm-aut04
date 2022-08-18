@@ -12,10 +12,10 @@ public class ReviewCarsPage extends KbbBasePage {
         // TODO Auto-generated constructor stub
     }
 
-    WebElement getReviewComponentTitles = keyword.findWebElementByXpath("//div[@class='css-1044rcd eds0yfe0']//h2[@class='css-1eagefn e148eed12']");
-    WebElement btnBuildAndPrice = keyword.findWebElementByXpath("//span[text()='Build & Price']");
-    WebElement btnSeeCarsForSale = keyword.findWebElementByXpath("//span[text()='See Cars for Sale']");
-    WebElement nameZipCodeExpected = keyword.findWebElementByXpath("//span[text()='Franklin, KY']");
+    private WebElement getReviewComponentTitles = keyword.findWebElementByXpath("//div[@class='css-1044rcd eds0yfe0']//h2[@class='css-1eagefn e148eed12']");
+    private WebElement btnBuildAndPrice = keyword.findWebElementByXpath("//span[text()='Build & Price']");
+    private WebElement btnSeeCarsForSale = keyword.findWebElementByXpath("//span[text()='See Cars for Sale']");
+    private WebElement nameZipCodeExpected = keyword.findWebElementByXpath("//span[text()='Franklin, KY']");
 
     public boolean isgetPageTitle(String expectedMessageText) {
         if (driver.getTitle().equals(expectedMessageText)) {
@@ -56,7 +56,7 @@ public class ReviewCarsPage extends KbbBasePage {
 
     public boolean assertTrueNameZipCodeDisplayed() {
 
-        if (btnSeeCarsForSale.isDisplayed()) {
+        if (nameZipCodeExpected.isDisplayed()) {
             return true;
         }
         return false;

@@ -13,11 +13,11 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
     }
 
     // #region
-    WebElement selectYears = keyword.findWebElementByXpath("//select[@placeholder='Year']");
-    WebElement selectMake = keyword.findWebElementByXpath("//div[@class='make']//select[@placeholder='Make']");
-    WebElement selectModel = keyword.findWebElementByXpath("//div[@class='model']//select[@placeholder='Model']");
-    WebElement inputZip = keyword.findWebElementByXpath("//input[@type='tel']");
-    WebElement btnGetReview = keyword.findWebElementByXpath("//form//button[@type='submit']");
+    private WebElement selectYears = keyword.findWebElementByXpath("//select[@placeholder='Year']");
+    private  WebElement selectMake = keyword.findWebElementByXpath("//div[@class='make']//select[@placeholder='Make']");
+    private WebElement selectModel = keyword.findWebElementByXpath("//div[@class='model']//select[@placeholder='Model']");
+    private WebElement inputZip = keyword.findWebElementByXpath("//input[@type='tel']");
+    private WebElement btnGetReview = keyword.findWebElementByXpath("//form//button[@type='submit']");
    
 
 
@@ -61,10 +61,7 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
         keyword.sendKeys(inputZip, zipbefore);
     }
 
-    /**
-     * 
-     * @throws InterruptedException
-     */
+    
     public void btnGetReviews() throws InterruptedException {
         keyword.scrollAndWaitToClick(btnGetReview);
     }

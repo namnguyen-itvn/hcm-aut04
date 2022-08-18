@@ -2,8 +2,6 @@ package com.example.test.tests.KBBMOOCProject;
 
 import com.example.test.tests.KBBMOOCProject.KbbBaseTest;
 
-import java.time.Year;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
