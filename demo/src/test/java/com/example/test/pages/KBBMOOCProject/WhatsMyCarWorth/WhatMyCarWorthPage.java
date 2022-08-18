@@ -7,19 +7,20 @@ public class WhatMyCarWorthPage extends KbbBasePage {
         super(driver);
         //TODO Auto-generated constructor stub
     }
-    WebElement txtVin = keyword.findWebElementByXpath("//div[@id='vinNumberInput']//input");
-    WebElement txtEmail = keyword.findWebElementByXpath("//div[@id='vinEmailInput']//input");
-    WebElement btnGo = keyword.findWebElementByXpath("//div[@class='css-3ok99w']//button");
-    public void sendVinTradeInandPrivatePartyValues(String vin) throws InterruptedException{
+    private WebElement txtVin = keyword.findWebElementByXpath("//div[@id='vinNumberInput']//input");
+    private WebElement txtEmail = keyword.findWebElementByXpath("//div[@id='vinEmailInput']//input");
+    private WebElement btnGo = keyword.findWebElementByXpath("//div[@class='css-3ok99w']//button");
+    
+    public void sendVinTradeInandPrivatePartyValues(String vin) {
         
         keyword.sendKeys(txtVin, vin);
     }
-    public void sendEmailTradeInandPrivatePartyValues(String email) throws InterruptedException{
-        
+    public void sendEmailTradeInandPrivatePartyValues(String email) {
+       
         keyword.sendKeys(txtEmail, email);
     }
-    public void clickOnGobutton() throws InterruptedException{
-       
+    public void clickOnGobutton() {
+        
         keyword.scrollAndWaitToClick(btnGo);
     }
     

@@ -9,16 +9,12 @@ public class ConditionPage extends KbbBasePage {
         super(driver);
         //TODO Auto-generated constructor stub
     }
-    WebElement itemFair = keyword.findWebElementByXpath("//div[@data-lean-auto='fair']");
-    WebElement btnNext = keyword.findWebElementByXpath("//button[@data-lean-auto='optionsNextButton']");
-    public void clickOnItemFair() throws InterruptedException{
-       
+    private  WebElement itemFair = keyword.findWebElementByXpath("//div[@data-lean-auto='fair']");
+    private  WebElement btnNext = keyword.findWebElementByXpath("//button[@data-lean-auto='optionsNextButton']");
+    public void clickOnItemFair() {
         keyword.scrollAndWaitToClick(itemFair);
-
     }
-    public void clickOnNextbutton() throws InterruptedException{
-      
+    public void clickOnNextbutton() {
         keyword.scrollAndWaitToClick(btnNext);
     }
-    
 }

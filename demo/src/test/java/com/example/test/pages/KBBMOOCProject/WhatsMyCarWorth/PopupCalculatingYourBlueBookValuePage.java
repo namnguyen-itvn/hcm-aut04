@@ -9,7 +9,7 @@ public class PopupCalculatingYourBlueBookValuePage extends KbbBasePage {
         super(driver);
         //TODO Auto-generated constructor stub
     }
-    WebElement titPopup = keyword.findWebElementByXpath("//div//h1[text()=' Calculating Your Blue Book® Value']");
+    private WebElement titPopup = keyword.findWebElementByXpath("//div//h1[text()=' Calculating Your Blue Book® Value']");
     public boolean checktitlePopupWhenUserClickOnFairbutton(){
         if (titPopup.isDisplayed()) {
             return true;
