@@ -23,8 +23,8 @@ public class ResearchNewAndUsedCarsPageTest extends KbbBaseTest {
      * @param URLReviewPage
      * @throws InterruptedException
      */
-    @Test(testName = "Verify click on highlight Zip Code link located under Car Name on Review Page and Input Zip Code To Change Vehicle Zip Code and displayed location", dataProviderClass = dataCarsResearchPage.class, dataProvider = "dataCarsResearchPage")
-    public void verifyClickOnHighlightZipCodeLinkLocatedUnderCarNameOnReviewPageAndInputZipCodeToChangeVehicleZipCodeAndDisplayedLocation(
+    @Test(testName = "Verify click on the write a review button in consumer review sectionon review page to bring user to write a review page", dataProviderClass = dataCarsResearchPage.class, dataProvider = "dataCarsResearchPage")
+    public void verifyClickOnTheWriteAReviewButtonInConsumerReviewSectionOnReviewPageToBringUserToWriteaReviewPage(
             String year, String make, String model, String zip, String expectedMessageText,
             String expectedMessageText1, String URLHondaCivicPage, String expectedMessageText2, String URLReviewPage)
             throws InterruptedException {

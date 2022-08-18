@@ -8,11 +8,10 @@ public class CarsWriteAReviewPage extends KbbBasePage {
 
     public CarsWriteAReviewPage(WebDriver driver) {
         super(driver);
-        //TODO Auto-generated constructor stub
+        // TODO Auto-generated constructor stub
     }
 
-
-    //#region
+    // #region
 
     public boolean isgetPageTitleWriteAReview(String expectedMessageText2) {
         if (driver.getTitle().equals(expectedMessageText2)) {
@@ -28,6 +27,6 @@ public class CarsWriteAReviewPage extends KbbBasePage {
         return false;
     }
 
-    //#endregion
-    
+    // #endregion
+
 }

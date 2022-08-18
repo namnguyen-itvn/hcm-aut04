@@ -12,8 +12,7 @@ public class CarsReviewPage extends KbbBasePage {
         // TODO Auto-generated constructor stub
     }
 
-    WebElement btnWriteAReview = keyword.findWebElementByXpath("//a[@data-analytics='consrev_lnk']");
-    WebElement btnWriteAReviewOnCarsReviewPage = keyword.findWebElementByXpath("//a[text()='Write a Review']");
+    private WebElement btnWriteAReview = keyword.findWebElementByXpath("//a[@data-analytics='consrev_lnk']");
 
     public boolean isSeeWriteAReviewBtnDisplayed() {
 

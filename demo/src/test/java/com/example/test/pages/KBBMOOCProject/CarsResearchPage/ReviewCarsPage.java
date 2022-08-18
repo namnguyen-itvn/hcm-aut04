@@ -12,6 +12,13 @@ public class ReviewCarsPage extends KbbBasePage {
         // TODO Auto-generated constructor stub
     }
 
+    // #region
+    private WebElement getReviewComponentTitles = keyword.findWebElementByXpath("//div[@class='css-1044rcd eds0yfe0']//h2[@class='css-1eagefn e148eed12']");
+    private WebElement btnBuildAndPrice = keyword.findWebElementByXpath("//span[text()='Build & Price']");
+    private WebElement btnSeeCarsForSale = keyword.findWebElementByXpath("//span[text()='See Cars for Sale']");
+
+    // #endregion
+
     public boolean isgetPageTitle(String expectedMessageText) {
         if (driver.getTitle().equals(expectedMessageText)) {
             return true;
@@ -26,17 +33,12 @@ public class ReviewCarsPage extends KbbBasePage {
         return false;
     }
 
-    WebElement getReviewComponentTitles = keyword
-            .findWebElementByXpath("//div[@class='css-1044rcd eds0yfe0']//h2[@class='css-1eagefn e148eed12']");
-
     public boolean isgetComponentTitles(String expectedMessageText1) {
         if (getReviewComponentTitles.getText().equals(expectedMessageText1)) {
             return true;
         }
         return false;
     }
-
-    WebElement btnBuildAndPrice = keyword.findWebElementByXpath("//span[text()='Build & Price']");
 
     public boolean isBuildAndPriceBtnDisplayed() {
 
@@ -46,8 +48,6 @@ public class ReviewCarsPage extends KbbBasePage {
         return false;
     }
 
-    WebElement btnSeeCarsForSale = keyword.findWebElementByXpath("//span[text()='See Cars for Sale']");
-
     public boolean isSeeCarsForSaleBtnDisplayed() {
 
         if (btnSeeCarsForSale.isDisplayed()) {
@@ -56,5 +56,4 @@ public class ReviewCarsPage extends KbbBasePage {
         return false;
     }
 
-    
 }
