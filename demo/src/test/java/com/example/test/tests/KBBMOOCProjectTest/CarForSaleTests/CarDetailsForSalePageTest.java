@@ -18,9 +18,8 @@ public class CarDetailsForSalePageTest extends KbbBaseTest{
         CarForSalePage carForSalePage = new CarForSalePage(driver);
         carForSalePage.ClickTextBoxSearch();
         carForSalePage.inputToTextBoxCarSearch(search);
-        // carForSalePage.SearchCar();
-        OptionSearchComponent optionSC= new OptionSearchComponent(driver);
-        optionSC.clickonOptionSearchCar();
+        OptionSearchComponent optionSearchCar= new OptionSearchComponent(driver);
+        optionSearchCar.clickonOptionSearchCar();
         CarSearchPage carSearchPage = new CarSearchPage(driver);
         carSearchPage.clickOnFirstCar();
         CarDetialsForSalePage carDetailPage = new CarDetialsForSalePage(driver);
