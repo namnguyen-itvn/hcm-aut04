@@ -13,7 +13,7 @@ import com.test.core.report.ReportListener;
 @Listeners(ReportListener.class)
 public class KBBBaseTest {
     public WebDriver driver;
-    String baseUrl = ReadConfigPropertyFile.getPropertyValue("url");
+    String baseUrl = ReadConfigPropertyFile.getPropertyValue("urlForWhatMyCarWorth");
     String browser = ReadConfigPropertyFile.getPropertyValue("browser");
     @BeforeTest
     public void setUp() throws Exception{
