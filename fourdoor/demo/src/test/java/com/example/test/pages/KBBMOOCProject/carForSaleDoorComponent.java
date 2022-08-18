@@ -22,8 +22,8 @@ public class carForSaleDoorComponent extends KbbBasePage{
         }return false;
     }
 
-    //*Cliclk Door  */
-    public void clickDoor() throws InterruptedException
+    //*Cliclk Door Filter*/
+    public void clickDoorFilter() throws InterruptedException
     {
         WebElement txtDoor = keyword.findWebElementByXpath("//span[@data-cmp='filterTitle']//span[text()='Doors']");
         keyword.scrollAndWaitToClick(txtDoor);
@@ -37,24 +37,25 @@ public class carForSaleDoorComponent extends KbbBasePage{
             return false; 
         }
         
-    //*Click Four Door */
-    public void clickFourDoor() throws InterruptedException
+    //*Click Checkbox Four Door */
+    public void clickCheckBoxFourDoor() throws InterruptedException
     {
         WebElement cbFourDoor = keyword.findWebElementByXpath("//div[@class='accordion-panel-content-wrapper padding-horizontal-4 collapse in']//div[text()='Four Door']");
         keyword.click(cbFourDoor);
     }
      //*Check Check Box Four Door Is Selected */
-    //  public boolean checkCheckBoxFourDoorIsSelected(){
-    //     WebElement checkCbFourDoor = keyword.findWebElementByXpath("//label[@class='checkbox']/input[@value='4']");
-    //     if(checkCbFourDoor.isSelected()){
-    //         return true;
-    //     }
-    //     return false;
+     public boolean checkCheckBoxFourDoorIsSelected()
+     {
+        WebElement checkCbFourDoor = keyword.findWebElementByXpath("//input[@value='4']/parent::label");
+        if(checkCbFourDoor.isSelected()){
+            return true;
+        }
+        return false;
   
         
-    // }
+    }
 
-     //*Get Text Four Door Result*/
+     //*Get Text Four Door Your Search*/
      public String getTextFourDoorResult(){
         WebElement txtFourDoor = keyword.findWebElementByXpath("//div[@class='chip btn input-chip display-inline-flex align-items-center margin-right-2 margin-bottom-2 text-bold']");
         keyword.scrollToElemtnIntoView(txtFourDoor);
@@ -62,8 +63,8 @@ public class carForSaleDoorComponent extends KbbBasePage{
         System.out.println(resultFourDoor);
         return resultFourDoor;
     }
-    //*Check Four Door */
-    public boolean checkFourDoor(String fourdoor){
+    //*Check Text Four Door Your Search*/
+    public boolean checkTextFourDoor(String fourdoor){
         if( getTextFourDoorResult().equals(fourdoor)){
             return true;
         }return false;

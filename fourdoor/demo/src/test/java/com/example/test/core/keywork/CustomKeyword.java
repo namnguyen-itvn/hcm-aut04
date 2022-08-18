@@ -14,10 +14,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class CustomKeyword {
     private WebDriver driver;
     private WebDriverWait wait;
+    private int timeOutInSeconds =20;
 
-    public CustomKeyword(WebDriver driver,WebDriverWait wait) {
+    public CustomKeyword(WebDriver driver) {
         this.driver = driver;
-        this.wait = wait;
+        this.wait = new WebDriverWait(driver, timeOutInSeconds );
     }
     
     /**
@@ -128,11 +129,10 @@ public class CustomKeyword {
     public CustomKeyword scrollAndWaitToClick(WebElement element) throws InterruptedException {
         try{
             scrollToElemtnIntoView(element);
-            Thread.sleep(5000);
             waitForElementDisplayed(element);
             element.click();
-            Thread.sleep(5000);
-            return new CustomKeyword(driver, wait);
+            Thread.sleep(4000);
+            return new CustomKeyword(driver);
         }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to click!");
         }
@@ -183,7 +183,7 @@ public class CustomKeyword {
         Actions actions = new Actions(this.driver);
         actions.moveToElement(element).build().perform();
         waitForElementIsDisplayed(element).click();
-        return new CustomKeyword(driver,wait);
+        return new CustomKeyword(driver);
     }
    
 }
