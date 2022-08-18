@@ -13,6 +13,14 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
     }
 
     // #region
+    WebElement selectYears = keyword.findWebElementByXpath("//select[@placeholder='Year']");
+    WebElement selectMake = keyword.findWebElementByXpath("//div[@class='make']//select[@placeholder='Make']");
+    WebElement selectModel = keyword.findWebElementByXpath("//div[@class='model']//select[@placeholder='Model']");
+    WebElement inputZip = keyword.findWebElementByXpath("//input[@type='tel']");
+    WebElement btnGetReview = keyword.findWebElementByXpath("//form//button[@type='submit']");
+   
+
+
 
     // #endregion
 
@@ -23,7 +31,6 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
      */
 
     public void selectYears(String year) throws InterruptedException {
-        WebElement selectYears = keyword.findWebElementByXpath("//select[@placeholder='Year']");
 
         keyword.selectElement(selectYears, year);
     }
@@ -33,7 +40,6 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
      * @throws InterruptedException
      */
     public void selectMake(String make) throws InterruptedException {
-        WebElement selectMake = keyword.findWebElementByXpath("//div[@class='make']//select[@placeholder='Make']");
         keyword.selectElement(selectMake, make);
 
     }
@@ -43,7 +49,6 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
      * @throws InterruptedException
      */
     public void selectModel(String model) throws InterruptedException {
-        WebElement selectModel = keyword.findWebElementByXpath("//div[@class='model']//select[@placeholder='Model']");
         keyword.selectElement(selectModel, model);
 
     }
@@ -53,7 +58,6 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
      * @throws InterruptedException
      */
     public void selectZipCode(String zipbefore) throws InterruptedException {
-        WebElement inputZip = keyword.findWebElementByXpath("//input[@type='tel']");
         keyword.sendKeys(inputZip, zipbefore);
     }
 
@@ -62,49 +66,10 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
      * @throws InterruptedException
      */
     public void btnGetReviews() throws InterruptedException {
-        WebElement btnGetReview = keyword.findWebElementByXpath("//form//button[@type='submit']");
         keyword.scrollAndWaitToClick(btnGetReview);
     }
 
     // #endregion
-    /**
-     * 
-     * @throws InterruptedException
-     */
-    public void btnChangeZipCode() throws InterruptedException {
-        WebElement btnChangeZipCode = keyword.findWebElementByXpath("//span[@data-automation='zipcode-link']");
-        keyword.scrollByToClick(btnChangeZipCode);
-
-    }
-
-    /**
-     * 
-     * @throws InterruptedException
-     */
-    public void deleteZipCode() throws InterruptedException {
-        WebElement sendKeyOnInputTextZipCodeDelete = keyword
-                .findWebElementByXpath("//input[@data-lean-auto='zip-input']");
-        sendKeyOnInputTextZipCodeDelete.clear();
-    }
-
-    /**
-     * 
-     * @throws InterruptedException
-     */
-    public void sendKeyZipCode(String zipafter) throws InterruptedException {
-        WebElement sendKeyOnInputTextZipCode = keyword.findWebElementByXpath("//input[@data-lean-auto='zip-input']");
-        keyword.sendKeys(sendKeyOnInputTextZipCode, zipafter);
-    }
-
-    /**
-     * 
-     * @throws InterruptedException
-     */
-    public void btnSaveZipCode() throws InterruptedException {
-        WebElement btnSaveZipCode = keyword.findWebElementByXpath("//button[@data-lean-auto='save-button']");
-        keyword.scrollAndWaitToClick(btnSaveZipCode);
-    }
-
-    // #region used car price quote
+    
 
 }

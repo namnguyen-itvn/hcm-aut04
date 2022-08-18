@@ -1,5 +1,6 @@
 package com.example.test.core.keywork;
 
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -95,6 +96,7 @@ public class CustomKeyword {
 
     public WebElement waitForElementDisplayed(WebElement element) {
         try {
+            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
             scrollToElemtnIntoView(element);
             driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
@@ -144,9 +146,17 @@ public class CustomKeyword {
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,500)");
             driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+<<<<<<< HEAD
             scrollToElemtnIntoView(element);
             waitForElementDisplayed(element);
             element.click();
+=======
+
+            scrollToElemtnIntoView(element);
+            waitForElementDisplayed(element);
+            element.click();
+
+>>>>>>> 9b74477624033ff94a72a5a4eb6121f10152de93
             return new CustomKeyword(driver, wait);
         } catch (WebDriverException ex) {
             throw new WebDriverException("Element not availabe to click!");
@@ -162,8 +172,13 @@ public class CustomKeyword {
      */
     public CustomKeyword waitToClick(WebElement element) throws InterruptedException {
         try {
-            waitForElementDisplayedWithoutScroll(element);
             driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+
+            waitForElementDisplayedWithoutScroll(element);
+<<<<<<< HEAD
+            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+=======
+>>>>>>> 9b74477624033ff94a72a5a4eb6121f10152de93
 
             element.click();
             return new CustomKeyword(driver, wait);
@@ -174,11 +189,16 @@ public class CustomKeyword {
 
     public void scrollByToClick(WebElement element) throws InterruptedException {
         try {
+            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,500)");
+<<<<<<< HEAD
             driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
             element.click();
             driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+=======
+            element.click();
+>>>>>>> 9b74477624033ff94a72a5a4eb6121f10152de93
         } catch (WebDriverException ex) {
             throw new WebDriverException("Element not availabe to input text!");
         }
