@@ -3,8 +3,9 @@ package com.example.test.tests.KBBMOOCProject.CarResearchPagesTests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-
+import com.example.test.core.datadriven.CarResearchZipCode;
 import com.example.test.pages.KBBMOOCProject.CarResearchPages.ResearchNewAndUsedCarsPage;
+import com.example.test.pages.KBBMOOCProject.CarResearchPages.ReviewCarsComponent;
 import com.example.test.pages.KBBMOOCProject.CarResearchPages.ReviewCarsDropdow;
 import com.example.test.pages.KBBMOOCProject.CarResearchPages.ReviewCarsPage;
 import com.example.test.tests.KBBMOOCProject.KbbBaseTest;
@@ -13,12 +14,12 @@ public class ResearchNewAndUsedCarsPageTest extends KbbBaseTest {
 
 
 
-    @Test( testName = "Verify Click on Change Vehicle link located under Car Name on Review Page and Input Data To Change to a different Vehicle Review Page")
-    public void verifyClickOnChangeVehicleLinkLocatedUnderCarNameonReviewPageAndInputDataToChangeToADifferentVehicleReviewPage() throws InterruptedException {
+    @Test( testName = "Verify Click on Change Vehicle link located under Car Name on Review Page and Input Data To Change to a different Vehicle Review Page",dataProviderClass = CarResearchZipCode.class,dataProvider = "inputzipcode")
+    public void verifyClickOnChangeVehicleLinkLocatedUnderCarNameonReviewPageAndInputDataToChangeToADifferentVehicleReviewPage(String zipcode) throws InterruptedException {
 
 
         ResearchNewAndUsedCarsPage researchNewAndUsedCarsPage = new ResearchNewAndUsedCarsPage(driver);
-        researchNewAndUsedCarsPage.actionSelectaCars();
+        researchNewAndUsedCarsPage.actionSelectaCars(zipcode);
         
         ReviewCarsPage reviewCarsPage = new ReviewCarsPage(driver);
         reviewCarsPage.clickonbtnChangeVehicle();
@@ -29,11 +30,11 @@ public class ResearchNewAndUsedCarsPageTest extends KbbBaseTest {
         reviewCarsDropdow.chooseTheModelOfChange();
         reviewCarsDropdow.clickOnBtnGo();
 
-        
-        Assert.assertTrue(reviewCarsPage.isgetPageTitle2020AudiA3());
-        Assert.assertTrue(reviewCarsPage.assertIsTitleUsed2020AudiA3());
-        Assert.assertTrue(reviewCarsPage.isBuildAndPriceBtnDisplayedAudi2020());
-        Assert.assertTrue(reviewCarsPage.isSeeCarsForSaleBtnDisplayedAudi2020());
+        ReviewCarsComponent reviewCarsComponent=new ReviewCarsComponent(driver);
+        Assert.assertTrue(reviewCarsComponent.isgetPageTitle2020AudiA3());
+        Assert.assertTrue(reviewCarsComponent.assertIsTitleUsed2020AudiA3());
+        Assert.assertTrue(reviewCarsComponent.isBuildAndPriceBtnDisplayedAudi2020());
+        Assert.assertTrue(reviewCarsComponent.isSeeCarsForSaleBtnDisplayedAudi2020());
         
 
        

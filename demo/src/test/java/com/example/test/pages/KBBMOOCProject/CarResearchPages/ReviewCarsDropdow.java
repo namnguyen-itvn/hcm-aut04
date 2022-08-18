@@ -11,26 +11,36 @@ public class ReviewCarsDropdow extends KbbBasePage {
         super(driver);
         //TODO Auto-generated constructor stub
     }
+   private WebElement selectYear = keyword.findWebElementByXpath("//div[@class='css-9a28ny e1c5k7mc1']//select[@placeholder='Year']");
+   private WebElement selectMake = keyword.findWebElementByXpath("//div[@class='css-9a28ny e1c5k7mc1']//select[@placeholder='Make']");
+   private WebElement selectModel = keyword.findWebElementByXpath(" //div[@class='css-9a28ny e1c5k7mc1']//select[@placeholder='Model']");
+   private WebElement btnGo = keyword.findWebElementByXpath("//form//button[@type='submit']");
+
+    
+  
+   
+    
     public void chooseTheYearOfChange() throws InterruptedException
     {
-        WebElement lbChangeYear = keyword.findWebElementByXpath("//*[@class='year']//option[@value='2020']");
-        keyword.scrollAndWaitToClick(lbChangeYear);
+        
+        keyword.selectElement(selectYear, "2020");
     }
 
     public void chooseTheMakeOfChange() throws InterruptedException
     {
-        WebElement lbChangeMake = keyword.findWebElementByXpath("//select[@aria-label='Make']/option[@value='Audi']");
-        keyword.scrollAndWaitToClick(lbChangeMake);
+        keyword.selectElement(selectMake, "Audi");
+
+        
     }
 
     public void chooseTheModelOfChange() throws InterruptedException
     {
-        WebElement lbChangeModel = keyword.findWebElementByXpath("//*[@class='model']//option[@value='A3']");
-        keyword.scrollAndWaitToClick(lbChangeModel);
+        keyword.selectElement(selectModel, "A3");
+
+ 
     }
     public void clickOnBtnGo() throws InterruptedException
     {
-        WebElement btnGo=keyword.findWebElementByXpath("//button[@data-automation='submit-button']");
         keyword.scrollAndWaitToClick(btnGo);
     }
     
