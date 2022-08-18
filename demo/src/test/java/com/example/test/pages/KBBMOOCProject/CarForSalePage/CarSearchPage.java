@@ -15,8 +15,7 @@ public class CarSearchPage extends KbbBasePage{
     
     //* Click Go to Car Details  */
     public void clickOnFirstCar() throws InterruptedException{
-        
-        keyword.scrollAndWaitToClick(btnfirstCar);
+        keyword.scrollAndWaitToClick(btnfirstCar);   
         keyword.waitForPageToLoad();
     }
 }

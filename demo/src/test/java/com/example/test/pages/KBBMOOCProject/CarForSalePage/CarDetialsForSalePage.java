@@ -38,7 +38,7 @@ public class CarDetialsForSalePage extends KbbBasePage{
 
     //*Fill User Information */
     public void fillInformation(String firstName,String lastName,String email,String phone) throws InterruptedException{
-
+        
         keyword.sendKeys(txtFirstName, firstName);
         keyword.sendKeys(txtLastName, lastName);
         keyword.sendKeys(txtEmailName, email);

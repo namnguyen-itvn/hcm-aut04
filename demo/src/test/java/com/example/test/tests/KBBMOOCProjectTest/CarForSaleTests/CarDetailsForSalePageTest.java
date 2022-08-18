@@ -8,6 +8,7 @@ import com.example.test.pages.KBBMOOCProject.CarForSalePage.CarDetialsForSalePag
 import com.example.test.pages.KBBMOOCProject.CarForSalePage.CarForSalePage;
 import com.example.test.pages.KBBMOOCProject.CarForSalePage.CarSearchPage;
 import com.example.test.pages.KBBMOOCProject.CarForSalePage.EmailConfirmComponent;
+import com.example.test.pages.KBBMOOCProject.CarForSalePage.OptionSearchComponent;
 import com.example.test.tests.KBBMOOCProjectTest.KbbBaseTest;
 
 
@@ -17,6 +18,8 @@ public class CarDetailsForSalePageTest extends KbbBaseTest{
         CarForSalePage carForSalePage = new CarForSalePage(driver);
         carForSalePage.ClickTextBoxSearch();
         carForSalePage.inputToTextBoxCarSearch(search);
+        OptionSearchComponent optionSC= new OptionSearchComponent(driver);
+        optionSC.SearchCar();
         CarSearchPage carSearchPage = new CarSearchPage(driver);
         carSearchPage.clickOnFirstCar();
         CarDetialsForSalePage carDetailPage = new CarDetialsForSalePage(driver);

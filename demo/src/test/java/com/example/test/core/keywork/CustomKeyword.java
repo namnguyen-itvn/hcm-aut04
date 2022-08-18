@@ -145,6 +145,7 @@ public class CustomKeyword {
             waitForElementDisplayed(element);
             ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,-100)");
             element.click();
+           
             return new CustomKeyword(driver, wait);
         }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to click!");
