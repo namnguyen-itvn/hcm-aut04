@@ -12,11 +12,12 @@ public class CarDetialsForSalePage extends KbbBasePage{
         //TODO Auto-generated constructor stub
     }
 
-    WebElement txtFirstName = keyword.findWebElementByXpath("//input[@id='firstName']");
-    WebElement txtLastName = keyword.findWebElementByXpath("//input[@id='lastName']");
-    WebElement txtEmailName = keyword.findWebElementByXpath("//input[@id='fromEmailAddress']");
-    WebElement txtPhoneName = keyword.findWebElementByXpath("//input[@id='phoneNumber']");
-    WebElement btnSentEmail = keyword.findWebElementByXpath("//button[text()='Send Email']");
+    private WebElement txtFirstName = keyword.findWebElementByXpath("//input[@id='firstName']");
+    private WebElement txtLastName = keyword.findWebElementByXpath("//input[@id='lastName']");
+    private WebElement txtEmailName = keyword.findWebElementByXpath("//input[@id='fromEmailAddress']");
+    private WebElement txtPhoneName = keyword.findWebElementByXpath("//input[@id='phoneNumber']");
+    private WebElement btnSentEmail = keyword.findWebElementByXpath("//button[text()='Send Email']");
+    private WebElement detailsPriceCar = keyword.findWebElementByXpath("//span[@class='first-price first-price-lg text-size-700']");
 
 
     //* Compera Title */
@@ -47,21 +48,14 @@ public class CarDetialsForSalePage extends KbbBasePage{
     public void clickOnSentEmailButton() throws InterruptedException{
 
         keyword.scrollAndWaitToClick(btnSentEmail);
+        keyword.waitForPageToLoad();
     }
-    //* Check Message Email Confirmation  */
-    public boolean checkEmailConfirmation(String confirmation){
-        WebElement msConfirmation = keyword.findWebElementByXpath("//div[@class='modal-body']//div");
-        String getConfirmation = msConfirmation.getText();
-        if(getConfirmation.equals(confirmation)){
-            return true;
-        }
-        return false;
-    }
+    
    
     //* Compare Price Car  */
        
     public boolean comparePrice(String price){
-        WebElement detailsPriceCar = keyword.findWebElementByXpath("//span[@class='first-price first-price-lg text-size-700']");
+        
         String strDetialsPriceCar = detailsPriceCar.getText();
         if(strDetialsPriceCar.equals(price)){
             return true;

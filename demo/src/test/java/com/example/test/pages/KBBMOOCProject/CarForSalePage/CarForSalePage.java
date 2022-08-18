@@ -1,7 +1,9 @@
 package com.example.test.pages.KBBMOOCProject.CarForSalePage;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import com.example.test.pages.KBBMOOCProject.KbbBasePage;
 
@@ -12,19 +14,21 @@ public class CarForSalePage extends KbbBasePage{
         //TODO Auto-generated constructor stub
     }
     
-    WebElement txtSearch = keyword.findWebElementByXpath("//div[@class='margin-bottom-3']//input");
+    private WebElement txtSearch = keyword.findWebElementByXpath("//div[@class='margin-bottom-3']//input");
+
 
     //* Input  Car Search  */
-    public  void inputToTextBoxCarSearch(String search) throws InterruptedException{
+    public  void ClickTextBoxSearch() throws InterruptedException{
         keyword.scrollAndWaitToClick(txtSearch);
-        keyword.sendKeys(txtSearch, search);  
-       
+        
     }
 
-       //*  Search Car  */
-    public  void ClickOnOptionCarSearch() throws InterruptedException{
-       WebElement optionSearch = keyword.findWebElementByXpath("//li[@id='react-autowhatever-1-section-0-item-0']");
-        keyword.scrollAndWaitToClick(optionSearch);
+    public  void inputToTextBoxCarSearch(String search) throws InterruptedException{
+        Actions action = new Actions(driver);
+        action.sendKeys(txtSearch,search).build().perform();
+        action.sendKeys(Keys.ENTER).build().perform();
+        keyword.waitForPageToLoad();
+       
     }
 
 

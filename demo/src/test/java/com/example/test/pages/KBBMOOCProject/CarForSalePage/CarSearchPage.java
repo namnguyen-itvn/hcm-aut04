@@ -11,11 +11,12 @@ public class CarSearchPage extends KbbBasePage{
         super(driver);
         //TODO Auto-generated constructor stub
     }
-    WebElement btnfirstCar = keyword.findWebElementByXpath("//div[@id='500114042']");
+    private WebElement btnfirstCar = keyword.findWebElementByXpath("//div[@id='500114042']");
     
     //* Click Go to Car Details  */
     public void clickOnFirstCar() throws InterruptedException{
         
         keyword.scrollAndWaitToClick(btnfirstCar);
+        keyword.waitForPageToLoad();
     }
 }
