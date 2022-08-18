@@ -12,7 +12,7 @@ public class ReviewCarsPage extends KbbBasePage {
         // TODO Auto-generated constructor stub
     }
 
-    WebElement btnOtherCompactSedans = keyword.findWebElementByXpath("//a[@href='/hyundai/elantra/']");
+    private WebElement btnOtherCompactSedans = keyword.findWebElementByXpath("//a[@href='/hyundai/elantra/']");
 
     public void clickfirstOtherCompactSedans() throws InterruptedException {
 
