@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.example.test.pages.KBBMOOCProject.CarForSalePage;
+import com.example.test.pages.KBBMOOCProject.CarForSalePageGetMilesFromFirstResult;
 import com.example.test.tests.KBBMOOCProject.KbbBaseTest;
 
 public class CarForSaleSearchLocationComponent extends KbbBaseTest{
@@ -16,6 +17,8 @@ public class CarForSaleSearchLocationComponent extends KbbBaseTest{
 
         cs.clickMileageTabInCarForSalePage();
         Assert.assertTrue(cs.checkTextBoxInMileageTab());
-        Assert.assertTrue(cs.comparasionMilesBetweenCheckboxAndResult());
+        
+        CarForSalePageGetMilesFromFirstResult csm = new CarForSalePageGetMilesFromFirstResult(driver);
+        Assert.assertTrue(csm.comparasionMilesBetweenCheckboxAndResult());
     }
 }
