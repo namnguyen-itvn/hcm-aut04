@@ -66,7 +66,7 @@ public class WhatsMyCarWorthMakeModelOptionPage extends KBBBasePage{
      * click On Go button to navigate to CategoryAndStypePage
      */
     public void clickOnMakeModelGoButton() {
-        keyword.scrollAndWaitToPageLoad(btnMakeModelGo);
+        keyword.scrollAndWaitForPageLoad(btnMakeModelGo);
     }
     //#endregion
 }

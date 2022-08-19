@@ -21,7 +21,7 @@ public class OptionsExtendPage extends KBBBasePage{
         keyword.scrollAndWaitToClick(colorRed);
     }
     public void clickOnNextButton() {
-        keyword.scrollAndWaitToPageLoad(btnNext);
+        keyword.scrollAndWaitForPageLoad(btnNext);
     }
     //#endregion
 }

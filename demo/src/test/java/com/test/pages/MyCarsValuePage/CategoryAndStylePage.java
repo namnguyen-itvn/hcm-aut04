@@ -21,7 +21,7 @@ public class CategoryAndStylePage extends KBBBasePage{
         keyword.scrollAndWaitToClick(optHatchback);
     }
     public void clickOnMakeModelNextButton() {
-        keyword.scrollAndWaitToPageLoad(btnMakeModelNext);
+        keyword.scrollAndWaitForPageLoad(btnMakeModelNext);
     }
     //#endregion
 }

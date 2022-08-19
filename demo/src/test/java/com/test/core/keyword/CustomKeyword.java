@@ -223,7 +223,7 @@ public class CustomKeyword {
      * @return
      * @throws InterruptedException
      */
-    public CustomKeyword scrollAndWaitToPageLoad(WebElement element){
+    public CustomKeyword scrollAndWaitForPageLoad(WebElement element){
         try{
             scrollToElemtnIntoView(element);
             waitForElementDisplayed(element);

@@ -23,6 +23,6 @@ public class ModificationQuestionComponentInOptionsPage extends KBBBasePage{
         keyword.scrollAndWaitToClick(withoutModifications);
     }
     public void clickOnNextButton() throws InterruptedException {
-        keyword.scrollAndWaitToPageLoad(btnNext);
+        keyword.scrollAndWaitForPageLoad(btnNext);
     }
 }
