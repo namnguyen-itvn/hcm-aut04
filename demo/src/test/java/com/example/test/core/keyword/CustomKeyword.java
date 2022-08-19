@@ -197,5 +197,50 @@ public class CustomKeyword {
             throw new WebDriverException("Element not availabe to input text!");
         }
     }
+    /**
+     * 
+     * @param element
+     * @param text
+     * @throws InterruptedException
+     */
+    public void sendKeyAndWait(WebElement element, String text){
+        try{
+            waitForElementIsDisplayed(element).sendKeys(text);
+            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        }catch(WebDriverException ex){
+            throw new WebDriverException("Element not availabe to input text!");
+        }
+    }
+    /**
+     * Wait to element visible
+     * 
+     * @param element to check display and clickable 
+     * @return element to be located
+     */
+    public WebElement waitForElementIsDisplayed(WebElement element){
+        try {
+            return wait.until(ExpectedConditions.elementToBeClickable(element));
+        } catch (WebDriverException e) {
+            throw new WebDriverException("Element is not displayed ");
+        }
+    }
+    /**
+     * 
+     * @param element
+     * @return
+     * @throws InterruptedException
+     */
+    public CustomKeyword scrollAndWaitToPageLoad(WebElement element){
+        try{
+            scrollToElemtnIntoView(element);
+            waitForElementDisplayed(element);
+            element.click();
+            driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
+            return new CustomKeyword(driver, wait);
+        }catch(WebDriverException ex){
+            throw new WebDriverException("Element not availabe to click!");
+        }
+    }
+
 }
 

@@ -25,7 +25,7 @@ public class WhatsMyCarWorthPage extends KbbBasePage{
         keyword.sendKeys(txtEmail, email);
     }
     public void clickOnVINGoButton()  {
-        keyword.scrollAndWaitToClick(btnGo);
+        keyword.scrollAndWaitToPageLoad(btnGo);
     }
     //#endregion
 }
