@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.example.test.core.datadriven.CarResearch;
+
 import com.example.test.pages.CompareTitleCar;
 import com.example.test.pages.KBBMOOCProject.ButtonCarChevroletCorvette;
 import com.example.test.pages.KBBMOOCProject.ButtonStyles;
@@ -15,6 +16,8 @@ public class CarRearchTest extends KbbBaseTest {
     public void VerifyCarsReviewPageTitleIsDisplayWhenUserClickOnItemCarNameAsChevroletCorvetteOfComponentOtherCompactCoupesverifyProductsPageTitleWhenLoginSuccess(String zipcode) throws InterruptedException{
         SearchCarPage CarSearch = new SearchCarPage(driver);
         CarSearch.SelectCars(zipcode);
+
+   
         ButtonStyles buttonStyles =new ButtonStyles(driver);
         buttonStyles.clickOnButtonStyles();
         ButtonCarChevroletCorvette buttonCarchevloca=new ButtonCarChevroletCorvette(driver);
