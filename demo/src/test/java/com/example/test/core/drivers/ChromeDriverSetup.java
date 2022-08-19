@@ -4,7 +4,6 @@ import java.io.File;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -31,9 +30,11 @@ public class ChromeDriverSetup implements SeleniumDriver {
             this.capabilities = DesiredCapabilities.chrome();
             this.capabilities.setJavascriptEnabled(true);
             this.capabilities.setAcceptInsecureCerts(true);
+            
         }
         return capabilities;
     }
+
 
     @Override
     public WebDriver createDriver(){
