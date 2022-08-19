@@ -4,8 +4,8 @@ package com.example.test.tests.KBBMOOCProject.CarForSaleTests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.example.test.pages.KBBMOOCProject.CarForSalePage;
-import com.example.test.pages.KBBMOOCProject.CarForSalePageGetMilesFromFirstResult;
+import com.example.test.pages.KBBMOOCProject.CarForSalePages.CarForSalePage;
+import com.example.test.pages.KBBMOOCProject.CarForSalePages.CarForSalePageGetMilesFromFirstResult;
 import com.example.test.tests.KBBMOOCProject.KbbBaseTest;
 
 public class CarForSaleSearchLocationComponent extends KbbBaseTest{
