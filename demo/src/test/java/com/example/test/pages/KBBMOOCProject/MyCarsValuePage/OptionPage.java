@@ -24,6 +24,4 @@ public class OptionPage extends KbbBasePage {
 
 
 
-
-
 }
