@@ -40,6 +40,7 @@ public class CustomKeyword {
      */
     public WebElement findWebElementByXpath(String locator){
         try{
+            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
             scrollToElemtnIntoView(driver.findElement(By.xpath(locator)));
             return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
         } catch(WebDriverException ex ){
@@ -80,10 +81,13 @@ public class CustomKeyword {
      */
     public void scrollToElemtnIntoView(WebElement element){
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+
     }
 
     public WebElement waitForElementDisplayed(WebElement element) {
         try{
+            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
             scrollToElemtnIntoView(element);
             return wait.until(ExpectedConditions.elementToBeClickable(element));
         } catch(WebDriverException ex){
@@ -109,6 +113,7 @@ public class CustomKeyword {
      */
     public void sendKeys(WebElement element, String text){
         try{
+            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
             waitForElementDisplayed(element).sendKeys(text);
         }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to input text!");
@@ -125,6 +130,7 @@ public class CustomKeyword {
             scrollToElemtnIntoView(element);
             waitForElementDisplayed(element);
             element.click();
+            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
             return new CustomKeyword(driver, wait);
         }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to click!");
@@ -141,6 +147,7 @@ public class CustomKeyword {
         try{
             waitForElementDisplayedWithoutScroll(element);
             element.click();
+            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
             return new CustomKeyword(driver, wait);
         }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to click!");
