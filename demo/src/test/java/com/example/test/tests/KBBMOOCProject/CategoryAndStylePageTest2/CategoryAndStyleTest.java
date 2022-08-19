@@ -14,7 +14,6 @@ import com.example.test.pages.KBBMOOCProject.CategoryAndStylePage2.MyCarValuePag
 import com.example.test.pages.KBBMOOCProject.CategoryAndStylePage2.NextButtonComponent;
 import com.example.test.pages.KBBMOOCProject.CategoryAndStylePage2.OptionPage;
 import com.example.test.pages.KBBMOOCProject.CategoryAndStylePage2.YearComponent;
-import com.example.test.tests.KBBMOOCProject.KbbBaseTest;
 
 public class CategoryAndStyleTest extends KbbBaseTest {
     @Test(testName = "Verify Option Page is displayed after choosing items from section Category and section Style", dataProviderClass = dataJsonforStyleAndCategoryPage2.class, dataProvider = "dataCategoryAndStyle")

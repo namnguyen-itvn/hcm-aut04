@@ -3,8 +3,6 @@ package com.example.test.pages.KBBMOOCProject.CategoryAndStylePage2;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import com.example.test.pages.KBBMOOCProject.KbbBasePage;
-
 public class ChooseaStyleComponent extends KbbBasePage {
 
     public ChooseaStyleComponent(WebDriver driver) {
