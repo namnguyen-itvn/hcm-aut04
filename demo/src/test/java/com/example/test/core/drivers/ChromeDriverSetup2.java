@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class ChromeDriverSetup1 implements SeleniumDriver {
+public class ChromeDriverSetup2 implements SeleniumDriver {
 
     private ChromeOptions options;
     private DesiredCapabilities capabilities;
