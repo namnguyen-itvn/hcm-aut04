@@ -9,8 +9,8 @@ import com.example.test.core.helper.ReadConfigPropertyFileconfigswhatmycarworth;
 public class KbbBaseTest {
     
     public WebDriver driver;
-    //String pathChromeDriver = "src\\test\\java\\com\\example\\test\\resources\\driver\\chromedriver.exe";
-    String pathChromeDriver = "src//test//java//com//example//test//resources//driver//chromedriver";
+    String pathChromeDriver = "src\\test\\java\\com\\example\\test\\resources\\driver\\chromedriver.exe";
+    //String pathChromeDriver = "src//test//java//com//example//test//resources//driver//chromedriver";
     String baseUrl = ReadConfigPropertyFileconfigswhatmycarworth.getPropertyValue("urlforwhatmycarworth");
     String browser = ReadConfigPropertyFileconfigswhatmycarworth.getPropertyValue("browser");
     

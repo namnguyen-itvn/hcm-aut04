@@ -5,8 +5,8 @@ import java.util.Properties;
 
 public class ReadConfigPropertyFileconfigswhatmycarworth {
 
-    //public static String propertiesFilePath ="src\\test\\java\\com\\example\\test\\core\\configswhatmycarworth.properties";
-    public static String propertiesFilePath ="src//test//java//com//example//test//core//configswhatmycarworth.properties";
+    public static String propertiesFilePath ="src\\test\\java\\com\\example\\test\\core\\configswhatmycarworth.properties";
+    //public static String propertiesFilePath ="src//test//java//com//example//test//core//configswhatmycarworth.properties";
     static String projectPath = System.getProperty("user.dir") + "\\";
     public static String getPropertyValue(String atrName){
         String value = null;
