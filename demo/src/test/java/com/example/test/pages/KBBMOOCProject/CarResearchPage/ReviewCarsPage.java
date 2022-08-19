@@ -9,17 +9,12 @@ public class ReviewCarsPage extends KbbBasePage {
         super(driver);
         // TODO Auto-generated constructor stub
     }
-
-   private WebElement btnSeeMoreCompactSedans = keyword.findWebElementByXpath("//span[text()='See More Compact Sedans']");
-
-    public void clickOnSeeMore() throws InterruptedException {
-
-        keyword.scrollAndWaitToClick(btnSeeMoreCompactSedans);
-    }
-    //#region Declare web object
+//#region Declare web object
     private WebElement getReviewComponentTitle = keyword.findWebElementByXpath("//div[@class='css-1044rcd eds0yfe0']//h2[@class='css-1eagefn e148eed12']");
     private WebElement btnBuildAndPrice = keyword.findWebElementByXpath("//span[text()='Build & Price']");
     private WebElement btnSeeCarsForSale = keyword.findWebElementByXpath("//span[text()='See Cars for Sale']");
+    private WebElement btnOtherCompactSedans = keyword.findWebElementByXpath("//a[@href='/hyundai/elantra/']");
+
     //#endregion
 
     //#region page action
@@ -55,5 +50,11 @@ public class ReviewCarsPage extends KbbBasePage {
         }
             return false;
         }
-    //#endregion
+    public void clickfirstOtherCompactSedans() throws InterruptedException {
+
+        keyword.scrollAndWaitToClick(btnOtherCompactSedans);
+    }
+    //#endregion    
+    
+    
 }
