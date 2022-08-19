@@ -28,4 +28,19 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
         keyword.scrollAndWaitToClick(btnGetReview);
     }
 
+
+
+//#region page action
+    public void actionSelectaVehicle() throws InterruptedException{
+        keyword.selectElement(selectYear,"2018");
+        keyword.selectElement(selectMake,"Honda");
+        keyword.selectElement(selectModel,"Civic");
+    }
+    public void actionInputZipcodeCarResearchPage(String zipcode) {
+        keyword.sendKeys(inputZip,zipcode);
+    }
+    public void actionClickGetReviewBtnCarResearchPage() throws InterruptedException {
+        keyword.waitToClick(btnGetReview);
+    }
+//#endregion
 }
