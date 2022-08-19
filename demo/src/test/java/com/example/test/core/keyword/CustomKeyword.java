@@ -1,5 +1,7 @@
 package com.example.test.core.keyword;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -124,6 +126,8 @@ public class CustomKeyword {
             scrollToElemtnIntoView(element);
             waitForElementDisplayed(element);
             element.click();
+            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+
             return new CustomKeyword(driver, wait);
         }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to click!");
@@ -140,6 +144,8 @@ public class CustomKeyword {
         try{
             waitForElementDisplayedWithoutScroll(element);
             element.click();
+            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+
             return new CustomKeyword(driver, wait);
         }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to click!");
@@ -151,6 +157,8 @@ public class CustomKeyword {
             js.executeScript("window.scrollBy(0,500)");
             waitForElementDisplayed(element);
             element.click();
+            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+
             }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to input text!");
         }
