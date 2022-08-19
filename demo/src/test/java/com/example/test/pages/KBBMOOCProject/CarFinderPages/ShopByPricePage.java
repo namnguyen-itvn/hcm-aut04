@@ -24,6 +24,7 @@ public class ShopByPricePage extends KbbBasePage {
     public void actionClickSeeResultForShopByPrice() {
         WebElement btnSeeResult = keyword.findWebElementByXpath("//div//a[@class='css-14twj67 e1uau9z02']");  
         keyword.scrollAndWaitToClick(btnSeeResult);
+
     }
  
 
