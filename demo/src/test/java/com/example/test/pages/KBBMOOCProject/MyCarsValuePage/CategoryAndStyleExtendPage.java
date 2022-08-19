@@ -28,7 +28,7 @@ public class CategoryAndStyleExtendPage extends KbbBasePage{
         keyword.sendKeys(txtZipCode, zip);
     }
     public void clickOnNextButton() {
-        keyword.scrollAndWaitToClick(btnNext);
+        keyword.scrollAndWaitToPageLoad(btnNext);
     }
     //#endregion
 }

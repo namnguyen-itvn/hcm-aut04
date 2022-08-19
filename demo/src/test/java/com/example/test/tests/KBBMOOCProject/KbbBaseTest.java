@@ -12,6 +12,7 @@ public class KbbBaseTest {
     public WebDriver driver;
     public CustomKeyword keyword;
     public String baseUrl = ReadConfigPropertyFile.getPropertyValue("url");
+    public String urlForWhatMyCarWorth = ReadConfigPropertyFile.getPropertyValue("urlForWhatMyCarWorth");
     public String browser = ReadConfigPropertyFile.getPropertyValue("browser");
     
     @BeforeTest
