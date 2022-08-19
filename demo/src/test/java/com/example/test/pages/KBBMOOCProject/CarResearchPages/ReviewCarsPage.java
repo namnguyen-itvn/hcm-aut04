@@ -13,13 +13,11 @@ public class ReviewCarsPage  extends KbbBasePage{
     }
 
     
-
        private WebElement lbYearChange = keyword.findWebElementByXpath("//select/option[text()='2019']");
         public void actionClickDropdowChangeYear() throws InterruptedException {
             keyword.scrollAndWaitToClick(lbYearChange);
             
         }
 
-        
 }
 

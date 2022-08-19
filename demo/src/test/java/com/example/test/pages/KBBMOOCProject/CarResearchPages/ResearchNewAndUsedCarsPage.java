@@ -18,7 +18,6 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
  private   WebElement selectModel = keyword.findWebElementByXpath("//div[@class='model']//select[@placeholder='Model']");
    private WebElement inputZip = keyword.findWebElementByXpath("//input[@type='tel']");
   private  WebElement btnGetReview = keyword.findWebElementByXpath("//form//button[@type='submit']");
-
     
     public void actionSelectaCars(String zipcode) throws InterruptedException{
           
@@ -28,5 +27,5 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
         keyword.sendKeys(inputZip, zipcode);
         keyword.scrollAndWaitToClick(btnGetReview);
     }
-   
+
 }
