@@ -1,29 +1,31 @@
 package com.example.test.pages.KBBMOOCProject;
 
 import org.openqa.selenium.WebDriver;
-
 public class CompareTitleCar extends KbbBasePage {
-
+       /**
+     * @param driver
+     */
     public CompareTitleCar(WebDriver driver) {
         super(driver);
         //TODO Auto-generated constructor stub
     }
-    String Titlee = driver.getTitle();
 
-    String MessageTitleUsed2020HondaCivicLXCoupe2D="Used 2020 Honda Civic LX Coupe 2D Prices | Kelley Blue Book";
+    String Title = driver.getTitle();
+
+    String MessageTitle="2023 Chevy Corvette Reviews, Pricing & Specs | Kelley Blue Book";
     public boolean isgetPageTitle(){
-        if(Titlee.equals(MessageTitleUsed2020HondaCivicLXCoupe2D)){
+        if(Title.equals(MessageTitle)){
             return true;
         }
         return false;
     }
-    String TitleeUrl = driver.getCurrentUrl();
+    String TitleUrl = driver.getCurrentUrl();
 
-    String UrlUsed2020HondaCivicLXCoupe2D="https://staging.kbb.com/honda/civic/2020/lx-coupe-2d/";
+    String Url="https://staging.kbb.com/chevrolet/corvette/";
     public boolean isgetPageTitleUrl(){
-        if(TitleeUrl.equals(UrlUsed2020HondaCivicLXCoupe2D)){
+        if(TitleUrl.equals(Url)){
             return true;
         }
         return false;
-    }
+    } 
 }
