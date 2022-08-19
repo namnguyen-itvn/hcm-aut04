@@ -15,46 +15,21 @@ public class CustomKeyword {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    public CustomKeyword(WebDriver driver, WebDriverWait wait) {
+    public CustomKeyword(WebDriver driver,WebDriverWait wait) {
+
         this.driver = driver;
         this.wait = wait;
     }
     
-    /**
-     * Keyword for open url with checking if the url valid or not
-     * @param baseUrl
-     * @throws Exception
-     */
-    public void openUrl(String baseUrl) throws Exception {
-        if(baseUrl.startsWith("http://") || baseUrl.startsWith("https://"))
-        {
-            driver.get(baseUrl);
-        }
-        throw new Exception("url not start with http or https. Double check baseUrl");
-    }
-
-    /**
-     * Scroll to element and find element by xpath
-     * @param locator
-     * @return
-     */
-    public WebElement findWebElementByXpath(String locator){
-        try{
-            scrollToElemtnIntoView(driver.findElement(By.xpath(locator)));
-            return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
-        } catch(WebDriverException ex ){
-            throw new WebDriverException("Element not found!");
-        }
-    }
-    /**
+        /**
      * Scroll to element and find element by classname
-     * @param locator
+     * @param element
      * @return
      */
-    public WebElement findWebElementByClassName(String locator){
+    public WebElement findWebElementByClassName(String element){
         try{
-            scrollToElemtnIntoView(driver.findElement(By.className(locator)));
-            return wait.until(ExpectedConditions.presenceOfElementLocated(By.className(locator)));
+            scrollToElemtnIntoView(driver.findElement(By.className(element)));
+            return wait.until(ExpectedConditions.presenceOfElementLocated(By.className(element)));
         } catch(WebDriverException ex ){
             throw new WebDriverException("Element not found!");
         }
@@ -65,15 +40,45 @@ public class CustomKeyword {
      * @param locator
      * @return
      */
-    public WebElement findWebElementByCSS(String locator){
+    public WebElement findWebElementByCSS(String element){
         try{
-            scrollToElemtnIntoView(driver.findElement(By.cssSelector(locator)));
-            return wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(locator)));
+            scrollToElemtnIntoView(driver.findElement(By.cssSelector(element)));
+            return wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(element)));
         } catch(WebDriverException ex ){
             throw new WebDriverException("Element not found!");
         }
     }
+    /**
+     * Keyword for open url with checking if the url valid or not
+     * @param baseUrl
+     * @throws Exception
+     */
 
+    public void openUrl(String baseUrl) throws Exception {
+        if(baseUrl.startsWith("http://") || baseUrl.startsWith("https://"))
+        {
+            driver.get(baseUrl);
+        }
+
+        throw new Exception("url not start with http or http. Double check baseUrl");
+    }
+
+
+    /**
+     * Scroll to element and find element by xpath
+     * @param locator
+     * @return
+     */
+    public WebElement findWebElementByXpath(String element){
+        try{
+            scrollToElemtnIntoView(driver.findElement(By.xpath(element)));
+            return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(element)));
+
+        } catch(WebDriverException ex ){
+            throw new WebDriverException("Element not found!");
+        }
+    }
+    
     /**
      * Scroll to element into View
      * @param element
@@ -92,6 +97,36 @@ public class CustomKeyword {
         
     }
 
+
+    /**
+     * Wait for Element displayed and input text
+     * @param element
+     * @param text
+     * @throws InterruptedException
+     */
+    public void sendKeys(WebElement element, String text) throws InterruptedException{
+        try{
+            waitForElementDisplayed(element).sendKeys(text);
+        }catch(WebDriverException ex){
+            throw new WebDriverException("Element not availabe to input text!");
+        }
+    }
+
+
+    /**
+     * Wait for Element displayed and input text
+     * @param element
+     * @param text
+     * @throws InterruptedException
+     */
+    public void sendKeysAndWait(WebElement element, String text) throws InterruptedException{
+        try{
+            waitForElementDisplayed(element).sendKeys(text);
+        }catch(WebDriverException ex){
+            throw new WebDriverException("Element not availabe to input text!");
+        }
+    }
+   
     //*wait without scroll */
     public WebElement waitForElementDisplayedWithoutScroll(WebElement element) throws InterruptedException {
         try{
@@ -103,33 +138,31 @@ public class CustomKeyword {
     }
 
     /**
-     * Wait for Element displayed and input text
-     * @param element
-     * @param text
-     */
-    public void sendKeys(WebElement element, String text){
-        try{
-            waitForElementDisplayed(element).sendKeys(text);
-        }catch(WebDriverException ex){
-            throw new WebDriverException("Element not availabe to input text!");
-        }
-    }
-
-    /**
      * Scroll And Wait To Click
      * @param element
      * @return
+     * @throws InterruptedException
      */
-    public CustomKeyword scrollAndWaitToClick(WebElement element) {
+    public CustomKeyword scrollAndWaitToClick(WebElement element)  {
         try{
             scrollToElemtnIntoView(element);
             waitForElementDisplayed(element);
+            ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,-100)");
             element.click();
             return new CustomKeyword(driver, wait);
         }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to click!");
         }
     }
+
+
+   
+
+    public void waitForPageToLoad() throws InterruptedException
+    {
+        Thread.sleep(5000);
+    }
+
 
     /**
      * Wait To Click
@@ -194,5 +227,7 @@ public class CustomKeyword {
         }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to input text!");
         }
+
     }
+  
 }

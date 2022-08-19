@@ -194,4 +194,8 @@ public class CustomKeyword {
             throw new WebDriverException("Element not availabe to input text!");
         }
     }
+    public void waitForPageToLoad() throws InterruptedException
+    {
+        Thread.sleep(5000);
+    }
 }
