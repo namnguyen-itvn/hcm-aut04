@@ -10,8 +10,7 @@ public class SearchCarPage  extends KbbBasePage{
     public SearchCarPage(WebDriver driver) {
         super(driver);
     }
-   
- 
+
 WebElement selectYear = keyword.findWebElementByXpath("//select[@placeholder='Year']");
     WebElement selectMake = keyword.findWebElementByXpath("//div[@class='make']//select[@placeholder='Make']");
     WebElement selectModel = keyword.findWebElementByXpath("//div[@class='model']//select[@placeholder='Model']");
@@ -20,7 +19,9 @@ WebElement selectYear = keyword.findWebElementByXpath("//select[@placeholder='Ye
   
     
     
+
     public void SelectCars(String zipcode) throws InterruptedException{
+
           
         keyword.selectElement(selectYear, "2020");
         keyword.selectElement(selectMake, "Honda");
@@ -30,4 +31,6 @@ WebElement selectYear = keyword.findWebElementByXpath("//select[@placeholder='Ye
         
         
     }
+
 }
+

@@ -9,4 +9,6 @@ public class CarResearchPages {
     public static Object Test1 () {
         return JsonHelper.ReadJsonFromFile("src\\test\\java\\com\\example\\test\\core\\resources\\datas\\CarResearchPages.json");       
     };
+
+
 }
