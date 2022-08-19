@@ -3,16 +3,16 @@ package com.example.test.pages.KBBMOOCProject.CategoryAndStylePage2;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.example.test.core.keyword.CustomKeywordForCategoryAndStylePage;
+import com.example.test.core.keyword.CustomKeywordForCategoryAndStylePage2;
 
 public class KbbBasePage {
     public WebDriver driver;
     public WebDriverWait wait;
-    public CustomKeywordForCategoryAndStylePage keyword;
+    public CustomKeywordForCategoryAndStylePage2 keyword;
     public KbbBasePage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, 20);
-        this.keyword = new CustomKeywordForCategoryAndStylePage(driver, wait);
+        this.keyword = new CustomKeywordForCategoryAndStylePage2(driver, wait);
         driver.manage().window().maximize();
     }
     

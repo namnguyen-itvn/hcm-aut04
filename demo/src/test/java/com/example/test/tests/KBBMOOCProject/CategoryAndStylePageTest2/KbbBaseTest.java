@@ -5,12 +5,12 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import com.example.test.core.drivers.DriverManager;
 import com.example.test.core.helper.ReadConfigPropertyFileCategoryAndStylePage2;
-import com.example.test.core.keyword.CustomKeywordForCategoryAndStylePage;
+import com.example.test.core.keyword.CustomKeywordForCategoryAndStylePage2;
 
 public class KbbBaseTest {
     
     public WebDriver driver;
-    public CustomKeywordForCategoryAndStylePage keyword;
+    public CustomKeywordForCategoryAndStylePage2 keyword;
     public String pathChromeDriver = "src\\test\\java\\com\\example\\test\\resources\\driver\\chromedriver.exe";
     public String baseUrl = ReadConfigPropertyFileCategoryAndStylePage2.getPropertyValue("urlforwhatmycarworth");
     public String browser = ReadConfigPropertyFileCategoryAndStylePage2.getPropertyValue("browser");
