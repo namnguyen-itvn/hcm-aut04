@@ -3,7 +3,6 @@ package com.example.test.tests.KBBMOOCProject.TestCarResearch;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.example.test.core.datadriven.CarResearchPages;
 import com.example.test.pages.KBBMOOCProject.ButtonLXCoupe2D;
 import com.example.test.pages.KBBMOOCProject.ButtonReadmore;
 import com.example.test.pages.KBBMOOCProject.ButtonSpecsvsFeatures;
@@ -13,7 +12,7 @@ import com.example.test.pages.KBBMOOCProject.SearchCarPage;
 import com.example.test.tests.KBBMOOCProject.KbbBaseTest;
 
 public class CarResearch extends KbbBaseTest {
-    @Test(testName = "Verify  Information Specifications will dipsplay full when user click Read More button of component Specifications ", dataProviderClass = CarResearchPages.class, dataProvider ="CarResearchPages" )
+    @Test(testName = "Verify  Information Specifications will dipsplay full when user click Read More button of component Specifications ", dataProviderClass = CarResearch.class, dataProvider ="CarResearch" )
     public void VerifyInformationSpecificationsWillDipsplayFullWhenUserClickReadMoreButtonOfComponentSpecifications(String zipcode) throws InterruptedException{
         SearchCarPage searchCarPage = new SearchCarPage(driver);
         searchCarPage.SelectCars(zipcode);
