@@ -23,7 +23,8 @@ public class ShopByPricePage extends KbbBasePage {
     // private WebElement btnSeeResult = keyword.findWebElementByXpath("//div//a[@class='css-14twj67 e1uau9z02']");  
     public void actionClickSeeResultForShopByPrice() {
         WebElement btnSeeResult = keyword.findWebElementByXpath("//div//a[@class='css-14twj67 e1uau9z02']");  
-       // keyword.scrollAndWaitToClick(btnSeeResult);
+        keyword.scrollAndWaitToClick(btnSeeResult);
+
     }
  
 

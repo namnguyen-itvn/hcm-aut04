@@ -4,7 +4,6 @@ import org.testng.annotations.DataProvider;
 
 import com.example.test.core.helper.JsonHelper;
 
-
 public class ShopByPrice {
     @DataProvider(name = "minmaxprice")
     public static Object accountLoginPhp () {
