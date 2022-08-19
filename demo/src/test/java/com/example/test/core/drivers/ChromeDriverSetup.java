@@ -1,5 +1,7 @@
 package com.example.test.core.drivers;
 
+import java.io.File;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverInfo;
@@ -18,6 +20,8 @@ public class ChromeDriverSetup implements SeleniumDriver {
             options = new ChromeOptions();
             options.addArguments("start-maximized");
             options.setAcceptInsecureCerts(true);
+            File file = new File("src\\test\\java\\com\\example\\test\\core\\drivers\\driver\\extension_3_14_1_0.crx");
+            options.addExtensions(file);
         }
         return options;
     }
