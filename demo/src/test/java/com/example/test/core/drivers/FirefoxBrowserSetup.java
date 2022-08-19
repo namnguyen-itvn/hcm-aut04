@@ -17,9 +17,9 @@ public class FirefoxBrowserSetup {
     private FirefoxOptions getOptions(){
         if(options == null){
             options = new FirefoxOptions();
-            //FirefoxProfile profile = new FirefoxProfile();
-            //profile.addExtension(new File("src\\test\\java\\com\\example\\test\\core\\drivers\\adblock_plus-3.13_firefox.xpi"));
-            //options.setProfile(profile);
+            FirefoxProfile profile = new FirefoxProfile();
+            profile.addExtension(new File("src\\test\\java\\com\\example\\test\\core\\drivers\\adblock_plus-3.13_firefox.xpi"));
+            options.setProfile(profile);
             options.addArguments("start-maximized");
             options.setAcceptInsecureCerts(true);
 
