@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import com.example.test.core.datadriven.dataCarsResearchPage;
 import com.example.test.pages.KBBMOOCProject.CarsResearchPage.CarsReviewPage;
 import com.example.test.pages.KBBMOOCProject.CarsResearchPage.CarsWriteAReviewPage;
+import com.example.test.pages.KBBMOOCProject.CarsResearchPage.KbbHomePage;
 import com.example.test.pages.KBBMOOCProject.CarsResearchPage.ResearchNewAndUsedCarsPage;
 import com.example.test.pages.KBBMOOCProject.CarsResearchPage.ReviewCarsPage;
 
@@ -28,7 +29,8 @@ public class ResearchNewAndUsedCarsPageTest extends KbbBaseTest {
             String year, String make, String model, String zip, String expectedMessageText,
             String expectedMessageText1, String URLHondaCivicPage, String expectedMessageText2, String URLReviewPage)
             throws InterruptedException {
-
+        KbbHomePage kbbHomePage = new KbbHomePage(driver);
+        kbbHomePage.btnResearchPage();
         ResearchNewAndUsedCarsPage researchNewAndUsedCarsPage = new ResearchNewAndUsedCarsPage(driver);
         researchNewAndUsedCarsPage.selectYears(year);
         researchNewAndUsedCarsPage.selectMake(make);
