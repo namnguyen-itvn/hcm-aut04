@@ -13,13 +13,13 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
         //TODO Auto-generated constructor stub
     }
 
+
    private WebElement selectYear = keyword.findWebElementByXpath("//select[@placeholder='Year']");
-    private WebElement selectMake = keyword.findWebElementByXpath("//div[@class='make']//select[@placeholder='Make']");
+   private WebElement selectMake = keyword.findWebElementByXpath("//div[@class='make']//select[@placeholder='Make']");
    private WebElement selectModel = keyword.findWebElementByXpath("//div[@class='model']//select[@placeholder='Model']");
    private WebElement inputZip = keyword.findWebElementByXpath("//input[@type='tel']");
    private WebElement btnGetReview = keyword.findWebElementByXpath("//form//button[@type='submit']");
 
-    
     public void actionSelectaCars(String zipcode) throws InterruptedException{
         keyword.selectElement(selectYear, "2018");
         keyword.selectElement(selectMake, "Honda");
@@ -28,5 +28,6 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
         keyword.scrollAndWaitToClick(btnGetReview);
     }
    
+
 
 }

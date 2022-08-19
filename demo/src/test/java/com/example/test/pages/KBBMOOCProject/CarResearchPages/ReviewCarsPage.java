@@ -11,6 +11,7 @@ public class ReviewCarsPage  extends KbbBasePage{
         super(driver);
         //TODO Auto-generated constructor stub
     }
+
    
    private WebElement btnChangeVehicle=keyword.findWebElementByXpath("//a[text()='Change Vehicle']");
     public void clickonbtnChangeVehicle() throws InterruptedException
@@ -21,6 +22,5 @@ public class ReviewCarsPage  extends KbbBasePage{
 
 
 
-
-
 }
+
