@@ -194,4 +194,14 @@ public class CustomKeyword {
             throw new WebDriverException("Element not availabe to input text!");
         }
     }
+
+    public void waitForPageToLoad() throws InterruptedException
+    {
+        Thread.sleep(4000);
+    }
+
+    public void scrollToTopOfPage()
+    {
+        ((JavascriptExecutor) driver).executeScript("window.scrollTo(document.body.scrollHeight, 0)");
+    }
 }
