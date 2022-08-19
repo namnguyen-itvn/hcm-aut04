@@ -17,7 +17,7 @@ import com.test.tests.KBBBaseTest;
 
 public class OfferOptionPageTests extends KBBBaseTest{
     @Test(testName = "Verify the Year/Make/Model/Style are displayed correctly as user selected", dataProviderClass = TestDataProvider.class, dataProvider = "OfferOptions")
-    public void verifyTheYearMakeModelStyleAreDisplayedCorrectlyAsUserSelected(String mileage, String zip, String email, String yearMakeModelStyle, String year, String make, String model) throws InterruptedException {
+    public void verifyTheYearMakeModelStyleAreDisplayedCorrectlyAsUserSelected(String mileage, String zip, String email, String yearMakeModelStyle, String year, String make, String model){
         WhatsMyCarWorthPage whatsMyCarWorthPage = new WhatsMyCarWorthPage(driver);
         whatsMyCarWorthPage.clickOnMakeModelCheckbox();
         WhatsMyCarWorthMakeModelOptionPage whatsMyCarWorthMakeModelOptionPage = new WhatsMyCarWorthMakeModelOptionPage(driver);

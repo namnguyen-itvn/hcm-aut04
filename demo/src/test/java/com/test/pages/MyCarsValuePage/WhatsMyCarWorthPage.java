@@ -19,9 +19,8 @@ public class WhatsMyCarWorthPage extends KBBBasePage{
    
     /**
      * Option Make/Model
-     * @throws InterruptedException
      */
-    public void clickOnMakeModelCheckbox() throws InterruptedException {
+    public void clickOnMakeModelCheckbox() {
         keyword.scrollAndWaitToClick(chkMakeModel);
     }
     //#endregion

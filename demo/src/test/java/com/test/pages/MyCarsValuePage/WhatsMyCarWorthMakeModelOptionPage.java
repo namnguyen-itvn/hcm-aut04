@@ -64,9 +64,8 @@ public class WhatsMyCarWorthMakeModelOptionPage extends KBBBasePage{
 
     /**
      * click On Go button to navigate to CategoryAndStypePage
-     * @throws InterruptedException
      */
-    public void clickOnMakeModelGoButton() throws InterruptedException {
+    public void clickOnMakeModelGoButton() {
         keyword.scrollAndWaitToPageLoad(btnMakeModelGo);
     }
     //#endregion

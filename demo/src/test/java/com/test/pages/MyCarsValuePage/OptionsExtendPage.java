@@ -20,7 +20,7 @@ public class OptionsExtendPage extends KBBBasePage{
     public void clickOnRedColor(){
         keyword.scrollAndWaitToClick(colorRed);
     }
-    public void clickOnNextButton() throws InterruptedException {
+    public void clickOnNextButton() {
         keyword.scrollAndWaitToPageLoad(btnNext);
     }
     //#endregion

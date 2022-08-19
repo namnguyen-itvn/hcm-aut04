@@ -20,7 +20,7 @@ public class CategoryAndStylePage extends KBBBasePage{
     public void clickToSelectStyle() {
         keyword.scrollAndWaitToClick(optHatchback);
     }
-    public void clickOnMakeModelNextButton() throws InterruptedException{
+    public void clickOnMakeModelNextButton() {
         keyword.scrollAndWaitToPageLoad(btnMakeModelNext);
     }
     //#endregion
