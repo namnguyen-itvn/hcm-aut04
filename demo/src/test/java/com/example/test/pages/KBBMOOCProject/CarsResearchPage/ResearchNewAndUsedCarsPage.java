@@ -13,6 +13,7 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
     }
 
     // #region
+
     private WebElement selectYears = keyword.findWebElementByXpath("//select[@placeholder='Year']");
     private WebElement selectMake = keyword.findWebElementByXpath("//div[@class='make']//select[@placeholder='Make']");
     private WebElement selectModel = keyword
@@ -27,6 +28,8 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
      * 
      * @throws InterruptedException
      */
+
+   
 
     public void selectYears(String year) throws InterruptedException {
 
@@ -78,13 +81,12 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
         }
         return false;
     }
+
     public boolean isgetPageURLHondaCivicPage(String URLHondaCivicPage) {
         if (driver.getCurrentUrl().equals(URLHondaCivicPage)) {
             return true;
         }
         return false;
     }
-
-   
 
 }

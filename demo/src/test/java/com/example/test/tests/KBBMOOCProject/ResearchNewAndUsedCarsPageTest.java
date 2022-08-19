@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 
 import com.example.test.core.datadriven.dataPageTest;
 import com.example.test.pages.KBBMOOCProject.CarsResearchPage.ZipCodeComponent;
+import com.example.test.pages.KBBMOOCProject.CarsResearchPage.KbbHomePage;
 import com.example.test.pages.KBBMOOCProject.CarsResearchPage.ResearchNewAndUsedCarsPage;
 import com.example.test.pages.KBBMOOCProject.CarsResearchPage.ReviewCarsPage;
 
@@ -25,7 +26,8 @@ public class ResearchNewAndUsedCarsPageTest extends KbbBaseTest {
     public void verifyClickOnHighlightZipCodeLinkLocatedUnderCarNameOnReviewPageAndInputZipCodeToChangeVehicleZipCodeAndDisplayedLocation(
             String year, String make, String model, String zipbefore, String zipafter, String expectedMessageText,
             String expectedMessageText1, String URLHondaCivicPage) throws InterruptedException {
-
+        KbbHomePage kbbHomePage = new KbbHomePage(driver);
+        kbbHomePage.btnResearchPage();
         ResearchNewAndUsedCarsPage researchNewAndUsedCarsPage = new ResearchNewAndUsedCarsPage(driver);
         researchNewAndUsedCarsPage.selectYears(year);
         researchNewAndUsedCarsPage.selectMake(make);
