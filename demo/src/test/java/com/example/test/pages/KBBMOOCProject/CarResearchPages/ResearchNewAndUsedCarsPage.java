@@ -13,6 +13,7 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
         //TODO Auto-generated constructor stub
     }
 
+
   private  WebElement selectYear = keyword.findWebElementByXpath("//select[@placeholder='Year']");
   private  WebElement selectMake = keyword.findWebElementByXpath("//div[@class='make']//select[@placeholder='Make']");
  private   WebElement selectModel = keyword.findWebElementByXpath("//div[@class='model']//select[@placeholder='Model']");
@@ -29,5 +30,6 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
         keyword.scrollAndWaitToClick(btnGetReview);
     }
    
+
 
 }
