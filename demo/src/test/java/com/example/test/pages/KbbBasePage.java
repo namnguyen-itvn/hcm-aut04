@@ -3,7 +3,9 @@ package com.example.test.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.example.test.core.keywork.CustomKeyword;
+import com.example.test.core.keyword.CustomKeyword;
+
+
 
 public class KbbBasePage {
     public WebDriver driver;
