@@ -29,5 +29,4 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
         keyword.scrollAndWaitToClick(btnGetReview);
     }
    
-
 }

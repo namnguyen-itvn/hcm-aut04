@@ -11,7 +11,7 @@ public class ReviewCarsPage  extends KbbBasePage{
         super(driver);
         //TODO Auto-generated constructor stub
     }
-   
+
     
 
        private WebElement lbYearChange = keyword.findWebElementByXpath("//select/option[text()='2019']");
@@ -21,8 +21,5 @@ public class ReviewCarsPage  extends KbbBasePage{
         }
 
         
-
-
-
-
 }
+
