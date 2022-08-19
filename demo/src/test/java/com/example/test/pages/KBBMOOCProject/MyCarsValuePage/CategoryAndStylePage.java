@@ -16,7 +16,7 @@ public class CategoryAndStylePage extends KbbBasePage{
     //#endregion
 
     //#region page actions
-    public void clickOnSelectboxAndClickOnAutomatic(String automatic){
+    public void clickOnSelectboxAndClickOnAutomatic(String automatic) throws InterruptedException{
         keyword.scrollAndWaitToClick(transmissionSelectBox);
         keyword.selectElement(transmissionSelectBox, automatic);
     }

@@ -21,6 +21,6 @@ public class ModificationQuestionComponentInOptionsPage extends KbbBasePage{
         keyword.scrollAndWaitToClick(withoutModifications);
     }
     public void clickOnNextButton() {
-        keyword.scrollAndWaitToPageLoad(btnNext);
+        keyword.scrollAndWaitToClick(btnNext);
     }
 }

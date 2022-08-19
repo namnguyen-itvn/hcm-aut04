@@ -25,10 +25,10 @@ public class CategoryAndStyleExtendPage extends KbbBasePage{
         keyword.scrollAndWaitToClick(txtMileage);   
     }
     public void sendKeysToZIPTextbox(String zip){ 
-        keyword.sendKeyAndWait(txtZipCode, zip);
+        keyword.sendKeys(txtZipCode, zip);
     }
     public void clickOnNextButton() {
-        keyword.scrollAndWaitToPageLoad(btnNext);
+        keyword.scrollAndWaitToClick(btnNext);
     }
     //#endregion
 }
