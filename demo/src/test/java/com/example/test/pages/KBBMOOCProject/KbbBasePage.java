@@ -35,4 +35,6 @@ public class KbbBasePage {
     public boolean isTitlePageCorrect(String expectedTitle) {
         return pageTitle().equals(expectedTitle);
     }
+    
+  
 }

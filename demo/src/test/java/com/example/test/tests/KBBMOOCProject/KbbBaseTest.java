@@ -13,7 +13,9 @@ public class KbbBaseTest {
     public CustomKeyword keyword;
     public String pathChromeDriver = "src\\test\\java\\com\\example\\test\\core\\drivers\\driver\\chromedriver.exe";
     public String baseUrl = ReadConfigPropertyFile.getPropertyValue("url");
+    public String baseUrl1 = ReadConfigPropertyFile.getPropertyValue("url1");
     public String browser = ReadConfigPropertyFile.getPropertyValue("browser");
+
 
     @BeforeTest
     public void setUp() throws Exception {
