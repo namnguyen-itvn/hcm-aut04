@@ -3,8 +3,6 @@ package com.example.test.pages.KBBMOOCProject.CategoryAndStylePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import com.example.test.pages.KBBMOOCProject.KbbBasePage;
-
 public class MyCarValuePage extends KbbBasePage {
 
    public MyCarValuePage(WebDriver driver) {
