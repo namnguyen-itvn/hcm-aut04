@@ -1,4 +1,4 @@
-package com.example.test.core.keywork;
+package com.example.test.core.keyword;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
