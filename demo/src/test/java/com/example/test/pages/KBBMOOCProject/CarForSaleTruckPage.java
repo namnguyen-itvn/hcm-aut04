@@ -11,7 +11,7 @@ public class CarForSaleTruckPage extends KbbBasePage {
     }
     private WebElement truckBedTab = keyword.findWebElementByXpath("//span[@ data-cmp='filterTitle']/span[text()='Truck Bed Length']");
    
-    public String strActual = pageTitle();
+    public String strActual = driver.getTitle();
     public String strExpected = "Trucks for Sale (Test Drive at Home) - Kelley Blue Book";   
 
 
