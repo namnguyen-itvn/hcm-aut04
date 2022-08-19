@@ -6,7 +6,8 @@ import org.testng.annotations.Test;
 import com.example.test.core.datadriven.GetReviewCarResearch;
 import com.example.test.pages.KBBMOOCProject.CarResearchPages.ResearchNewAndUsedCarsPage;
 import com.example.test.pages.KBBMOOCProject.CarResearchPages.ReviewCarsPage;
-import com.example.test.tests.KBBMOOCProject.KbbBaseTest;
+import com.example.test.tests.KBBMOOCProjectTest.KbbBaseTest;
+
 
 
 

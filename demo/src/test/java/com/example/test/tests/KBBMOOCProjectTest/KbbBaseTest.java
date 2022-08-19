@@ -1,4 +1,4 @@
-package com.example.test.tests.KBBMOOCProject;
+package com.example.test.tests.KBBMOOCProjectTest;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
