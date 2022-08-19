@@ -1,20 +1,17 @@
 package com.example.test.core.drivers;
 
 import java.io.File;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
+import org.openqa.selenium.chrome.ChromeDriverInfo;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ChromeDriverSetup implements SeleniumDriver {
 
     private ChromeOptions options;
     private DesiredCapabilities capabilities;
-
     private ChromeOptions getOptions(){
         if(options == null){
             options = new ChromeOptions();

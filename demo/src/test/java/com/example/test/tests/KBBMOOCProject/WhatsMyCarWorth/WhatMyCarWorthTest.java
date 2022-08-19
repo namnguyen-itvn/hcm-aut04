@@ -24,8 +24,8 @@ public class WhatMyCarWorthTest extends KbbBaseTest {
         categoryandStylePage.clickOnDropListTransmission();
         categoryandStylePage.selectOnAutomatic();
         WhatsYourMileageandZIPCodeComponent whatsYourMileageandZIPCodeComponent = new WhatsYourMileageandZIPCodeComponent(driver);
-        whatsYourMileageandZIPCodeComponent.sendInforMileage(mileage);
         whatsYourMileageandZIPCodeComponent.sendInforZIP(zipcode);
+        whatsYourMileageandZIPCodeComponent.sendInforMileage(mileage);
         whatsYourMileageandZIPCodeComponent.clickOnNextbutton();
 
     }
