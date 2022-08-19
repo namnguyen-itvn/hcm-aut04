@@ -18,8 +18,7 @@ public class CarForSaleSearchLocationComponent extends KbbBaseTest{
         
         CarForSaleTruckPage cst = new CarForSaleTruckPage(driver);
         
-        Assert.assertEquals(cst.strActual, cst.strExpected);
-        
+        Assert.assertEquals(cst.strActual, cst.strExpected);    
         cst.clickTruckBedTab();
         Assert.assertTrue(cst.checkTextboxinBedTab(), "its not checked or error");
 
