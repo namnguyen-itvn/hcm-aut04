@@ -9,7 +9,7 @@ import com.example.test.pages.KBBMOOCProject.CarForSalePage.CarForSalePage;
 import com.example.test.pages.KBBMOOCProject.CarForSalePage.CarSearchPage;
 import com.example.test.pages.KBBMOOCProject.CarForSalePage.EmailConfirmComponent;
 import com.example.test.pages.KBBMOOCProject.CarForSalePage.OptionSearchComponent;
-import com.example.test.tests.KBBMOOCProjectTest.KbbBaseTest;
+import com.example.test.tests.KbbBaseTest;
 
 
 public class CarDetailsForSalePageTest extends KbbBaseTest{
