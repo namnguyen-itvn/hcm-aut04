@@ -1,6 +1,6 @@
 package com.example.test.core.keywork;
 
-import java.util.concurrent.TimeUnit;
+
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -95,7 +95,7 @@ public class CustomKeyword {
     //*wait without scroll */
     public WebElement waitForElementDisplayedWithoutScroll(WebElement element) throws InterruptedException {
         try{
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+         
             return wait.until(ExpectedConditions.elementToBeClickable(element));
         } catch(WebDriverException ex){
             throw new WebDriverException("Element not displayed");
@@ -119,18 +119,27 @@ public class CustomKeyword {
      * Scroll And Wait To Click
      * @param element
      * @return
+     * @throws InterruptedException
      */
-    public CustomKeyword scrollAndWaitToClick(WebElement element) {
+    public CustomKeyword scrollAndWaitToClick(WebElement element) throws InterruptedException {
         try{
             scrollToElemtnIntoView(element);
             waitForElementDisplayed(element);
+
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0,-100)");
             element.click();
+
+            waitforpageload();
+
             return new CustomKeyword(driver, wait);
         }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to click!");
         }
     }
-
+public void waitforpageload() throws InterruptedException{
+    Thread.sleep(3000);
+}
     /**
      * Wait To Click
      * @param element
@@ -145,14 +154,16 @@ public class CustomKeyword {
         }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to click!");
         }
+
     }
     public void scrollByToClick(WebElement element) throws InterruptedException{
         try{
             JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("window.scrollBy(0,200)");
-           
+
+
+            js.executeScript("window.scrollBy(0,500)"); 
             element.click();
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
             }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to input text!");
         }
@@ -161,7 +172,7 @@ public class CustomKeyword {
         try{
             JavascriptExecutor jse = (JavascriptExecutor)driver;
             jse.executeScript("arguments[0].click()", element);
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
             }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to input text!");
         }
@@ -170,18 +181,20 @@ public class CustomKeyword {
         try{
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,0)");
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            element.click();
+
+            
+            element.click();       
+
             }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to input text!");
         }
     }
     public void selectElement(WebElement element, String text) throws InterruptedException{
         try {
-            //waitForElementDisplayed(element);
+            waitForElementDisplayed(element);
             Select select6=new Select(element);
             select6.selectByVisibleText(text);
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
         }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to input text!");
         }
@@ -195,4 +208,9 @@ public class CustomKeyword {
             throw new WebDriverException("Element not availabe to input text!");
         }
     }
-}
+
+    }
+
+  
+  
+
