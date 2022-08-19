@@ -56,7 +56,7 @@ public class CustomKeyword {
     public void sendKeyAndWait(WebElement element, String text){
         try{
             waitForElementIsDisplayed(element).sendKeys(text);
-            driver.manage().timeouts().implicitlyWait(2000, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to input text!");
         }
@@ -228,7 +228,7 @@ public class CustomKeyword {
             scrollToElemtnIntoView(element);
             waitForElementDisplayed(element);
             element.click();
-            driver.manage().timeouts().implicitlyWait(4000, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
             return new CustomKeyword(driver, wait);
         }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to click!");
