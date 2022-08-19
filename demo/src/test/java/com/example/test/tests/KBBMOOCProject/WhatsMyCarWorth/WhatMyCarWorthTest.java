@@ -17,17 +17,13 @@ public class WhatMyCarWorthTest extends KbbBaseTest {
         whatMyCarWorthPage.sendVinTradeInandPrivatePartyValues(vin);
         whatMyCarWorthPage.sendEmailTradeInandPrivatePartyValues(email);
         whatMyCarWorthPage.clickOnGobutton();
-    }
-    @Test(testName = "Send Infor Category and Style Page",dataProviderClass = dataforWhatMyCarWorthTest.class,dataProvider = "dataWhatMyCarWorthTest",priority = 2)
-    public void sendInforCategoryandStylePage(String vin,String email,String mileage ,String zipcode,String mileagee) {
         CategoryandStylePage categoryandStylePage = new CategoryandStylePage(driver);
         categoryandStylePage.clickOnDropListTransmission();
         categoryandStylePage.selectOnAutomatic();
         WhatsYourMileageandZIPCodeComponent whatsYourMileageandZIPCodeComponent = new WhatsYourMileageandZIPCodeComponent(driver);
-        whatsYourMileageandZIPCodeComponent.sendInforMileage(mileage);
         whatsYourMileageandZIPCodeComponent.sendInforZIP(zipcode);
+        whatsYourMileageandZIPCodeComponent.sendInforMileage(mileage);
         whatsYourMileageandZIPCodeComponent.clickOnNextbutton();
-
     }
     @Test(testName = "Verify Edit Icon when user click on it, Should be edit Mileage successful",dataProviderClass = dataforWhatMyCarWorthTest.class,dataProvider = "dataWhatMyCarWorthTest",priority = 3)
     public void verifyEditIconwhenuserclickonitShouldbeeditMileagesuccessful(String vin,String email,String mileage ,String zipcode,String mileagee) {

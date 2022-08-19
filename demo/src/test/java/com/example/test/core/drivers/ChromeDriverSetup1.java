@@ -1,4 +1,5 @@
 package com.example.test.core.drivers;
+
 import java.io.File;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -6,7 +7,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class ChromeDriverSetup implements SeleniumDriver {
+public class ChromeDriverSetup1 implements SeleniumDriver {
+
     private ChromeOptions options;
     private DesiredCapabilities capabilities;
     private ChromeOptions getOptions(){
@@ -18,6 +20,7 @@ public class ChromeDriverSetup implements SeleniumDriver {
         }
         return options;
     }
+
     private DesiredCapabilities getCapabilities(){
         if(this.capabilities == null){
             this.capabilities = DesiredCapabilities.chrome();
