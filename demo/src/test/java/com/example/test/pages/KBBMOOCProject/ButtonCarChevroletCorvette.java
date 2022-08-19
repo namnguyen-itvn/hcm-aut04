@@ -14,5 +14,6 @@ WebElement btnCarChevrolet = keyword.findWebElementByXpath("//a[@href='/chevrole
 public void clickOnButtonCar () throws InterruptedException{
     keyword.scrollAndWaitToClick(btnCarChevrolet);  
 }
-    
+ 
 }
+

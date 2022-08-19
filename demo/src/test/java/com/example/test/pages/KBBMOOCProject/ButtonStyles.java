@@ -15,7 +15,8 @@ public class ButtonStyles extends KbbBasePage {
 public void clickOnButtonStyles () throws InterruptedException{
     
     keyword.scrollAndWaitToClick(btnStyles);
-    
-}
+
 
 }
+}
+
