@@ -17,7 +17,7 @@ import com.example.test.tests.KBBMOOCProject.KbbBaseTest;
 
 public class OfferOptionPageTests extends KbbBaseTest{
     @Test(testName = "Verify that 'Get a Cash Offer for Your Specific Vehicle' checkbox can be check and uncheck but 'Get Your Trade-In & Private Party Values' can not uncheck", dataProviderClass = TestDataProvider.class, dataProvider = "WhatsMyCarWorth")
-    public void verifyThatGetACashOfferForYourSpecificVehicleCheckboxCanBeCheckAndUncheckButGetYourTradeInPrivatePartyValuesCanNotUncheck(String vin, String email, String mileage, String zip, String automatic) throws InterruptedException {
+    public void verifyThatGetACashOfferForYourSpecificVehicleCheckboxCanBeCheckAndUncheckButGetYourTradeInPrivatePartyValuesCanNotUncheck(String vin, String email, String mileage, String zip, String automatic) {
         WhatsMyCarWorthPage whatsMyCarWorthPage = new WhatsMyCarWorthPage(driver);
         whatsMyCarWorthPage.sendKeysToVINTextbox(vin);
         whatsMyCarWorthPage.sendKeysToEmailTextbox(email);

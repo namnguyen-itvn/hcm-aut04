@@ -1,6 +1,7 @@
 package com.example.test.core.keyword;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -47,19 +48,15 @@ public class CustomKeyword {
             throw new WebDriverException("Element not availabe to input text!");
         }
     }
-    public void waitToPageLoad() throws InterruptedException{
-        Thread.sleep(4000);       
-    }
     /**
      * 
      * @param element
      * @param text
-     * @throws InterruptedException
      */
-    public void sendKeyAndWait(WebElement element, String text) throws InterruptedException{
+    public void sendKeyAndWait(WebElement element, String text){
         try{
             waitForElementIsDisplayed(element).sendKeys(text);
-            waitToPageLoad();
+            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to input text!");
         }
@@ -233,14 +230,13 @@ public class CustomKeyword {
      * 
      * @param element
      * @return
-     * @throws InterruptedException
      */
-    public CustomKeyword scrollAndWaitToPageLoad(WebElement element) throws InterruptedException {
+    public CustomKeyword scrollAndWaitToPageLoad(WebElement element)  {
         try{
             scrollToElemtnIntoView(element);
             waitForElementDisplayed(element);
             element.click();
-            waitToPageLoad();
+            driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
             return new CustomKeyword(driver, wait);
         }catch(WebDriverException ex){
             throw new WebDriverException("Element not availabe to click!");

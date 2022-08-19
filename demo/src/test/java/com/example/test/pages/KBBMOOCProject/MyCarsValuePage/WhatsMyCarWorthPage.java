@@ -24,7 +24,7 @@ public class WhatsMyCarWorthPage extends KbbBasePage{
     public void sendKeysToEmailTextbox(String email) {
         keyword.sendKeys(txtEmail, email);
     }
-    public void clickOnVINGoButton() throws InterruptedException {
+    public void clickOnVINGoButton()  {
         keyword.scrollAndWaitToPageLoad(btnGo);
     }
     //#endregion

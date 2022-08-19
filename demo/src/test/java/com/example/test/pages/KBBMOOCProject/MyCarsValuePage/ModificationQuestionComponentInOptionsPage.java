@@ -20,7 +20,7 @@ public class ModificationQuestionComponentInOptionsPage extends KbbBasePage{
     public void clickNoOptionInModificationsQuestion() {
         keyword.scrollAndWaitToClick(withoutModifications);
     }
-    public void clickOnNextButton() throws InterruptedException {
+    public void clickOnNextButton() {
         keyword.scrollAndWaitToPageLoad(btnNext);
     }
 }

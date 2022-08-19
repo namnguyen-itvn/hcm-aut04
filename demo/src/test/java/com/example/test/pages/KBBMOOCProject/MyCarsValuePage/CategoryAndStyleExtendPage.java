@@ -19,12 +19,15 @@ public class CategoryAndStyleExtendPage extends KbbBasePage{
 
     //#region page actions
     public void sendKeysToMileageTextbox(String mileage)  {
-        keyword.sendKeys(txtMileage, mileage);        
+        keyword.sendKeys(txtMileage, mileage);     
+        keyword.scrollAndWaitToClick(txtZipCode);
+        keyword.scrollAndWaitToClick(txtMileage);
+        keyword.scrollAndWaitToClick(txtMileage);   
     }
-    public void sendKeysToZIPTextbox(String zip) throws InterruptedException{ 
+    public void sendKeysToZIPTextbox(String zip){ 
         keyword.sendKeyAndWait(txtZipCode, zip);
     }
-    public void clickOnNextButton() throws InterruptedException{
+    public void clickOnNextButton() {
         keyword.scrollAndWaitToPageLoad(btnNext);
     }
     //#endregion
