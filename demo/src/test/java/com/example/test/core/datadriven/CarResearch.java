@@ -10,9 +10,5 @@ public class CarResearch {
     @DataProvider(name = "CarResearch")
     public static Object test1 () {
         return JsonHelper.ReadJsonFromFile("src\\test\\java\\com\\example\\test\\core\\resources\\datas\\CarResearch.json");       
-
-
-    }
-
-
+}
 }
