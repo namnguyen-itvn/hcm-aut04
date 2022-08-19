@@ -15,4 +15,4 @@ public class KbbBasePage {
         this.keyword = new CustomKeyword(driver, wait);
         driver.manage().window().maximize();
     }  
-    
+}
