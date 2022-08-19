@@ -8,7 +8,7 @@ import com.example.test.core.keywork.CustomKeyword;
 public class KbbBasePage {
     public WebDriver driver;
     public WebDriverWait wait;
-    public CustomKeyword keyword;
+    public AiNHCustomKeyword keyword;
     public KbbBasePage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, 20);
