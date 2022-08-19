@@ -5,7 +5,8 @@ import java.util.Properties;
 
 public class ReadConfigPropertyFile {
 
-    public static String propertiesFilePath ="src\\test\\java\\com\\example\\test\\core\\configs.properties";
+    // public static String propertiesFilePath ="src\\test\\java\\com\\example\\test\\core\\configs.properties";
+    public static String propertiesFilePath ="src//test//java//com//example//test//core//configs.properties";
     static String projectPath = System.getProperty("user.dir") + "\\";
 
     public static String getPropertyValue(String atrName){
