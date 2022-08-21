@@ -30,11 +30,9 @@ public class ChromeDriverSetup implements SeleniumDriver {
             this.capabilities = DesiredCapabilities.chrome();
             this.capabilities.setJavascriptEnabled(true);
             this.capabilities.setAcceptInsecureCerts(true);
-            
         }
         return capabilities;
     }
-
 
     @Override
     public WebDriver createDriver(){
