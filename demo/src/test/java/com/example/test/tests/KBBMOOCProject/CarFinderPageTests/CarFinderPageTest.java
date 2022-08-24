@@ -27,4 +27,3 @@ public class CarFinderPageTest extends KbbBaseTest {
        Assert.assertTrue(carFinderPage.isgetResultCarFinder());
     }
 }
-

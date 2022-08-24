@@ -27,7 +27,7 @@ public class ResearchNewAndUsedCarsPage extends KbbBasePage {
         keyword.selectElement(selectMake,"Honda");
         keyword.selectElement(selectModel,"Civic");
     }
-    public void actionInputZipcodeCarResearchPage(String zipcode) {
+    public void actionInputZipcodeCarResearchPage(String zipcode) throws InterruptedException {
         keyword.sendKeys(inputZip,zipcode);
     }
     public void actionClickGetReviewBtnCarResearchPage() throws InterruptedException {
